@@ -1,0 +1,27 @@
+Found 567 files: 190 PDFs + 377 HTMLs
+  ⚠ 25 PDFs exceed 200-page limit, will skip
+
+Completed: 170, Failed: 25, Remaining: 372
+PDFs: 5, HTMLs: 367
+
+Batch 1 (5 files, vlm)
+  Batch 13d327ef-df97-46e7-a039-a1ae5d67a8b9: uploading 5 files...
+  Batch 13d327ef-df97-46e7-a039-a1ae5d67a8b9: 4✓ 0✗ 1… (0s)
+  Batch 13d327ef-df97-46e7-a039-a1ae5d67a8b9: 5✓ 0✗ 0… (10s)
+    ✓ research/pack2_text19.md
+    ✓ 49 images → research/pack2_text19/images/
+    ✓ research/pack2_text20.md
+    ✓ 79 images → research/pack2_text20/images/
+
+Batch 1 (10 files, MinerU-HTML)
+  ✗ API error: ⚠️ daily web crawl limit reached max: 100 tasks,submit tomorrow.
+  ⚠ Daily quota exhausted — stopping for today
+  Quota exhausted — skipping remaining 367 files
+
+============================================================
+SUMMARY
+============================================================
+  Completed: 175
+  Failed permanently: 25
+  Pending (orphaned): 0
+  Output: 177 .md, 12 .html, 2478 images

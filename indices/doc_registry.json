@@ -1,0 +1,5012 @@
+{
+  "by_id": {
+    "text01": {
+      "doc_id": "text01",
+      "friendly_name": "广东省广晟控股集团有限公司",
+      "rel_path": "financial_contracts/text01.md",
+      "domain": "financial_contracts"
+    },
+    "text02": {
+      "doc_id": "text02",
+      "friendly_name": "6 年面向专业投资者公开发行科技",
+      "rel_path": "financial_contracts/text02.md",
+      "domain": "financial_contracts"
+    },
+    "text03": {
+      "doc_id": "text03",
+      "friendly_name": "厦门金圆投资集团有限公司",
+      "rel_path": "financial_contracts/text03.md",
+      "domain": "financial_contracts"
+    },
+    "text04": {
+      "doc_id": "text04",
+      "friendly_name": "Anker",
+      "rel_path": "financial_contracts/text04.md",
+      "domain": "financial_contracts"
+    },
+    "text05": {
+      "doc_id": "text05",
+      "friendly_name": "江苏本川智能电路科技股份有限公司",
+      "rel_path": "financial_contracts/text05.md",
+      "domain": "financial_contracts"
+    },
+    "text06": {
+      "doc_id": "text06",
+      "friendly_name": "鼎捷数 公司",
+      "rel_path": "financial_contracts/text06.md",
+      "domain": "financial_contracts"
+    },
+    "text07": {
+      "doc_id": "text07",
+      "friendly_name": "海南海峡航运股份有限公司",
+      "rel_path": "financial_contracts/text07.md",
+      "domain": "financial_contracts"
+    },
+    "text08": {
+      "doc_id": "text08",
+      "friendly_name": "苏州华亚智能科技股份有限公司",
+      "rel_path": "financial_contracts/text08.md",
+      "domain": "financial_contracts"
+    },
+    "text09": {
+      "doc_id": "text09",
+      "friendly_name": "金达威集团",
+      "rel_path": "financial_contracts/text09.md",
+      "domain": "financial_contracts"
+    },
+    "text10": {
+      "doc_id": "text10",
+      "friendly_name": "科源製藥",
+      "rel_path": "financial_contracts/text10.md",
+      "domain": "financial_contracts"
+    },
+    "text11": {
+      "doc_id": "text11",
+      "friendly_name": "Pansoft Company Limited",
+      "rel_path": "financial_contracts/text11.md",
+      "domain": "financial_contracts"
+    },
+    "text12": {
+      "doc_id": "text12",
+      "friendly_name": "陕西省国际信托股份有限公司",
+      "rel_path": "financial_contracts/text12.md",
+      "domain": "financial_contracts"
+    },
+    "text13": {
+      "doc_id": "text13",
+      "friendly_name": "2026年度中国铁路建设债券",
+      "rel_path": "financial_contracts/text13.md",
+      "domain": "financial_contracts"
+    },
+    "text14": {
+      "doc_id": "text14",
+      "friendly_name": "西部证券股份有限公司",
+      "rel_path": "financial_contracts/text14.md",
+      "domain": "financial_contracts"
+    },
+    "annual_byd_2024_report": {
+      "doc_id": "annual_byd_2024_report",
+      "friendly_name": "比亚迪股份有限公司",
+      "rel_path": "financial_reports/annual_byd_2024_report.md",
+      "domain": "financial_reports"
+    },
+    "annual_byd_2025_report": {
+      "doc_id": "annual_byd_2025_report",
+      "friendly_name": "比亚迪股份有限公司",
+      "rel_path": "financial_reports/annual_byd_2025_report.md",
+      "domain": "financial_reports"
+    },
+    "annual_catl_2024_report": {
+      "doc_id": "annual_catl_2024_report",
+      "friendly_name": "CATL",
+      "rel_path": "financial_reports/annual_catl_2024_report.md",
+      "domain": "financial_reports"
+    },
+    "annual_catl_2025_report": {
+      "doc_id": "annual_catl_2025_report",
+      "friendly_name": "CATL",
+      "rel_path": "financial_reports/annual_catl_2025_report.md",
+      "domain": "financial_reports"
+    },
+    "annual_chinamobile_2025_report": {
+      "doc_id": "annual_chinamobile_2025_report",
+      "friendly_name": "中国移动",
+      "rel_path": "financial_reports/annual_chinamobile_2025_report.md",
+      "domain": "financial_reports"
+    },
+    "annual_cmb_2025_report": {
+      "doc_id": "annual_cmb_2025_report",
+      "friendly_name": "2025年度报告",
+      "rel_path": "financial_reports/annual_cmb_2025_report.md",
+      "domain": "financial_reports"
+    },
+    "annual_cscec_2024_report": {
+      "doc_id": "annual_cscec_2024_report",
+      "friendly_name": "2024",
+      "rel_path": "financial_reports/annual_cscec_2024_report.md",
+      "domain": "financial_reports"
+    },
+    "annual_cscec_2025_report": {
+      "doc_id": "annual_cscec_2025_report",
+      "friendly_name": "2025",
+      "rel_path": "financial_reports/annual_cscec_2025_report.md",
+      "domain": "financial_reports"
+    },
+    "annual_midea_2024_report": {
+      "doc_id": "annual_midea_2024_report",
+      "friendly_name": "雨V 美的集",
+      "rel_path": "financial_reports/annual_midea_2024_report.md",
+      "domain": "financial_reports"
+    },
+    "annual_midea_2025_report": {
+      "doc_id": "annual_midea_2025_report",
+      "friendly_name": "我们总有道路",
+      "rel_path": "financial_reports/annual_midea_2025_report.md",
+      "domain": "financial_reports"
+    },
+    "1": {
+      "doc_id": "1",
+      "friendly_name": "平安智盈金生专属商业养老保险",
+      "rel_path": "insurance/1.md",
+      "domain": "insurance"
+    },
+    "10": {
+      "doc_id": "10",
+      "friendly_name": "众安在线财产保险股份有限公司特种车商业保险示范条款（2020版）",
+      "rel_path": "insurance/10.md",
+      "domain": "insurance"
+    },
+    "11": {
+      "doc_id": "11",
+      "friendly_name": "中国平安财产保险股份有限公司",
+      "rel_path": "insurance/11.md",
+      "domain": "insurance"
+    },
+    "12": {
+      "doc_id": "12",
+      "friendly_name": "众安在线财产保险股份有限公司",
+      "rel_path": "insurance/12.md",
+      "domain": "insurance"
+    },
+    "13": {
+      "doc_id": "13",
+      "friendly_name": "众安在线财产保险股份有限公司",
+      "rel_path": "insurance/13.md",
+      "domain": "insurance"
+    },
+    "14": {
+      "doc_id": "14",
+      "friendly_name": "中国平安财产保险股份有限公司",
+      "rel_path": "insurance/14.md",
+      "domain": "insurance"
+    },
+    "15": {
+      "doc_id": "15",
+      "friendly_name": "阅读指引",
+      "rel_path": "insurance/15.md",
+      "domain": "insurance"
+    },
+    "16": {
+      "doc_id": "16",
+      "friendly_name": "平安养老保险股份有限公司",
+      "rel_path": "insurance/16.md",
+      "domain": "insurance"
+    },
+    "2": {
+      "doc_id": "2",
+      "friendly_name": "阅读指引",
+      "rel_path": "insurance/2.md",
+      "domain": "insurance"
+    },
+    "3": {
+      "doc_id": "3",
+      "friendly_name": "众安在线财产保险股份有限公司",
+      "rel_path": "insurance/3.md",
+      "domain": "insurance"
+    },
+    "4": {
+      "doc_id": "4",
+      "friendly_name": "平安安佑福重大疾病保险产品提供重大疾病及身故保障",
+      "rel_path": "insurance/4.md",
+      "domain": "insurance"
+    },
+    "5": {
+      "doc_id": "5",
+      "friendly_name": "阅 读 指 引",
+      "rel_path": "insurance/5.md",
+      "domain": "insurance"
+    },
+    "6": {
+      "doc_id": "6",
+      "friendly_name": "太平洋健康保险股份有限公司",
+      "rel_path": "insurance/6.md",
+      "domain": "insurance"
+    },
+    "7": {
+      "doc_id": "7",
+      "friendly_name": "中国平安财产保险股份有限公司",
+      "rel_path": "insurance/7.md",
+      "domain": "insurance"
+    },
+    "8": {
+      "doc_id": "8",
+      "friendly_name": "众安在线财产保险股份有限公司",
+      "rel_path": "insurance/8.md",
+      "domain": "insurance"
+    },
+    "9": {
+      "doc_id": "9",
+      "friendly_name": "中国平安财产保险股份有限公司",
+      "rel_path": "insurance/9.md",
+      "domain": "insurance"
+    },
+    "csrc_0001_att1": {
+      "doc_id": "csrc_0001_att1",
+      "friendly_name": "私募投资基金信息披露监督管理办法",
+      "rel_path": "regulatory/attachments/csrc_0001_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0001_att2": {
+      "doc_id": "csrc_0001_att2",
+      "friendly_name": "《私募投资基金信息披露监督管理办法》立法说明",
+      "rel_path": "regulatory/attachments/csrc_0001_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0002_att1": {
+      "doc_id": "csrc_0002_att1",
+      "friendly_name": "关于修改《证券期货行政执法当事人承诺制度实施规定》的决定",
+      "rel_path": "regulatory/attachments/csrc_0002_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0002_att2": {
+      "doc_id": "csrc_0002_att2",
+      "friendly_name": "《关于修改〈证券期货行政执法当事人承诺制度实施规定〉的决定》立法说明",
+      "rel_path": "regulatory/attachments/csrc_0002_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0003_att1": {
+      "doc_id": "csrc_0003_att1",
+      "friendly_name": "证券期货市场监督管理措施实施办法",
+      "rel_path": "regulatory/attachments/csrc_0003_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0003_att2": {
+      "doc_id": "csrc_0003_att2",
+      "friendly_name": "关于《证券期货市场监督管理措施实施办法》的说明",
+      "rel_path": "regulatory/attachments/csrc_0003_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0004_att1": {
+      "doc_id": "csrc_0004_att1",
+      "friendly_name": "金融基础设施监督管理办法",
+      "rel_path": "regulatory/attachments/csrc_0004_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0005_att1": {
+      "doc_id": "csrc_0005_att1",
+      "friendly_name": "关于修改《上市公司重大资产重组管理办法》的决定",
+      "rel_path": "regulatory/attachments/csrc_0005_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0005_att2": {
+      "doc_id": "csrc_0005_att2",
+      "friendly_name": "关于《关于修改<上市公司重大资产重组管理办法>的决定》的立法说明",
+      "rel_path": "regulatory/attachments/csrc_0005_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0006_att1": {
+      "doc_id": "csrc_0006_att1",
+      "friendly_name": "中国证监会派出机构监管职责规定",
+      "rel_path": "regulatory/attachments/csrc_0006_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0006_att2": {
+      "doc_id": "csrc_0006_att2",
+      "friendly_name": "关于《中国证监会派出机构监管职责规定》的修订说明",
+      "rel_path": "regulatory/attachments/csrc_0006_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0007_att1": {
+      "doc_id": "csrc_0007_att1",
+      "friendly_name": "关于修改《证券发行与承销管理办法》的决定",
+      "rel_path": "regulatory/attachments/csrc_0007_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0007_att2": {
+      "doc_id": "csrc_0007_att2",
+      "friendly_name": "《关于修改<证券发行与承销管理办法>的决定》的立法说明",
+      "rel_path": "regulatory/attachments/csrc_0007_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0008_att1": {
+      "doc_id": "csrc_0008_att1",
+      "friendly_name": "关于修改部分证券期货规章的决定",
+      "rel_path": "regulatory/attachments/csrc_0008_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0008_att2": {
+      "doc_id": "csrc_0008_att2",
+      "friendly_name": "《关于修改部分证券期货规章的决定》立法说明",
+      "rel_path": "regulatory/attachments/csrc_0008_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0009_att1": {
+      "doc_id": "csrc_0009_att1",
+      "friendly_name": "上市公司信息披露管理办法",
+      "rel_path": "regulatory/attachments/csrc_0009_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0009_att2": {
+      "doc_id": "csrc_0009_att2",
+      "friendly_name": "《上市公司信息披露管理办法》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0009_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0010_att1": {
+      "doc_id": "csrc_0010_att1",
+      "friendly_name": "中国证监会行政处罚裁量基本规则",
+      "rel_path": "regulatory/attachments/csrc_0010_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0010_att2": {
+      "doc_id": "csrc_0010_att2",
+      "friendly_name": "《中国证监会行政处罚裁量基本规则》立法说明",
+      "rel_path": "regulatory/attachments/csrc_0010_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0011_att1": {
+      "doc_id": "csrc_0011_att1",
+      "friendly_name": "上市公司股东减持股份管理暂行办法",
+      "rel_path": "regulatory/attachments/csrc_0011_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0011_att2": {
+      "doc_id": "csrc_0011_att2",
+      "friendly_name": "《上市公司股东减持股份管理暂行办法》立法说明",
+      "rel_path": "regulatory/attachments/csrc_0011_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0012_att1": {
+      "doc_id": "csrc_0012_att1",
+      "friendly_name": "关于修改《〈上市公司证券发行注册管理办法〉第九条、第十条、第十一条、第十三条、第四十条、第五十七条、第六十条有关规定的适用意见——证券期货法律适用意见第 18号》的决定",
+      "rel_path": "regulatory/attachments/csrc_0012_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0012_att2": {
+      "doc_id": "csrc_0012_att2",
+      "friendly_name": "《关于修改〈《上市公司证券发行注册管理办法》第九条、第十条、第十一条、第十三条、第四十条、第五十七条、第六十条有关规定的适用意见——证券期货法律适用意见第 18 号〉的决定》立法说明",
+      "rel_path": "regulatory/attachments/csrc_0012_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0013_att1": {
+      "doc_id": "csrc_0013_att1",
+      "friendly_name": "公开募集证券投资基金信息披露内容与格式准则第 2 号—定期报告的内容与格式",
+      "rel_path": "regulatory/attachments/csrc_0013_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0013_att2": {
+      "doc_id": "csrc_0013_att2",
+      "friendly_name": "《公开募集证券投资基金信息披露内容与格式准则第 2 号—定期报告的内容与格式》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0013_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0014_att1": {
+      "doc_id": "csrc_0014_att1",
+      "friendly_name": "关于短线交易监管的若干规定",
+      "rel_path": "regulatory/attachments/csrc_0014_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0014_att2": {
+      "doc_id": "csrc_0014_att2",
+      "friendly_name": "《关于短线交易监管的若干规定》起草说明",
+      "rel_path": "regulatory/attachments/csrc_0014_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0015_att1": {
+      "doc_id": "csrc_0015_att1",
+      "friendly_name": "关于境内资产境外发行资产支持证券代币的监管指引",
+      "rel_path": "regulatory/attachments/csrc_0015_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0016_att1": {
+      "doc_id": "csrc_0016_att1",
+      "friendly_name": "公开募集证券投资基金业绩比较基准指引",
+      "rel_path": "regulatory/attachments/csrc_0016_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0016_att2": {
+      "doc_id": "csrc_0016_att2",
+      "friendly_name": "《公开募集证券投资基金业绩比较基准指引》起草说明",
+      "rel_path": "regulatory/attachments/csrc_0016_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0017_att1": {
+      "doc_id": "csrc_0017_att1",
+      "friendly_name": "证券期货业信息系统密码技术应用指引",
+      "rel_path": "regulatory/attachments/csrc_0017_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0017_att2": {
+      "doc_id": "csrc_0017_att2",
+      "friendly_name": "证券期货业信息系统分类与代码",
+      "rel_path": "regulatory/attachments/csrc_0017_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0018_att1": {
+      "doc_id": "csrc_0018_att1",
+      "friendly_name": "公开募集证券投资基金销售费用管理规定",
+      "rel_path": "regulatory/attachments/csrc_0018_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0018_att2": {
+      "doc_id": "csrc_0018_att2",
+      "friendly_name": "《公开募集证券投资基金销售费用管理规定》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0018_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0019_att1": {
+      "doc_id": "csrc_0019_att1",
+      "friendly_name": "中国证监会关于推出商业不动产投资信托基金试点的公告",
+      "rel_path": "regulatory/attachments/csrc_0019_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0019_att2": {
+      "doc_id": "csrc_0019_att2",
+      "friendly_name": "《中国证监会关于推出商业不动产投资信托基金试点的公告》起草说明",
+      "rel_path": "regulatory/attachments/csrc_0019_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0020_att1": {
+      "doc_id": "csrc_0020_att1",
+      "friendly_name": "证券期货违法行为“吹哨人”奖励工作规定",
+      "rel_path": "regulatory/attachments/csrc_0020_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0020_att2": {
+      "doc_id": "csrc_0020_att2",
+      "friendly_name": "《证券期货违法行为“吹哨人”奖励工作规定》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0020_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0021_att1": {
+      "doc_id": "csrc_0021_att1",
+      "friendly_name": "证券结算风险基金管理办法",
+      "rel_path": "regulatory/attachments/csrc_0021_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0021_att2": {
+      "doc_id": "csrc_0021_att2",
+      "friendly_name": "《证券结算风险基金管理办法》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0021_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0022_att1": {
+      "doc_id": "csrc_0022_att1",
+      "friendly_name": "关于加强资本市场中小投资者保护的若干意见",
+      "rel_path": "regulatory/attachments/csrc_0022_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0023_att1": {
+      "doc_id": "csrc_0023_att1",
+      "friendly_name": "上市公司治理准则",
+      "rel_path": "regulatory/attachments/csrc_0023_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0023_att2": {
+      "doc_id": "csrc_0023_att2",
+      "friendly_name": "《上市公司治理准则》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0023_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0024_att1": {
+      "doc_id": "csrc_0024_att1",
+      "friendly_name": "证券期货业业务域数据元规范第4 部分：证券交易所",
+      "rel_path": "regulatory/attachments/csrc_0024_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0024_att2": {
+      "doc_id": "csrc_0024_att2",
+      "friendly_name": "证券期货业业务域数据元规范 第 5 部分：企业资产证券化业务",
+      "rel_path": "regulatory/attachments/csrc_0024_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0024_att3": {
+      "doc_id": "csrc_0024_att3",
+      "friendly_name": "期货公司监管数据采集规范",
+      "rel_path": "regulatory/attachments/csrc_0024_att3.md",
+      "domain": "regulatory"
+    },
+    "csrc_0025_att1": {
+      "doc_id": "csrc_0025_att1",
+      "friendly_name": "期货公司分类评价规定",
+      "rel_path": "regulatory/attachments/csrc_0025_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0025_att2": {
+      "doc_id": "csrc_0025_att2",
+      "friendly_name": "《期货公司分类评价规定》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0025_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0026_att1": {
+      "doc_id": "csrc_0026_att1",
+      "friendly_name": "期货公司互联网营销管理暂行规定",
+      "rel_path": "regulatory/attachments/csrc_0026_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0026_att2": {
+      "doc_id": "csrc_0026_att2",
+      "friendly_name": "《期货公司互联网营销管理暂行规定》起草说明",
+      "rel_path": "regulatory/attachments/csrc_0026_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0027_att1": {
+      "doc_id": "csrc_0027_att1",
+      "friendly_name": "关于修改《证券公司分类监管规定》的决定",
+      "rel_path": "regulatory/attachments/csrc_0027_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0027_att2": {
+      "doc_id": "csrc_0027_att2",
+      "friendly_name": "关于修改《证券公司分类监管规定》的说明",
+      "rel_path": "regulatory/attachments/csrc_0027_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0029_att1": {
+      "doc_id": "csrc_0029_att1",
+      "friendly_name": "期货市场程序化交易管理规定（试行）",
+      "rel_path": "regulatory/attachments/csrc_0029_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0029_att2": {
+      "doc_id": "csrc_0029_att2",
+      "friendly_name": "《期货市场程序化交易管理规定（试行）》起草说明",
+      "rel_path": "regulatory/attachments/csrc_0029_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0030_att1": {
+      "doc_id": "csrc_0030_att1",
+      "friendly_name": "上市公司监管指引第9号— 上市公司筹划和实施重大资产重组的监管要求",
+      "rel_path": "regulatory/attachments/csrc_0030_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0030_att2": {
+      "doc_id": "csrc_0030_att2",
+      "friendly_name": "关于《上市公司监管指引第 9 号— 上市公司筹划和实施重大资产重组的监管要求》的说明",
+      "rel_path": "regulatory/attachments/csrc_0030_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0031_att1": {
+      "doc_id": "csrc_0031_att1",
+      "friendly_name": "上市公司募集资金监管规则",
+      "rel_path": "regulatory/attachments/csrc_0031_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0031_att2": {
+      "doc_id": "csrc_0031_att2",
+      "friendly_name": "《上市公司募集资金监管规则》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0031_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0032_att1": {
+      "doc_id": "csrc_0032_att1",
+      "friendly_name": "证券期货业统计指标标准指引",
+      "rel_path": "regulatory/attachments/csrc_0032_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0033_att1": {
+      "doc_id": "csrc_0033_att1",
+      "friendly_name": "上市公司信息披露暂缓与豁免管理规定",
+      "rel_path": "regulatory/attachments/csrc_0033_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0033_att2": {
+      "doc_id": "csrc_0033_att2",
+      "friendly_name": "《上市公司信息披露暂缓与豁免管理规定》立法说明",
+      "rel_path": "regulatory/attachments/csrc_0033_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0034_att1": {
+      "doc_id": "csrc_0034_att1",
+      "friendly_name": "上市公司股东会规则",
+      "rel_path": "regulatory/attachments/csrc_0034_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0034_att2": {
+      "doc_id": "csrc_0034_att2",
+      "friendly_name": "《上市公司股东会规则》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0034_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0035_att1": {
+      "doc_id": "csrc_0035_att1",
+      "friendly_name": "上市公司章程指引",
+      "rel_path": "regulatory/attachments/csrc_0035_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0035_att2": {
+      "doc_id": "csrc_0035_att2",
+      "friendly_name": "《上市公司章程指引》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0035_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0036_att1": {
+      "doc_id": "csrc_0036_att1",
+      "friendly_name": "关于修改、废止部分证券期货规范性文件的决定",
+      "rel_path": "regulatory/attachments/csrc_0036_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0036_att2": {
+      "doc_id": "csrc_0036_att2",
+      "friendly_name": "附件1：",
+      "rel_path": "regulatory/attachments/csrc_0036_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0036_att3": {
+      "doc_id": "csrc_0036_att3",
+      "friendly_name": "中国证监会决定废止的规范性文件",
+      "rel_path": "regulatory/attachments/csrc_0036_att3.md",
+      "domain": "regulatory"
+    },
+    "csrc_0036_att4": {
+      "doc_id": "csrc_0036_att4",
+      "friendly_name": "《关于修改、废止部分证券期货规范性文件的决定》立法说明",
+      "rel_path": "regulatory/attachments/csrc_0036_att4.md",
+      "domain": "regulatory"
+    },
+    "csrc_0037_att1": {
+      "doc_id": "csrc_0037_att1",
+      "friendly_name": "公开发行证券的公司信息披露内容与格式准则第 3 号— 半年度报告的内容与格式",
+      "rel_path": "regulatory/attachments/csrc_0037_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0037_att2": {
+      "doc_id": "csrc_0037_att2",
+      "friendly_name": "《公开发行证券的公司信息披露内容与格式准则第 3 号——半年度报告的内容与格式》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0037_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0038_att1": {
+      "doc_id": "csrc_0038_att1",
+      "friendly_name": "公开发行证券的公司信息披露内容与格式准则第 2 号— 年度报告的内容与格式",
+      "rel_path": "regulatory/attachments/csrc_0038_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0038_att2": {
+      "doc_id": "csrc_0038_att2",
+      "friendly_name": "《公开发行证券的公司信息披露内容与格式准则第2号——年度报告的内容与格式》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0038_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0039_att1": {
+      "doc_id": "csrc_0039_att1",
+      "friendly_name": "上市公司监管指引第 11号——上市公司破产重整相关事项",
+      "rel_path": "regulatory/attachments/csrc_0039_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0039_att2": {
+      "doc_id": "csrc_0039_att2",
+      "friendly_name": "起草说明",
+      "rel_path": "regulatory/attachments/csrc_0039_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0040_att1": {
+      "doc_id": "csrc_0040_att1",
+      "friendly_name": "证券期货法律适用意见第 19 号《上市公司收购管理办法》第十三条、第十四条的适用意见",
+      "rel_path": "regulatory/attachments/csrc_0040_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0040_att2": {
+      "doc_id": "csrc_0040_att2",
+      "friendly_name": "关于《证券期货法律适用意见第 19 号—上市公司收购管理办法>第十三条、第十四条的适用意见》的立法说明",
+      "rel_path": "regulatory/attachments/csrc_0040_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0041_att1": {
+      "doc_id": "csrc_0041_att1",
+      "friendly_name": "期货经纪合同要素",
+      "rel_path": "regulatory/attachments/csrc_0041_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0041_att2": {
+      "doc_id": "csrc_0041_att2",
+      "friendly_name": "证券期货业信息系统备份能力规范",
+      "rel_path": "regulatory/attachments/csrc_0041_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0041_att3": {
+      "doc_id": "csrc_0041_att3",
+      "friendly_name": "证券期货业数据模型 第 5 部分：期货公司逻辑模型",
+      "rel_path": "regulatory/attachments/csrc_0041_att3.md",
+      "domain": "regulatory"
+    },
+    "csrc_0041_att4": {
+      "doc_id": "csrc_0041_att4",
+      "friendly_name": "区域性股权市场分布式数字身份技术规范",
+      "rel_path": "regulatory/attachments/csrc_0041_att4.md",
+      "domain": "regulatory"
+    },
+    "csrc_0041_att5": {
+      "doc_id": "csrc_0041_att5",
+      "friendly_name": "区域性股权市场企业、产品和投资者编码规范",
+      "rel_path": "regulatory/attachments/csrc_0041_att5.md",
+      "domain": "regulatory"
+    },
+    "csrc_0042_att1": {
+      "doc_id": "csrc_0042_att1",
+      "friendly_name": "香港互认基金管理规定",
+      "rel_path": "regulatory/attachments/csrc_0042_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0042_att2": {
+      "doc_id": "csrc_0042_att2",
+      "friendly_name": "《香港互认基金管理暂行规定》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0042_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0043_att1": {
+      "doc_id": "csrc_0043_att1",
+      "friendly_name": "上市公司行业统计分类与代码",
+      "rel_path": "regulatory/attachments/csrc_0043_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0043_att2": {
+      "doc_id": "csrc_0043_att2",
+      "friendly_name": "区域性股权市场跨链技术规范",
+      "rel_path": "regulatory/attachments/csrc_0043_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0043_att3": {
+      "doc_id": "csrc_0043_att3",
+      "friendly_name": "区域性股权市场跨链数据规范",
+      "rel_path": "regulatory/attachments/csrc_0043_att3.md",
+      "domain": "regulatory"
+    },
+    "csrc_0043_att4": {
+      "doc_id": "csrc_0043_att4",
+      "friendly_name": "区域性股权市场跨链认证安全规范",
+      "rel_path": "regulatory/attachments/csrc_0043_att4.md",
+      "domain": "regulatory"
+    },
+    "csrc_0043_att5": {
+      "doc_id": "csrc_0043_att5",
+      "friendly_name": "区域性股权市场区块链通用基础设施通讯指南",
+      "rel_path": "regulatory/attachments/csrc_0043_att5.md",
+      "domain": "regulatory"
+    },
+    "csrc_0045_att1": {
+      "doc_id": "csrc_0045_att1",
+      "friendly_name": "上市公司监管指引第 10 号— 市值管理",
+      "rel_path": "regulatory/attachments/csrc_0045_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0045_att2": {
+      "doc_id": "csrc_0045_att2",
+      "friendly_name": "起草说明",
+      "rel_path": "regulatory/attachments/csrc_0045_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0046_att1": {
+      "doc_id": "csrc_0046_att1",
+      "friendly_name": "证券公司风险控制指标计算标准规定",
+      "rel_path": "regulatory/attachments/csrc_0046_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0046_att2": {
+      "doc_id": "csrc_0046_att2",
+      "friendly_name": "关于修订《证券公司风险控制指标计算标准规定》的说明",
+      "rel_path": "regulatory/attachments/csrc_0046_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0047_att1": {
+      "doc_id": "csrc_0047_att1",
+      "friendly_name": "证券发行人信息披露文件编码规则",
+      "rel_path": "regulatory/attachments/csrc_0047_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0048_att1": {
+      "doc_id": "csrc_0048_att1",
+      "friendly_name": "证监会系统离职人员入股拟上市企业监管规定（试行）",
+      "rel_path": "regulatory/attachments/csrc_0048_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0048_att2": {
+      "doc_id": "csrc_0048_att2",
+      "friendly_name": "关于《证监会系统离职人员入股拟上市企业监管规定（试行）》的起草说明",
+      "rel_path": "regulatory/attachments/csrc_0048_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0049_att1": {
+      "doc_id": "csrc_0049_att1",
+      "friendly_name": "公开发行证券的公司信息披露编报规则第 4 号——保险公司信息披露特别规定（2024 年修订）",
+      "rel_path": "regulatory/attachments/csrc_0049_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0049_att2": {
+      "doc_id": "csrc_0049_att2",
+      "friendly_name": "《公开发行证券的公司信息披露编报规则第 4 号——保险公司信息披露特别规定（2024 年修订）》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0049_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0050_att1": {
+      "doc_id": "csrc_0050_att1",
+      "friendly_name": "上市公司董事、监事和高级管理人员所持本公司股份及其变动管理规则",
+      "rel_path": "regulatory/attachments/csrc_0050_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0050_att2": {
+      "doc_id": "csrc_0050_att2",
+      "friendly_name": "《上市公司董事、监事和高级管理人员所持本公司股份及其变动管理规则》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0050_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0051_att1": {
+      "doc_id": "csrc_0051_att1",
+      "friendly_name": "证券市场程序化交易管理规定（试行）",
+      "rel_path": "regulatory/attachments/csrc_0051_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0051_att2": {
+      "doc_id": "csrc_0051_att2",
+      "friendly_name": "《证券市场程序化交易管理规定（试行）》起草说明",
+      "rel_path": "regulatory/attachments/csrc_0051_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0052_att1": {
+      "doc_id": "csrc_0052_att1",
+      "friendly_name": "关于修订《关于加强上市证券公司监管的规定》的决定",
+      "rel_path": "regulatory/attachments/csrc_0052_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0052_att2": {
+      "doc_id": "csrc_0052_att2",
+      "friendly_name": "关于修订《关于加强上市证券公司监管的规定》的说明",
+      "rel_path": "regulatory/attachments/csrc_0052_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0053_att1": {
+      "doc_id": "csrc_0053_att1",
+      "friendly_name": "关于修改《科创属性评价指引（试行）》的决定",
+      "rel_path": "regulatory/attachments/csrc_0053_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0053_att2": {
+      "doc_id": "csrc_0053_att2",
+      "friendly_name": "关于《关于修改〈科创属性评价指引（试行）〉的决定》的说明",
+      "rel_path": "regulatory/attachments/csrc_0053_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0054_att1": {
+      "doc_id": "csrc_0054_att1",
+      "friendly_name": "关于修改《中国证监会随机抽查事项清单》的决定",
+      "rel_path": "regulatory/attachments/csrc_0054_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0054_att2": {
+      "doc_id": "csrc_0054_att2",
+      "friendly_name": "关于修改《中国证监会随机抽查事项清单》的起草说明",
+      "rel_path": "regulatory/attachments/csrc_0054_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0055_att1": {
+      "doc_id": "csrc_0055_att1",
+      "friendly_name": "投资研究时序数据参考模型",
+      "rel_path": "regulatory/attachments/csrc_0055_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0055_att2": {
+      "doc_id": "csrc_0055_att2",
+      "friendly_name": "证券期货业基础数据元规范第1部分：基础数据元",
+      "rel_path": "regulatory/attachments/csrc_0055_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0055_att3": {
+      "doc_id": "csrc_0055_att3",
+      "friendly_name": "证券期货业基础数据元规范",
+      "rel_path": "regulatory/attachments/csrc_0055_att3.md",
+      "domain": "regulatory"
+    },
+    "csrc_0056_att1": {
+      "doc_id": "csrc_0056_att1",
+      "friendly_name": "公开募集证券投资基金证券交易费用管理规定",
+      "rel_path": "regulatory/attachments/csrc_0056_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0056_att2": {
+      "doc_id": "csrc_0056_att2",
+      "friendly_name": "《公开募集证券投资基金证券交易费用管理规定》",
+      "rel_path": "regulatory/attachments/csrc_0056_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0057_att1": {
+      "doc_id": "csrc_0057_att1",
+      "friendly_name": "首次公开发行股票并上市辅导监管规定",
+      "rel_path": "regulatory/attachments/csrc_0057_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0057_att2": {
+      "doc_id": "csrc_0057_att2",
+      "friendly_name": "《首次公开发行股票并上市辅导监管规定》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0057_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0058_att1": {
+      "doc_id": "csrc_0058_att1",
+      "friendly_name": "首发企业现场检查规定",
+      "rel_path": "regulatory/attachments/csrc_0058_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0058_att2": {
+      "doc_id": "csrc_0058_att2",
+      "friendly_name": "《首发企业现场检查规定》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0058_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0059_att1": {
+      "doc_id": "csrc_0059_att1",
+      "friendly_name": "监管规则适用指引— 债券类第 1 号：公开发行公司债券注册工作规程",
+      "rel_path": "regulatory/attachments/csrc_0059_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0060_att1": {
+      "doc_id": "csrc_0060_att1",
+      "friendly_name": "监管规则适用指引— 评估类第 2 号",
+      "rel_path": "regulatory/attachments/csrc_0060_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0060_att2": {
+      "doc_id": "csrc_0060_att2",
+      "friendly_name": "关于《监管规则适用指引— 评估类第2号》的说明",
+      "rel_path": "regulatory/attachments/csrc_0060_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0061_att1": {
+      "doc_id": "csrc_0061_att1",
+      "friendly_name": "监管规则适用指引— 会计类第 5 号",
+      "rel_path": "regulatory/attachments/csrc_0061_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0061_att2": {
+      "doc_id": "csrc_0061_att2",
+      "friendly_name": "关于《监管规则适用指引— 会计类第 5号》的说明",
+      "rel_path": "regulatory/attachments/csrc_0061_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0062_att1": {
+      "doc_id": "csrc_0062_att1",
+      "friendly_name": "关于《监管规则适用指引——机构类第4号》的说明",
+      "rel_path": "regulatory/attachments/csrc_0062_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0063_att1": {
+      "doc_id": "csrc_0063_att1",
+      "friendly_name": "关于《监管规则适用指引— 法律类第 4号》的说明",
+      "rel_path": "regulatory/attachments/csrc_0063_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0064_att1": {
+      "doc_id": "csrc_0064_att1",
+      "friendly_name": "《监管规则适用指引—发行类第 10 号》起草说明",
+      "rel_path": "regulatory/attachments/csrc_0064_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0065_att1": {
+      "doc_id": "csrc_0065_att1",
+      "friendly_name": "监管规则适用指引— 境外发行上市类第 7号：关于境内企业由境外场外市场转至境外证券交易所实现境外发行上市的监管要求",
+      "rel_path": "regulatory/attachments/csrc_0065_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0066_att1": {
+      "doc_id": "csrc_0066_att1",
+      "friendly_name": "关于《监管规则适用指引— 北京证券交易所类第 1 号：全国股转系统挂牌公司申请在北京证券交易所发行上市辅导监管指引》的起草说明",
+      "rel_path": "regulatory/attachments/csrc_0066_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0067_att1": {
+      "doc_id": "csrc_0067_att1",
+      "friendly_name": "关于《监管规则适用指引—机构类第 3 号》的说明",
+      "rel_path": "regulatory/attachments/csrc_0067_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0068_att1": {
+      "doc_id": "csrc_0068_att1",
+      "friendly_name": "监管规则适用指引— 会计类第 4 号",
+      "rel_path": "regulatory/attachments/csrc_0068_att1.md",
+      "domain": "regulatory"
+    },
+    "csrc_0068_att2": {
+      "doc_id": "csrc_0068_att2",
+      "friendly_name": "关于《监管规则适用指引— 会计类第 4号》的说明",
+      "rel_path": "regulatory/attachments/csrc_0068_att2.md",
+      "domain": "regulatory"
+    },
+    "csrc_0001": {
+      "doc_id": "csrc_0001",
+      "friendly_name": "【第233号令】《私募投资基金信息披露监督管理办法》",
+      "rel_path": "regulatory/html/csrc_0001.md",
+      "domain": "regulatory"
+    },
+    "csrc_0002": {
+      "doc_id": "csrc_0002",
+      "friendly_name": "【第232号令】《关于修改〈证券期货行政执法当事人承诺制度实施规定〉的决定》",
+      "rel_path": "regulatory/html/csrc_0002.md",
+      "domain": "regulatory"
+    },
+    "csrc_0017": {
+      "doc_id": "csrc_0017",
+      "friendly_name": "【第2号公告】《证券期货业信息系统密码技术应用指引》《证券期货业信息系统分类与代码》",
+      "rel_path": "regulatory/html/csrc_0017.md",
+      "domain": "regulatory"
+    },
+    "csrc_0018": {
+      "doc_id": "csrc_0018",
+      "friendly_name": "【第22号公告】《公开募集证券投资基金销售费用管理规定》",
+      "rel_path": "regulatory/html/csrc_0018.md",
+      "domain": "regulatory"
+    },
+    "csrc_0019": {
+      "doc_id": "csrc_0019",
+      "friendly_name": "【第21号公告】《中国证监会关于推出商业不动产投资信托基金试点的公告》",
+      "rel_path": "regulatory/html/csrc_0019.md",
+      "domain": "regulatory"
+    },
+    "csrc_0020": {
+      "doc_id": "csrc_0020",
+      "friendly_name": "【第23号公告】《证券期货违法行为“吹哨人”奖励工作规定》",
+      "rel_path": "regulatory/html/csrc_0020.md",
+      "domain": "regulatory"
+    },
+    "csrc_0021": {
+      "doc_id": "csrc_0021",
+      "friendly_name": "【第20号公告】《证券结算风险基金管理办法》",
+      "rel_path": "regulatory/html/csrc_0021.md",
+      "domain": "regulatory"
+    },
+    "csrc_0022": {
+      "doc_id": "csrc_0022",
+      "friendly_name": "【第19号公告】《关于加强资本市场中小投资者保护的若干意见》",
+      "rel_path": "regulatory/html/csrc_0022.md",
+      "domain": "regulatory"
+    },
+    "csrc_0023": {
+      "doc_id": "csrc_0023",
+      "friendly_name": "【第18号公告】《上市公司治理准则》",
+      "rel_path": "regulatory/html/csrc_0023.md",
+      "domain": "regulatory"
+    },
+    "csrc_0024": {
+      "doc_id": "csrc_0024",
+      "friendly_name": "【第17号公告】",
+      "rel_path": "regulatory/html/csrc_0024.md",
+      "domain": "regulatory"
+    },
+    "csrc_0025": {
+      "doc_id": "csrc_0025",
+      "friendly_name": "【第16号公告】《期货公司分类评价规定》",
+      "rel_path": "regulatory/html/csrc_0025.md",
+      "domain": "regulatory"
+    },
+    "csrc_0026": {
+      "doc_id": "csrc_0026",
+      "friendly_name": "【第15号公告】《期货公司互联网营销管理暂行规定》",
+      "rel_path": "regulatory/html/csrc_0026.md",
+      "domain": "regulatory"
+    },
+    "csrc_0031": {
+      "doc_id": "csrc_0031",
+      "friendly_name": "【第10号公告】《上市公司募集资金监管规则》",
+      "rel_path": "regulatory/html/csrc_0031.md",
+      "domain": "regulatory"
+    },
+    "csrc_0032": {
+      "doc_id": "csrc_0032",
+      "friendly_name": "【第9号公告】《证券期货业统计指标标准指引（2025年修订）》",
+      "rel_path": "regulatory/html/csrc_0032.md",
+      "domain": "regulatory"
+    },
+    "csrc_0033": {
+      "doc_id": "csrc_0033",
+      "friendly_name": "【第8号公告】《上市公司信息披露暂缓与豁免管理规定》",
+      "rel_path": "regulatory/html/csrc_0033.md",
+      "domain": "regulatory"
+    },
+    "csrc_0034": {
+      "doc_id": "csrc_0034",
+      "friendly_name": "【第7号公告】《上市公司股东会规则》",
+      "rel_path": "regulatory/html/csrc_0034.md",
+      "domain": "regulatory"
+    },
+    "csrc_0035": {
+      "doc_id": "csrc_0035",
+      "friendly_name": "【第6号公告】《上市公司章程指引》",
+      "rel_path": "regulatory/html/csrc_0035.md",
+      "domain": "regulatory"
+    },
+    "csrc_0036": {
+      "doc_id": "csrc_0036",
+      "friendly_name": "【第5号公告】《关于修改、废止部分证券期货规范性文件的决定》",
+      "rel_path": "regulatory/html/csrc_0036.md",
+      "domain": "regulatory"
+    },
+    "csrc_0037": {
+      "doc_id": "csrc_0037",
+      "friendly_name": "【第4号公告】《公开发行证券的公司信息披露内容与格式准则第3号——半年度报告的内容与格式》",
+      "rel_path": "regulatory/html/csrc_0037.md",
+      "domain": "regulatory"
+    },
+    "csrc_0038": {
+      "doc_id": "csrc_0038",
+      "friendly_name": "【第3号公告】《公开发行证券的公司信息披露内容与格式准则第2号——年度报告的内容与格式》",
+      "rel_path": "regulatory/html/csrc_0038.md",
+      "domain": "regulatory"
+    },
+    "csrc_0039": {
+      "doc_id": "csrc_0039",
+      "friendly_name": "【第2号公告】《上市公司监管指引第11号——上市公司破产重整相关事项》",
+      "rel_path": "regulatory/html/csrc_0039.md",
+      "domain": "regulatory"
+    },
+    "csrc_0040": {
+      "doc_id": "csrc_0040",
+      "friendly_name": "【第1号公告】《证券期货法律适用意见第19号——<上市公司收购管理办法>第十三条、第十四条的适用意见》",
+      "rel_path": "regulatory/html/csrc_0040.md",
+      "domain": "regulatory"
+    },
+    "csrc_0041": {
+      "doc_id": "csrc_0041",
+      "friendly_name": "【第18号公告】",
+      "rel_path": "regulatory/html/csrc_0041.md",
+      "domain": "regulatory"
+    },
+    "csrc_0042": {
+      "doc_id": "csrc_0042",
+      "friendly_name": "【第17号公告】《香港互认基金管理规定》",
+      "rel_path": "regulatory/html/csrc_0042.md",
+      "domain": "regulatory"
+    },
+    "csrc_0043": {
+      "doc_id": "csrc_0043",
+      "friendly_name": "【第16号公告】",
+      "rel_path": "regulatory/html/csrc_0043.md",
+      "domain": "regulatory"
+    },
+    "csrc_0044": {
+      "doc_id": "csrc_0044",
+      "friendly_name": "【第15号公告】",
+      "rel_path": "regulatory/html/csrc_0044.md",
+      "domain": "regulatory"
+    },
+    "csrc_0045": {
+      "doc_id": "csrc_0045",
+      "friendly_name": "【第14号公告】《上市公司监管指引第10号——市值管理》",
+      "rel_path": "regulatory/html/csrc_0045.md",
+      "domain": "regulatory"
+    },
+    "csrc_0046": {
+      "doc_id": "csrc_0046",
+      "friendly_name": "【第13号公告】《证券公司风险控制指标计算标准规定》",
+      "rel_path": "regulatory/html/csrc_0046.md",
+      "domain": "regulatory"
+    },
+    "csrc_0047": {
+      "doc_id": "csrc_0047",
+      "friendly_name": "【第12号公告】《证券发行人信息披露文件编码规则》",
+      "rel_path": "regulatory/html/csrc_0047.md",
+      "domain": "regulatory"
+    },
+    "csrc_0048": {
+      "doc_id": "csrc_0048",
+      "friendly_name": "【第11号公告】《证监会系统离职人员入股拟上市企业监管规定（试行）》",
+      "rel_path": "regulatory/html/csrc_0048.md",
+      "domain": "regulatory"
+    },
+    "csrc_0049": {
+      "doc_id": "csrc_0049",
+      "friendly_name": "【第10号公告】《公开发行证券的公司信息披露编报规则第4号——保险公司信息披露特别规定（2024年修订）》",
+      "rel_path": "regulatory/html/csrc_0049.md",
+      "domain": "regulatory"
+    },
+    "csrc_0050": {
+      "doc_id": "csrc_0050",
+      "friendly_name": "【第9号公告】《上市公司董事、监事和高级管理人员所持本公司股份及其变动管理规则》",
+      "rel_path": "regulatory/html/csrc_0050.md",
+      "domain": "regulatory"
+    },
+    "csrc_0051": {
+      "doc_id": "csrc_0051",
+      "friendly_name": "【第8号公告】《证券市场程序化交易管理规定（试行）》",
+      "rel_path": "regulatory/html/csrc_0051.md",
+      "domain": "regulatory"
+    },
+    "csrc_0052": {
+      "doc_id": "csrc_0052",
+      "friendly_name": "【第7号公告】《关于修订〈关于加强上市证券公司监管的规定〉的决定》",
+      "rel_path": "regulatory/html/csrc_0052.md",
+      "domain": "regulatory"
+    },
+    "csrc_0053": {
+      "doc_id": "csrc_0053",
+      "friendly_name": "【第6号公告】《关于修改〈科创属性评价指引（试行）〉的决定》",
+      "rel_path": "regulatory/html/csrc_0053.md",
+      "domain": "regulatory"
+    },
+    "csrc_0054": {
+      "doc_id": "csrc_0054",
+      "friendly_name": "【第5号公告】《关于修改〈中国证监会随机抽查事项清单〉的决定》",
+      "rel_path": "regulatory/html/csrc_0054.md",
+      "domain": "regulatory"
+    },
+    "csrc_0055": {
+      "doc_id": "csrc_0055",
+      "friendly_name": "【第4号公告】《投资研究时序数据参考模型》等3项金融行业标准",
+      "rel_path": "regulatory/html/csrc_0055.md",
+      "domain": "regulatory"
+    },
+    "csrc_0056": {
+      "doc_id": "csrc_0056",
+      "friendly_name": "【第3号公告】《公开募集证券投资基金证券交易费用管理规定》",
+      "rel_path": "regulatory/html/csrc_0056.md",
+      "domain": "regulatory"
+    },
+    "csrc_0057": {
+      "doc_id": "csrc_0057",
+      "friendly_name": "【第2号公告】《首次公开发行股票并上市辅导监管规定》",
+      "rel_path": "regulatory/html/csrc_0057.md",
+      "domain": "regulatory"
+    },
+    "csrc_0058": {
+      "doc_id": "csrc_0058",
+      "friendly_name": "【第1号公告】《首发企业现场检查规定》",
+      "rel_path": "regulatory/html/csrc_0058.md",
+      "domain": "regulatory"
+    },
+    "csrc_0059": {
+      "doc_id": "csrc_0059",
+      "friendly_name": "监管规则适用指引——债券类第1号：公开发行公司债券注册工作规程",
+      "rel_path": "regulatory/html/csrc_0059.md",
+      "domain": "regulatory"
+    },
+    "csrc_0060": {
+      "doc_id": "csrc_0060",
+      "friendly_name": "监管规则适用指引——评估类第2号",
+      "rel_path": "regulatory/html/csrc_0060.md",
+      "domain": "regulatory"
+    },
+    "csrc_0061": {
+      "doc_id": "csrc_0061",
+      "friendly_name": "监管规则适用指引——会计类第5号",
+      "rel_path": "regulatory/html/csrc_0061.md",
+      "domain": "regulatory"
+    },
+    "csrc_0062": {
+      "doc_id": "csrc_0062",
+      "friendly_name": "监管规则适用指引——机构类第4号",
+      "rel_path": "regulatory/html/csrc_0062.md",
+      "domain": "regulatory"
+    },
+    "csrc_0063": {
+      "doc_id": "csrc_0063",
+      "friendly_name": "监管规则适用指引——法律类第4号",
+      "rel_path": "regulatory/html/csrc_0063.md",
+      "domain": "regulatory"
+    },
+    "csrc_0064": {
+      "doc_id": "csrc_0064",
+      "friendly_name": "监管规则适用指引——发行类第10号",
+      "rel_path": "regulatory/html/csrc_0064.md",
+      "domain": "regulatory"
+    },
+    "csrc_0065": {
+      "doc_id": "csrc_0065",
+      "friendly_name": "监管规则适用指引——境外发行上市类第7号：关于境内企业由境外场外市场转至境外证券交易所实现境外发行上市的监管要求",
+      "rel_path": "regulatory/html/csrc_0065.md",
+      "domain": "regulatory"
+    },
+    "csrc_0066": {
+      "doc_id": "csrc_0066",
+      "friendly_name": "监管规则适用指引——北京证券交易所类第1号：全国股转系统挂牌公司申请在北京证券交易所发行上市辅导监管指引",
+      "rel_path": "regulatory/html/csrc_0066.md",
+      "domain": "regulatory"
+    },
+    "csrc_0067": {
+      "doc_id": "csrc_0067",
+      "friendly_name": "监管规则适用指引——机构类第3号",
+      "rel_path": "regulatory/html/csrc_0067.md",
+      "domain": "regulatory"
+    },
+    "csrc_0068": {
+      "doc_id": "csrc_0068",
+      "friendly_name": "监管规则适用指引——会计类第4号",
+      "rel_path": "regulatory/html/csrc_0068.md",
+      "domain": "regulatory"
+    },
+    "csrc_0069": {
+      "doc_id": "csrc_0069",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0069.md",
+      "domain": "regulatory"
+    },
+    "csrc_0070": {
+      "doc_id": "csrc_0070",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0070.md",
+      "domain": "regulatory"
+    },
+    "csrc_0071": {
+      "doc_id": "csrc_0071",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0071.md",
+      "domain": "regulatory"
+    },
+    "csrc_0072": {
+      "doc_id": "csrc_0072",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0072.md",
+      "domain": "regulatory"
+    },
+    "csrc_0073": {
+      "doc_id": "csrc_0073",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0073.md",
+      "domain": "regulatory"
+    },
+    "csrc_0074": {
+      "doc_id": "csrc_0074",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0074.md",
+      "domain": "regulatory"
+    },
+    "csrc_0075": {
+      "doc_id": "csrc_0075",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0075.md",
+      "domain": "regulatory"
+    },
+    "csrc_0076": {
+      "doc_id": "csrc_0076",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0076.md",
+      "domain": "regulatory"
+    },
+    "csrc_0077": {
+      "doc_id": "csrc_0077",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0077.md",
+      "domain": "regulatory"
+    },
+    "csrc_0078": {
+      "doc_id": "csrc_0078",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0078.md",
+      "domain": "regulatory"
+    },
+    "csrc_0079": {
+      "doc_id": "csrc_0079",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0079.md",
+      "domain": "regulatory"
+    },
+    "csrc_0080": {
+      "doc_id": "csrc_0080",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0080.md",
+      "domain": "regulatory"
+    },
+    "csrc_0081": {
+      "doc_id": "csrc_0081",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0081.md",
+      "domain": "regulatory"
+    },
+    "csrc_0082": {
+      "doc_id": "csrc_0082",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0082.md",
+      "domain": "regulatory"
+    },
+    "csrc_0083": {
+      "doc_id": "csrc_0083",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0083.md",
+      "domain": "regulatory"
+    },
+    "csrc_0084": {
+      "doc_id": "csrc_0084",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0084.md",
+      "domain": "regulatory"
+    },
+    "csrc_0085": {
+      "doc_id": "csrc_0085",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0085.md",
+      "domain": "regulatory"
+    },
+    "csrc_0086": {
+      "doc_id": "csrc_0086",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0086.md",
+      "domain": "regulatory"
+    },
+    "csrc_0087": {
+      "doc_id": "csrc_0087",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0087.md",
+      "domain": "regulatory"
+    },
+    "csrc_0088": {
+      "doc_id": "csrc_0088",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0088.md",
+      "domain": "regulatory"
+    },
+    "csrc_0089": {
+      "doc_id": "csrc_0089",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0089.md",
+      "domain": "regulatory"
+    },
+    "csrc_0090": {
+      "doc_id": "csrc_0090",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0090.md",
+      "domain": "regulatory"
+    },
+    "csrc_0091": {
+      "doc_id": "csrc_0091",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0091.md",
+      "domain": "regulatory"
+    },
+    "csrc_0092": {
+      "doc_id": "csrc_0092",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0092.md",
+      "domain": "regulatory"
+    },
+    "csrc_0093": {
+      "doc_id": "csrc_0093",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0093.md",
+      "domain": "regulatory"
+    },
+    "csrc_0094": {
+      "doc_id": "csrc_0094",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0094.md",
+      "domain": "regulatory"
+    },
+    "csrc_0095": {
+      "doc_id": "csrc_0095",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0095.md",
+      "domain": "regulatory"
+    },
+    "csrc_0096": {
+      "doc_id": "csrc_0096",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0096.md",
+      "domain": "regulatory"
+    },
+    "csrc_0097": {
+      "doc_id": "csrc_0097",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0097.md",
+      "domain": "regulatory"
+    },
+    "csrc_0098": {
+      "doc_id": "csrc_0098",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0098.md",
+      "domain": "regulatory"
+    },
+    "csrc_0099": {
+      "doc_id": "csrc_0099",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0099.md",
+      "domain": "regulatory"
+    },
+    "csrc_0100": {
+      "doc_id": "csrc_0100",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0100.md",
+      "domain": "regulatory"
+    },
+    "csrc_0101": {
+      "doc_id": "csrc_0101",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0101.md",
+      "domain": "regulatory"
+    },
+    "csrc_0102": {
+      "doc_id": "csrc_0102",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0102.md",
+      "domain": "regulatory"
+    },
+    "csrc_0103": {
+      "doc_id": "csrc_0103",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0103.md",
+      "domain": "regulatory"
+    },
+    "csrc_0104": {
+      "doc_id": "csrc_0104",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0104.md",
+      "domain": "regulatory"
+    },
+    "csrc_0105": {
+      "doc_id": "csrc_0105",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0105.md",
+      "domain": "regulatory"
+    },
+    "csrc_0106": {
+      "doc_id": "csrc_0106",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0106.md",
+      "domain": "regulatory"
+    },
+    "csrc_0107": {
+      "doc_id": "csrc_0107",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0107.md",
+      "domain": "regulatory"
+    },
+    "csrc_0108": {
+      "doc_id": "csrc_0108",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0108.md",
+      "domain": "regulatory"
+    },
+    "csrc_0109": {
+      "doc_id": "csrc_0109",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0109.md",
+      "domain": "regulatory"
+    },
+    "csrc_0110": {
+      "doc_id": "csrc_0110",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0110.md",
+      "domain": "regulatory"
+    },
+    "csrc_0111": {
+      "doc_id": "csrc_0111",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0111.md",
+      "domain": "regulatory"
+    },
+    "csrc_0112": {
+      "doc_id": "csrc_0112",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0112.md",
+      "domain": "regulatory"
+    },
+    "csrc_0113": {
+      "doc_id": "csrc_0113",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0113.md",
+      "domain": "regulatory"
+    },
+    "csrc_0114": {
+      "doc_id": "csrc_0114",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0114.md",
+      "domain": "regulatory"
+    },
+    "csrc_0115": {
+      "doc_id": "csrc_0115",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0115.md",
+      "domain": "regulatory"
+    },
+    "csrc_0116": {
+      "doc_id": "csrc_0116",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0116.md",
+      "domain": "regulatory"
+    },
+    "csrc_0117": {
+      "doc_id": "csrc_0117",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0117.md",
+      "domain": "regulatory"
+    },
+    "csrc_0118": {
+      "doc_id": "csrc_0118",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0118.md",
+      "domain": "regulatory"
+    },
+    "csrc_0119": {
+      "doc_id": "csrc_0119",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0119.md",
+      "domain": "regulatory"
+    },
+    "csrc_0120": {
+      "doc_id": "csrc_0120",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0120.md",
+      "domain": "regulatory"
+    },
+    "csrc_0121": {
+      "doc_id": "csrc_0121",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0121.md",
+      "domain": "regulatory"
+    },
+    "csrc_0122": {
+      "doc_id": "csrc_0122",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0122.md",
+      "domain": "regulatory"
+    },
+    "csrc_0123": {
+      "doc_id": "csrc_0123",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0123.md",
+      "domain": "regulatory"
+    },
+    "csrc_0124": {
+      "doc_id": "csrc_0124",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0124.md",
+      "domain": "regulatory"
+    },
+    "csrc_0125": {
+      "doc_id": "csrc_0125",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0125.md",
+      "domain": "regulatory"
+    },
+    "csrc_0126": {
+      "doc_id": "csrc_0126",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0126.md",
+      "domain": "regulatory"
+    },
+    "csrc_0127": {
+      "doc_id": "csrc_0127",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0127.md",
+      "domain": "regulatory"
+    },
+    "csrc_0128": {
+      "doc_id": "csrc_0128",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0128.md",
+      "domain": "regulatory"
+    },
+    "csrc_0129": {
+      "doc_id": "csrc_0129",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0129.md",
+      "domain": "regulatory"
+    },
+    "csrc_0130": {
+      "doc_id": "csrc_0130",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0130.md",
+      "domain": "regulatory"
+    },
+    "pack2_text01": {
+      "doc_id": "pack2_text01",
+      "friendly_name": "以海外银保为鉴，观我国寿险发展新格局",
+      "rel_path": "research/pack2_text01.md",
+      "domain": "research"
+    },
+    "pack2_text02": {
+      "doc_id": "pack2_text02",
+      "friendly_name": "金融网络安全运营数智化 建设研究与实践",
+      "rel_path": "research/pack2_text02.md",
+      "domain": "research"
+    },
+    "pack2_text03": {
+      "doc_id": "pack2_text03",
+      "friendly_name": "证券研究报告",
+      "rel_path": "research/pack2_text03.md",
+      "domain": "research"
+    },
+    "pack2_text04": {
+      "doc_id": "pack2_text04",
+      "friendly_name": "动储产销两旺， 量利双升， 继续强推电动车行业策略",
+      "rel_path": "research/pack2_text04.md",
+      "domain": "research"
+    },
+    "pack2_text05": {
+      "doc_id": "pack2_text05",
+      "friendly_name": "品牌转型，玉汝于成",
+      "rel_path": "research/pack2_text05.md",
+      "domain": "research"
+    },
+    "pack2_text06": {
+      "doc_id": "pack2_text06",
+      "friendly_name": "大化工周报：美伊谈判推进，油价下降带动化工品价格整体回落",
+      "rel_path": "research/pack2_text06.md",
+      "domain": "research"
+    },
+    "pack2_text07": {
+      "doc_id": "pack2_text07",
+      "friendly_name": "【中泰汽车·北京车展前瞻】",
+      "rel_path": "research/pack2_text07.md",
+      "domain": "research"
+    },
+    "pack2_text08": {
+      "doc_id": "pack2_text08",
+      "friendly_name": "杠杆资金&股票型ETF分化加剧",
+      "rel_path": "research/pack2_text08.md",
+      "domain": "research"
+    },
+    "pack2_text09": {
+      "doc_id": "pack2_text09",
+      "friendly_name": "AI ASIC 领军者，迎接 ASIC 定制新纪元",
+      "rel_path": "research/pack2_text09.md",
+      "domain": "research"
+    },
+    "pack2_text10": {
+      "doc_id": "pack2_text10",
+      "friendly_name": "ROE 提升有道（一）—",
+      "rel_path": "research/pack2_text10.md",
+      "domain": "research"
+    },
+    "pack2_text11": {
+      "doc_id": "pack2_text11",
+      "friendly_name": "光模块行业延续高景气度，光纤产品量价齐升",
+      "rel_path": "research/pack2_text11.md",
+      "domain": "research"
+    },
+    "pack2_text12": {
+      "doc_id": "pack2_text12",
+      "friendly_name": "光模块设备：站在巨人的肩膀上，寻找中长期通胀方向",
+      "rel_path": "research/pack2_text12.md",
+      "domain": "research"
+    },
+    "pack2_text13": {
+      "doc_id": "pack2_text13",
+      "friendly_name": "农林牧渔",
+      "rel_path": "research/pack2_text13.md",
+      "domain": "research"
+    },
+    "pack2_text14": {
+      "doc_id": "pack2_text14",
+      "friendly_name": "“资产荒”的新叙事",
+      "rel_path": "research/pack2_text14.md",
+      "domain": "research"
+    },
+    "pack2_text15": {
+      "doc_id": "pack2_text15",
+      "friendly_name": "改革红利兑现，增量价值开启新一轮资负共振",
+      "rel_path": "research/pack2_text15.md",
+      "domain": "research"
+    },
+    "pack2_text16": {
+      "doc_id": "pack2_text16",
+      "friendly_name": "农林牧渔 | 养殖业",
+      "rel_path": "research/pack2_text16.md",
+      "domain": "research"
+    },
+    "pack2_text17": {
+      "doc_id": "pack2_text17",
+      "friendly_name": "非银金融行业深度报告",
+      "rel_path": "research/pack2_text17.md",
+      "domain": "research"
+    },
+    "pack2_text18": {
+      "doc_id": "pack2_text18",
+      "friendly_name": "大族激光（002008.SZ）",
+      "rel_path": "research/pack2_text18.md",
+      "domain": "research"
+    },
+    "pack2_text19": {
+      "doc_id": "pack2_text19",
+      "friendly_name": "远望谷（002161.SZ）",
+      "rel_path": "research/pack2_text19.md",
+      "domain": "research"
+    },
+    "pack2_text20": {
+      "doc_id": "pack2_text20",
+      "friendly_name": "“资产荒”的新叙事",
+      "rel_path": "research/pack2_text20.md",
+      "domain": "research"
+    }
+  },
+  "by_name": {
+    "广东省广晟控股集团有限公司": {
+      "doc_id": "text01",
+      "friendly_name": "广东省广晟控股集团有限公司",
+      "rel_path": "financial_contracts/text01.md",
+      "domain": "financial_contracts"
+    },
+    "6 年面向专业投资者公开发行科技": {
+      "doc_id": "text02",
+      "friendly_name": "6 年面向专业投资者公开发行科技",
+      "rel_path": "financial_contracts/text02.md",
+      "domain": "financial_contracts"
+    },
+    "厦门金圆投资集团有限公司": {
+      "doc_id": "text03",
+      "friendly_name": "厦门金圆投资集团有限公司",
+      "rel_path": "financial_contracts/text03.md",
+      "domain": "financial_contracts"
+    },
+    "Anker": {
+      "doc_id": "text04",
+      "friendly_name": "Anker",
+      "rel_path": "financial_contracts/text04.md",
+      "domain": "financial_contracts"
+    },
+    "江苏本川智能电路科技股份有限公司": {
+      "doc_id": "text05",
+      "friendly_name": "江苏本川智能电路科技股份有限公司",
+      "rel_path": "financial_contracts/text05.md",
+      "domain": "financial_contracts"
+    },
+    "鼎捷数 公司": {
+      "doc_id": "text06",
+      "friendly_name": "鼎捷数 公司",
+      "rel_path": "financial_contracts/text06.md",
+      "domain": "financial_contracts"
+    },
+    "海南海峡航运股份有限公司": {
+      "doc_id": "text07",
+      "friendly_name": "海南海峡航运股份有限公司",
+      "rel_path": "financial_contracts/text07.md",
+      "domain": "financial_contracts"
+    },
+    "苏州华亚智能科技股份有限公司": {
+      "doc_id": "text08",
+      "friendly_name": "苏州华亚智能科技股份有限公司",
+      "rel_path": "financial_contracts/text08.md",
+      "domain": "financial_contracts"
+    },
+    "金达威集团": {
+      "doc_id": "text09",
+      "friendly_name": "金达威集团",
+      "rel_path": "financial_contracts/text09.md",
+      "domain": "financial_contracts"
+    },
+    "科源製藥": {
+      "doc_id": "text10",
+      "friendly_name": "科源製藥",
+      "rel_path": "financial_contracts/text10.md",
+      "domain": "financial_contracts"
+    },
+    "Pansoft Company Limited": {
+      "doc_id": "text11",
+      "friendly_name": "Pansoft Company Limited",
+      "rel_path": "financial_contracts/text11.md",
+      "domain": "financial_contracts"
+    },
+    "陕西省国际信托股份有限公司": {
+      "doc_id": "text12",
+      "friendly_name": "陕西省国际信托股份有限公司",
+      "rel_path": "financial_contracts/text12.md",
+      "domain": "financial_contracts"
+    },
+    "2026年度中国铁路建设债券": {
+      "doc_id": "text13",
+      "friendly_name": "2026年度中国铁路建设债券",
+      "rel_path": "financial_contracts/text13.md",
+      "domain": "financial_contracts"
+    },
+    "西部证券股份有限公司": {
+      "doc_id": "text14",
+      "friendly_name": "西部证券股份有限公司",
+      "rel_path": "financial_contracts/text14.md",
+      "domain": "financial_contracts"
+    },
+    "比亚迪股份有限公司": {
+      "doc_id": "annual_byd_2025_report",
+      "friendly_name": "比亚迪股份有限公司",
+      "rel_path": "financial_reports/annual_byd_2025_report.md",
+      "domain": "financial_reports"
+    },
+    "CATL": {
+      "doc_id": "annual_catl_2025_report",
+      "friendly_name": "CATL",
+      "rel_path": "financial_reports/annual_catl_2025_report.md",
+      "domain": "financial_reports"
+    },
+    "中国移动": {
+      "doc_id": "annual_chinamobile_2025_report",
+      "friendly_name": "中国移动",
+      "rel_path": "financial_reports/annual_chinamobile_2025_report.md",
+      "domain": "financial_reports"
+    },
+    "2025年度报告": {
+      "doc_id": "annual_cmb_2025_report",
+      "friendly_name": "2025年度报告",
+      "rel_path": "financial_reports/annual_cmb_2025_report.md",
+      "domain": "financial_reports"
+    },
+    "2024": {
+      "doc_id": "annual_cscec_2024_report",
+      "friendly_name": "2024",
+      "rel_path": "financial_reports/annual_cscec_2024_report.md",
+      "domain": "financial_reports"
+    },
+    "2025": {
+      "doc_id": "annual_cscec_2025_report",
+      "friendly_name": "2025",
+      "rel_path": "financial_reports/annual_cscec_2025_report.md",
+      "domain": "financial_reports"
+    },
+    "雨V 美的集": {
+      "doc_id": "annual_midea_2024_report",
+      "friendly_name": "雨V 美的集",
+      "rel_path": "financial_reports/annual_midea_2024_report.md",
+      "domain": "financial_reports"
+    },
+    "我们总有道路": {
+      "doc_id": "annual_midea_2025_report",
+      "friendly_name": "我们总有道路",
+      "rel_path": "financial_reports/annual_midea_2025_report.md",
+      "domain": "financial_reports"
+    },
+    "平安智盈金生专属商业养老保险": {
+      "doc_id": "1",
+      "friendly_name": "平安智盈金生专属商业养老保险",
+      "rel_path": "insurance/1.md",
+      "domain": "insurance"
+    },
+    "众安在线财产保险股份有限公司特种车商业保险示范条款（2020版）": {
+      "doc_id": "10",
+      "friendly_name": "众安在线财产保险股份有限公司特种车商业保险示范条款（2020版）",
+      "rel_path": "insurance/10.md",
+      "domain": "insurance"
+    },
+    "中国平安财产保险股份有限公司": {
+      "doc_id": "9",
+      "friendly_name": "中国平安财产保险股份有限公司",
+      "rel_path": "insurance/9.md",
+      "domain": "insurance"
+    },
+    "众安在线财产保险股份有限公司": {
+      "doc_id": "8",
+      "friendly_name": "众安在线财产保险股份有限公司",
+      "rel_path": "insurance/8.md",
+      "domain": "insurance"
+    },
+    "阅读指引": {
+      "doc_id": "2",
+      "friendly_name": "阅读指引",
+      "rel_path": "insurance/2.md",
+      "domain": "insurance"
+    },
+    "平安养老保险股份有限公司": {
+      "doc_id": "16",
+      "friendly_name": "平安养老保险股份有限公司",
+      "rel_path": "insurance/16.md",
+      "domain": "insurance"
+    },
+    "平安安佑福重大疾病保险产品提供重大疾病及身故保障": {
+      "doc_id": "4",
+      "friendly_name": "平安安佑福重大疾病保险产品提供重大疾病及身故保障",
+      "rel_path": "insurance/4.md",
+      "domain": "insurance"
+    },
+    "阅 读 指 引": {
+      "doc_id": "5",
+      "friendly_name": "阅 读 指 引",
+      "rel_path": "insurance/5.md",
+      "domain": "insurance"
+    },
+    "太平洋健康保险股份有限公司": {
+      "doc_id": "6",
+      "friendly_name": "太平洋健康保险股份有限公司",
+      "rel_path": "insurance/6.md",
+      "domain": "insurance"
+    },
+    "私募投资基金信息披露监督管理办法": {
+      "doc_id": "csrc_0001_att1",
+      "friendly_name": "私募投资基金信息披露监督管理办法",
+      "rel_path": "regulatory/attachments/csrc_0001_att1.md",
+      "domain": "regulatory"
+    },
+    "《私募投资基金信息披露监督管理办法》立法说明": {
+      "doc_id": "csrc_0001_att2",
+      "friendly_name": "《私募投资基金信息披露监督管理办法》立法说明",
+      "rel_path": "regulatory/attachments/csrc_0001_att2.md",
+      "domain": "regulatory"
+    },
+    "关于修改《证券期货行政执法当事人承诺制度实施规定》的决定": {
+      "doc_id": "csrc_0002_att1",
+      "friendly_name": "关于修改《证券期货行政执法当事人承诺制度实施规定》的决定",
+      "rel_path": "regulatory/attachments/csrc_0002_att1.md",
+      "domain": "regulatory"
+    },
+    "《关于修改〈证券期货行政执法当事人承诺制度实施规定〉的决定》立法说明": {
+      "doc_id": "csrc_0002_att2",
+      "friendly_name": "《关于修改〈证券期货行政执法当事人承诺制度实施规定〉的决定》立法说明",
+      "rel_path": "regulatory/attachments/csrc_0002_att2.md",
+      "domain": "regulatory"
+    },
+    "证券期货市场监督管理措施实施办法": {
+      "doc_id": "csrc_0003_att1",
+      "friendly_name": "证券期货市场监督管理措施实施办法",
+      "rel_path": "regulatory/attachments/csrc_0003_att1.md",
+      "domain": "regulatory"
+    },
+    "关于《证券期货市场监督管理措施实施办法》的说明": {
+      "doc_id": "csrc_0003_att2",
+      "friendly_name": "关于《证券期货市场监督管理措施实施办法》的说明",
+      "rel_path": "regulatory/attachments/csrc_0003_att2.md",
+      "domain": "regulatory"
+    },
+    "金融基础设施监督管理办法": {
+      "doc_id": "csrc_0004_att1",
+      "friendly_name": "金融基础设施监督管理办法",
+      "rel_path": "regulatory/attachments/csrc_0004_att1.md",
+      "domain": "regulatory"
+    },
+    "关于修改《上市公司重大资产重组管理办法》的决定": {
+      "doc_id": "csrc_0005_att1",
+      "friendly_name": "关于修改《上市公司重大资产重组管理办法》的决定",
+      "rel_path": "regulatory/attachments/csrc_0005_att1.md",
+      "domain": "regulatory"
+    },
+    "关于《关于修改<上市公司重大资产重组管理办法>的决定》的立法说明": {
+      "doc_id": "csrc_0005_att2",
+      "friendly_name": "关于《关于修改<上市公司重大资产重组管理办法>的决定》的立法说明",
+      "rel_path": "regulatory/attachments/csrc_0005_att2.md",
+      "domain": "regulatory"
+    },
+    "中国证监会派出机构监管职责规定": {
+      "doc_id": "csrc_0006_att1",
+      "friendly_name": "中国证监会派出机构监管职责规定",
+      "rel_path": "regulatory/attachments/csrc_0006_att1.md",
+      "domain": "regulatory"
+    },
+    "关于《中国证监会派出机构监管职责规定》的修订说明": {
+      "doc_id": "csrc_0006_att2",
+      "friendly_name": "关于《中国证监会派出机构监管职责规定》的修订说明",
+      "rel_path": "regulatory/attachments/csrc_0006_att2.md",
+      "domain": "regulatory"
+    },
+    "关于修改《证券发行与承销管理办法》的决定": {
+      "doc_id": "csrc_0007_att1",
+      "friendly_name": "关于修改《证券发行与承销管理办法》的决定",
+      "rel_path": "regulatory/attachments/csrc_0007_att1.md",
+      "domain": "regulatory"
+    },
+    "《关于修改<证券发行与承销管理办法>的决定》的立法说明": {
+      "doc_id": "csrc_0007_att2",
+      "friendly_name": "《关于修改<证券发行与承销管理办法>的决定》的立法说明",
+      "rel_path": "regulatory/attachments/csrc_0007_att2.md",
+      "domain": "regulatory"
+    },
+    "关于修改部分证券期货规章的决定": {
+      "doc_id": "csrc_0008_att1",
+      "friendly_name": "关于修改部分证券期货规章的决定",
+      "rel_path": "regulatory/attachments/csrc_0008_att1.md",
+      "domain": "regulatory"
+    },
+    "《关于修改部分证券期货规章的决定》立法说明": {
+      "doc_id": "csrc_0008_att2",
+      "friendly_name": "《关于修改部分证券期货规章的决定》立法说明",
+      "rel_path": "regulatory/attachments/csrc_0008_att2.md",
+      "domain": "regulatory"
+    },
+    "上市公司信息披露管理办法": {
+      "doc_id": "csrc_0009_att1",
+      "friendly_name": "上市公司信息披露管理办法",
+      "rel_path": "regulatory/attachments/csrc_0009_att1.md",
+      "domain": "regulatory"
+    },
+    "《上市公司信息披露管理办法》修订说明": {
+      "doc_id": "csrc_0009_att2",
+      "friendly_name": "《上市公司信息披露管理办法》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0009_att2.md",
+      "domain": "regulatory"
+    },
+    "中国证监会行政处罚裁量基本规则": {
+      "doc_id": "csrc_0010_att1",
+      "friendly_name": "中国证监会行政处罚裁量基本规则",
+      "rel_path": "regulatory/attachments/csrc_0010_att1.md",
+      "domain": "regulatory"
+    },
+    "《中国证监会行政处罚裁量基本规则》立法说明": {
+      "doc_id": "csrc_0010_att2",
+      "friendly_name": "《中国证监会行政处罚裁量基本规则》立法说明",
+      "rel_path": "regulatory/attachments/csrc_0010_att2.md",
+      "domain": "regulatory"
+    },
+    "上市公司股东减持股份管理暂行办法": {
+      "doc_id": "csrc_0011_att1",
+      "friendly_name": "上市公司股东减持股份管理暂行办法",
+      "rel_path": "regulatory/attachments/csrc_0011_att1.md",
+      "domain": "regulatory"
+    },
+    "《上市公司股东减持股份管理暂行办法》立法说明": {
+      "doc_id": "csrc_0011_att2",
+      "friendly_name": "《上市公司股东减持股份管理暂行办法》立法说明",
+      "rel_path": "regulatory/attachments/csrc_0011_att2.md",
+      "domain": "regulatory"
+    },
+    "关于修改《〈上市公司证券发行注册管理办法〉第九条、第十条、第十一条、第十三条、第四十条、第五十七条、第六十条有关规定的适用意见——证券期货法律适用意见第 18号》的决定": {
+      "doc_id": "csrc_0012_att1",
+      "friendly_name": "关于修改《〈上市公司证券发行注册管理办法〉第九条、第十条、第十一条、第十三条、第四十条、第五十七条、第六十条有关规定的适用意见——证券期货法律适用意见第 18号》的决定",
+      "rel_path": "regulatory/attachments/csrc_0012_att1.md",
+      "domain": "regulatory"
+    },
+    "《关于修改〈《上市公司证券发行注册管理办法》第九条、第十条、第十一条、第十三条、第四十条、第五十七条、第六十条有关规定的适用意见——证券期货法律适用意见第 18 号〉的决定》立法说明": {
+      "doc_id": "csrc_0012_att2",
+      "friendly_name": "《关于修改〈《上市公司证券发行注册管理办法》第九条、第十条、第十一条、第十三条、第四十条、第五十七条、第六十条有关规定的适用意见——证券期货法律适用意见第 18 号〉的决定》立法说明",
+      "rel_path": "regulatory/attachments/csrc_0012_att2.md",
+      "domain": "regulatory"
+    },
+    "公开募集证券投资基金信息披露内容与格式准则第 2 号—定期报告的内容与格式": {
+      "doc_id": "csrc_0013_att1",
+      "friendly_name": "公开募集证券投资基金信息披露内容与格式准则第 2 号—定期报告的内容与格式",
+      "rel_path": "regulatory/attachments/csrc_0013_att1.md",
+      "domain": "regulatory"
+    },
+    "《公开募集证券投资基金信息披露内容与格式准则第 2 号—定期报告的内容与格式》修订说明": {
+      "doc_id": "csrc_0013_att2",
+      "friendly_name": "《公开募集证券投资基金信息披露内容与格式准则第 2 号—定期报告的内容与格式》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0013_att2.md",
+      "domain": "regulatory"
+    },
+    "关于短线交易监管的若干规定": {
+      "doc_id": "csrc_0014_att1",
+      "friendly_name": "关于短线交易监管的若干规定",
+      "rel_path": "regulatory/attachments/csrc_0014_att1.md",
+      "domain": "regulatory"
+    },
+    "《关于短线交易监管的若干规定》起草说明": {
+      "doc_id": "csrc_0014_att2",
+      "friendly_name": "《关于短线交易监管的若干规定》起草说明",
+      "rel_path": "regulatory/attachments/csrc_0014_att2.md",
+      "domain": "regulatory"
+    },
+    "关于境内资产境外发行资产支持证券代币的监管指引": {
+      "doc_id": "csrc_0015_att1",
+      "friendly_name": "关于境内资产境外发行资产支持证券代币的监管指引",
+      "rel_path": "regulatory/attachments/csrc_0015_att1.md",
+      "domain": "regulatory"
+    },
+    "公开募集证券投资基金业绩比较基准指引": {
+      "doc_id": "csrc_0016_att1",
+      "friendly_name": "公开募集证券投资基金业绩比较基准指引",
+      "rel_path": "regulatory/attachments/csrc_0016_att1.md",
+      "domain": "regulatory"
+    },
+    "《公开募集证券投资基金业绩比较基准指引》起草说明": {
+      "doc_id": "csrc_0016_att2",
+      "friendly_name": "《公开募集证券投资基金业绩比较基准指引》起草说明",
+      "rel_path": "regulatory/attachments/csrc_0016_att2.md",
+      "domain": "regulatory"
+    },
+    "证券期货业信息系统密码技术应用指引": {
+      "doc_id": "csrc_0017_att1",
+      "friendly_name": "证券期货业信息系统密码技术应用指引",
+      "rel_path": "regulatory/attachments/csrc_0017_att1.md",
+      "domain": "regulatory"
+    },
+    "证券期货业信息系统分类与代码": {
+      "doc_id": "csrc_0017_att2",
+      "friendly_name": "证券期货业信息系统分类与代码",
+      "rel_path": "regulatory/attachments/csrc_0017_att2.md",
+      "domain": "regulatory"
+    },
+    "公开募集证券投资基金销售费用管理规定": {
+      "doc_id": "csrc_0018_att1",
+      "friendly_name": "公开募集证券投资基金销售费用管理规定",
+      "rel_path": "regulatory/attachments/csrc_0018_att1.md",
+      "domain": "regulatory"
+    },
+    "《公开募集证券投资基金销售费用管理规定》修订说明": {
+      "doc_id": "csrc_0018_att2",
+      "friendly_name": "《公开募集证券投资基金销售费用管理规定》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0018_att2.md",
+      "domain": "regulatory"
+    },
+    "中国证监会关于推出商业不动产投资信托基金试点的公告": {
+      "doc_id": "csrc_0019_att1",
+      "friendly_name": "中国证监会关于推出商业不动产投资信托基金试点的公告",
+      "rel_path": "regulatory/attachments/csrc_0019_att1.md",
+      "domain": "regulatory"
+    },
+    "《中国证监会关于推出商业不动产投资信托基金试点的公告》起草说明": {
+      "doc_id": "csrc_0019_att2",
+      "friendly_name": "《中国证监会关于推出商业不动产投资信托基金试点的公告》起草说明",
+      "rel_path": "regulatory/attachments/csrc_0019_att2.md",
+      "domain": "regulatory"
+    },
+    "证券期货违法行为“吹哨人”奖励工作规定": {
+      "doc_id": "csrc_0020_att1",
+      "friendly_name": "证券期货违法行为“吹哨人”奖励工作规定",
+      "rel_path": "regulatory/attachments/csrc_0020_att1.md",
+      "domain": "regulatory"
+    },
+    "《证券期货违法行为“吹哨人”奖励工作规定》修订说明": {
+      "doc_id": "csrc_0020_att2",
+      "friendly_name": "《证券期货违法行为“吹哨人”奖励工作规定》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0020_att2.md",
+      "domain": "regulatory"
+    },
+    "证券结算风险基金管理办法": {
+      "doc_id": "csrc_0021_att1",
+      "friendly_name": "证券结算风险基金管理办法",
+      "rel_path": "regulatory/attachments/csrc_0021_att1.md",
+      "domain": "regulatory"
+    },
+    "《证券结算风险基金管理办法》修订说明": {
+      "doc_id": "csrc_0021_att2",
+      "friendly_name": "《证券结算风险基金管理办法》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0021_att2.md",
+      "domain": "regulatory"
+    },
+    "关于加强资本市场中小投资者保护的若干意见": {
+      "doc_id": "csrc_0022_att1",
+      "friendly_name": "关于加强资本市场中小投资者保护的若干意见",
+      "rel_path": "regulatory/attachments/csrc_0022_att1.md",
+      "domain": "regulatory"
+    },
+    "上市公司治理准则": {
+      "doc_id": "csrc_0023_att1",
+      "friendly_name": "上市公司治理准则",
+      "rel_path": "regulatory/attachments/csrc_0023_att1.md",
+      "domain": "regulatory"
+    },
+    "《上市公司治理准则》修订说明": {
+      "doc_id": "csrc_0023_att2",
+      "friendly_name": "《上市公司治理准则》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0023_att2.md",
+      "domain": "regulatory"
+    },
+    "证券期货业业务域数据元规范第4 部分：证券交易所": {
+      "doc_id": "csrc_0024_att1",
+      "friendly_name": "证券期货业业务域数据元规范第4 部分：证券交易所",
+      "rel_path": "regulatory/attachments/csrc_0024_att1.md",
+      "domain": "regulatory"
+    },
+    "证券期货业业务域数据元规范 第 5 部分：企业资产证券化业务": {
+      "doc_id": "csrc_0024_att2",
+      "friendly_name": "证券期货业业务域数据元规范 第 5 部分：企业资产证券化业务",
+      "rel_path": "regulatory/attachments/csrc_0024_att2.md",
+      "domain": "regulatory"
+    },
+    "期货公司监管数据采集规范": {
+      "doc_id": "csrc_0024_att3",
+      "friendly_name": "期货公司监管数据采集规范",
+      "rel_path": "regulatory/attachments/csrc_0024_att3.md",
+      "domain": "regulatory"
+    },
+    "期货公司分类评价规定": {
+      "doc_id": "csrc_0025_att1",
+      "friendly_name": "期货公司分类评价规定",
+      "rel_path": "regulatory/attachments/csrc_0025_att1.md",
+      "domain": "regulatory"
+    },
+    "《期货公司分类评价规定》修订说明": {
+      "doc_id": "csrc_0025_att2",
+      "friendly_name": "《期货公司分类评价规定》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0025_att2.md",
+      "domain": "regulatory"
+    },
+    "期货公司互联网营销管理暂行规定": {
+      "doc_id": "csrc_0026_att1",
+      "friendly_name": "期货公司互联网营销管理暂行规定",
+      "rel_path": "regulatory/attachments/csrc_0026_att1.md",
+      "domain": "regulatory"
+    },
+    "《期货公司互联网营销管理暂行规定》起草说明": {
+      "doc_id": "csrc_0026_att2",
+      "friendly_name": "《期货公司互联网营销管理暂行规定》起草说明",
+      "rel_path": "regulatory/attachments/csrc_0026_att2.md",
+      "domain": "regulatory"
+    },
+    "关于修改《证券公司分类监管规定》的决定": {
+      "doc_id": "csrc_0027_att1",
+      "friendly_name": "关于修改《证券公司分类监管规定》的决定",
+      "rel_path": "regulatory/attachments/csrc_0027_att1.md",
+      "domain": "regulatory"
+    },
+    "关于修改《证券公司分类监管规定》的说明": {
+      "doc_id": "csrc_0027_att2",
+      "friendly_name": "关于修改《证券公司分类监管规定》的说明",
+      "rel_path": "regulatory/attachments/csrc_0027_att2.md",
+      "domain": "regulatory"
+    },
+    "期货市场程序化交易管理规定（试行）": {
+      "doc_id": "csrc_0029_att1",
+      "friendly_name": "期货市场程序化交易管理规定（试行）",
+      "rel_path": "regulatory/attachments/csrc_0029_att1.md",
+      "domain": "regulatory"
+    },
+    "《期货市场程序化交易管理规定（试行）》起草说明": {
+      "doc_id": "csrc_0029_att2",
+      "friendly_name": "《期货市场程序化交易管理规定（试行）》起草说明",
+      "rel_path": "regulatory/attachments/csrc_0029_att2.md",
+      "domain": "regulatory"
+    },
+    "上市公司监管指引第9号— 上市公司筹划和实施重大资产重组的监管要求": {
+      "doc_id": "csrc_0030_att1",
+      "friendly_name": "上市公司监管指引第9号— 上市公司筹划和实施重大资产重组的监管要求",
+      "rel_path": "regulatory/attachments/csrc_0030_att1.md",
+      "domain": "regulatory"
+    },
+    "关于《上市公司监管指引第 9 号— 上市公司筹划和实施重大资产重组的监管要求》的说明": {
+      "doc_id": "csrc_0030_att2",
+      "friendly_name": "关于《上市公司监管指引第 9 号— 上市公司筹划和实施重大资产重组的监管要求》的说明",
+      "rel_path": "regulatory/attachments/csrc_0030_att2.md",
+      "domain": "regulatory"
+    },
+    "上市公司募集资金监管规则": {
+      "doc_id": "csrc_0031_att1",
+      "friendly_name": "上市公司募集资金监管规则",
+      "rel_path": "regulatory/attachments/csrc_0031_att1.md",
+      "domain": "regulatory"
+    },
+    "《上市公司募集资金监管规则》修订说明": {
+      "doc_id": "csrc_0031_att2",
+      "friendly_name": "《上市公司募集资金监管规则》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0031_att2.md",
+      "domain": "regulatory"
+    },
+    "证券期货业统计指标标准指引": {
+      "doc_id": "csrc_0032_att1",
+      "friendly_name": "证券期货业统计指标标准指引",
+      "rel_path": "regulatory/attachments/csrc_0032_att1.md",
+      "domain": "regulatory"
+    },
+    "上市公司信息披露暂缓与豁免管理规定": {
+      "doc_id": "csrc_0033_att1",
+      "friendly_name": "上市公司信息披露暂缓与豁免管理规定",
+      "rel_path": "regulatory/attachments/csrc_0033_att1.md",
+      "domain": "regulatory"
+    },
+    "《上市公司信息披露暂缓与豁免管理规定》立法说明": {
+      "doc_id": "csrc_0033_att2",
+      "friendly_name": "《上市公司信息披露暂缓与豁免管理规定》立法说明",
+      "rel_path": "regulatory/attachments/csrc_0033_att2.md",
+      "domain": "regulatory"
+    },
+    "上市公司股东会规则": {
+      "doc_id": "csrc_0034_att1",
+      "friendly_name": "上市公司股东会规则",
+      "rel_path": "regulatory/attachments/csrc_0034_att1.md",
+      "domain": "regulatory"
+    },
+    "《上市公司股东会规则》修订说明": {
+      "doc_id": "csrc_0034_att2",
+      "friendly_name": "《上市公司股东会规则》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0034_att2.md",
+      "domain": "regulatory"
+    },
+    "上市公司章程指引": {
+      "doc_id": "csrc_0035_att1",
+      "friendly_name": "上市公司章程指引",
+      "rel_path": "regulatory/attachments/csrc_0035_att1.md",
+      "domain": "regulatory"
+    },
+    "《上市公司章程指引》修订说明": {
+      "doc_id": "csrc_0035_att2",
+      "friendly_name": "《上市公司章程指引》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0035_att2.md",
+      "domain": "regulatory"
+    },
+    "关于修改、废止部分证券期货规范性文件的决定": {
+      "doc_id": "csrc_0036_att1",
+      "friendly_name": "关于修改、废止部分证券期货规范性文件的决定",
+      "rel_path": "regulatory/attachments/csrc_0036_att1.md",
+      "domain": "regulatory"
+    },
+    "附件1：": {
+      "doc_id": "csrc_0036_att2",
+      "friendly_name": "附件1：",
+      "rel_path": "regulatory/attachments/csrc_0036_att2.md",
+      "domain": "regulatory"
+    },
+    "中国证监会决定废止的规范性文件": {
+      "doc_id": "csrc_0036_att3",
+      "friendly_name": "中国证监会决定废止的规范性文件",
+      "rel_path": "regulatory/attachments/csrc_0036_att3.md",
+      "domain": "regulatory"
+    },
+    "《关于修改、废止部分证券期货规范性文件的决定》立法说明": {
+      "doc_id": "csrc_0036_att4",
+      "friendly_name": "《关于修改、废止部分证券期货规范性文件的决定》立法说明",
+      "rel_path": "regulatory/attachments/csrc_0036_att4.md",
+      "domain": "regulatory"
+    },
+    "公开发行证券的公司信息披露内容与格式准则第 3 号— 半年度报告的内容与格式": {
+      "doc_id": "csrc_0037_att1",
+      "friendly_name": "公开发行证券的公司信息披露内容与格式准则第 3 号— 半年度报告的内容与格式",
+      "rel_path": "regulatory/attachments/csrc_0037_att1.md",
+      "domain": "regulatory"
+    },
+    "《公开发行证券的公司信息披露内容与格式准则第 3 号——半年度报告的内容与格式》修订说明": {
+      "doc_id": "csrc_0037_att2",
+      "friendly_name": "《公开发行证券的公司信息披露内容与格式准则第 3 号——半年度报告的内容与格式》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0037_att2.md",
+      "domain": "regulatory"
+    },
+    "公开发行证券的公司信息披露内容与格式准则第 2 号— 年度报告的内容与格式": {
+      "doc_id": "csrc_0038_att1",
+      "friendly_name": "公开发行证券的公司信息披露内容与格式准则第 2 号— 年度报告的内容与格式",
+      "rel_path": "regulatory/attachments/csrc_0038_att1.md",
+      "domain": "regulatory"
+    },
+    "《公开发行证券的公司信息披露内容与格式准则第2号——年度报告的内容与格式》修订说明": {
+      "doc_id": "csrc_0038_att2",
+      "friendly_name": "《公开发行证券的公司信息披露内容与格式准则第2号——年度报告的内容与格式》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0038_att2.md",
+      "domain": "regulatory"
+    },
+    "上市公司监管指引第 11号——上市公司破产重整相关事项": {
+      "doc_id": "csrc_0039_att1",
+      "friendly_name": "上市公司监管指引第 11号——上市公司破产重整相关事项",
+      "rel_path": "regulatory/attachments/csrc_0039_att1.md",
+      "domain": "regulatory"
+    },
+    "起草说明": {
+      "doc_id": "csrc_0045_att2",
+      "friendly_name": "起草说明",
+      "rel_path": "regulatory/attachments/csrc_0045_att2.md",
+      "domain": "regulatory"
+    },
+    "证券期货法律适用意见第 19 号《上市公司收购管理办法》第十三条、第十四条的适用意见": {
+      "doc_id": "csrc_0040_att1",
+      "friendly_name": "证券期货法律适用意见第 19 号《上市公司收购管理办法》第十三条、第十四条的适用意见",
+      "rel_path": "regulatory/attachments/csrc_0040_att1.md",
+      "domain": "regulatory"
+    },
+    "关于《证券期货法律适用意见第 19 号—上市公司收购管理办法>第十三条、第十四条的适用意见》的立法说明": {
+      "doc_id": "csrc_0040_att2",
+      "friendly_name": "关于《证券期货法律适用意见第 19 号—上市公司收购管理办法>第十三条、第十四条的适用意见》的立法说明",
+      "rel_path": "regulatory/attachments/csrc_0040_att2.md",
+      "domain": "regulatory"
+    },
+    "期货经纪合同要素": {
+      "doc_id": "csrc_0041_att1",
+      "friendly_name": "期货经纪合同要素",
+      "rel_path": "regulatory/attachments/csrc_0041_att1.md",
+      "domain": "regulatory"
+    },
+    "证券期货业信息系统备份能力规范": {
+      "doc_id": "csrc_0041_att2",
+      "friendly_name": "证券期货业信息系统备份能力规范",
+      "rel_path": "regulatory/attachments/csrc_0041_att2.md",
+      "domain": "regulatory"
+    },
+    "证券期货业数据模型 第 5 部分：期货公司逻辑模型": {
+      "doc_id": "csrc_0041_att3",
+      "friendly_name": "证券期货业数据模型 第 5 部分：期货公司逻辑模型",
+      "rel_path": "regulatory/attachments/csrc_0041_att3.md",
+      "domain": "regulatory"
+    },
+    "区域性股权市场分布式数字身份技术规范": {
+      "doc_id": "csrc_0041_att4",
+      "friendly_name": "区域性股权市场分布式数字身份技术规范",
+      "rel_path": "regulatory/attachments/csrc_0041_att4.md",
+      "domain": "regulatory"
+    },
+    "区域性股权市场企业、产品和投资者编码规范": {
+      "doc_id": "csrc_0041_att5",
+      "friendly_name": "区域性股权市场企业、产品和投资者编码规范",
+      "rel_path": "regulatory/attachments/csrc_0041_att5.md",
+      "domain": "regulatory"
+    },
+    "香港互认基金管理规定": {
+      "doc_id": "csrc_0042_att1",
+      "friendly_name": "香港互认基金管理规定",
+      "rel_path": "regulatory/attachments/csrc_0042_att1.md",
+      "domain": "regulatory"
+    },
+    "《香港互认基金管理暂行规定》修订说明": {
+      "doc_id": "csrc_0042_att2",
+      "friendly_name": "《香港互认基金管理暂行规定》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0042_att2.md",
+      "domain": "regulatory"
+    },
+    "上市公司行业统计分类与代码": {
+      "doc_id": "csrc_0043_att1",
+      "friendly_name": "上市公司行业统计分类与代码",
+      "rel_path": "regulatory/attachments/csrc_0043_att1.md",
+      "domain": "regulatory"
+    },
+    "区域性股权市场跨链技术规范": {
+      "doc_id": "csrc_0043_att2",
+      "friendly_name": "区域性股权市场跨链技术规范",
+      "rel_path": "regulatory/attachments/csrc_0043_att2.md",
+      "domain": "regulatory"
+    },
+    "区域性股权市场跨链数据规范": {
+      "doc_id": "csrc_0043_att3",
+      "friendly_name": "区域性股权市场跨链数据规范",
+      "rel_path": "regulatory/attachments/csrc_0043_att3.md",
+      "domain": "regulatory"
+    },
+    "区域性股权市场跨链认证安全规范": {
+      "doc_id": "csrc_0043_att4",
+      "friendly_name": "区域性股权市场跨链认证安全规范",
+      "rel_path": "regulatory/attachments/csrc_0043_att4.md",
+      "domain": "regulatory"
+    },
+    "区域性股权市场区块链通用基础设施通讯指南": {
+      "doc_id": "csrc_0043_att5",
+      "friendly_name": "区域性股权市场区块链通用基础设施通讯指南",
+      "rel_path": "regulatory/attachments/csrc_0043_att5.md",
+      "domain": "regulatory"
+    },
+    "上市公司监管指引第 10 号— 市值管理": {
+      "doc_id": "csrc_0045_att1",
+      "friendly_name": "上市公司监管指引第 10 号— 市值管理",
+      "rel_path": "regulatory/attachments/csrc_0045_att1.md",
+      "domain": "regulatory"
+    },
+    "证券公司风险控制指标计算标准规定": {
+      "doc_id": "csrc_0046_att1",
+      "friendly_name": "证券公司风险控制指标计算标准规定",
+      "rel_path": "regulatory/attachments/csrc_0046_att1.md",
+      "domain": "regulatory"
+    },
+    "关于修订《证券公司风险控制指标计算标准规定》的说明": {
+      "doc_id": "csrc_0046_att2",
+      "friendly_name": "关于修订《证券公司风险控制指标计算标准规定》的说明",
+      "rel_path": "regulatory/attachments/csrc_0046_att2.md",
+      "domain": "regulatory"
+    },
+    "证券发行人信息披露文件编码规则": {
+      "doc_id": "csrc_0047_att1",
+      "friendly_name": "证券发行人信息披露文件编码规则",
+      "rel_path": "regulatory/attachments/csrc_0047_att1.md",
+      "domain": "regulatory"
+    },
+    "证监会系统离职人员入股拟上市企业监管规定（试行）": {
+      "doc_id": "csrc_0048_att1",
+      "friendly_name": "证监会系统离职人员入股拟上市企业监管规定（试行）",
+      "rel_path": "regulatory/attachments/csrc_0048_att1.md",
+      "domain": "regulatory"
+    },
+    "关于《证监会系统离职人员入股拟上市企业监管规定（试行）》的起草说明": {
+      "doc_id": "csrc_0048_att2",
+      "friendly_name": "关于《证监会系统离职人员入股拟上市企业监管规定（试行）》的起草说明",
+      "rel_path": "regulatory/attachments/csrc_0048_att2.md",
+      "domain": "regulatory"
+    },
+    "公开发行证券的公司信息披露编报规则第 4 号——保险公司信息披露特别规定（2024 年修订）": {
+      "doc_id": "csrc_0049_att1",
+      "friendly_name": "公开发行证券的公司信息披露编报规则第 4 号——保险公司信息披露特别规定（2024 年修订）",
+      "rel_path": "regulatory/attachments/csrc_0049_att1.md",
+      "domain": "regulatory"
+    },
+    "《公开发行证券的公司信息披露编报规则第 4 号——保险公司信息披露特别规定（2024 年修订）》修订说明": {
+      "doc_id": "csrc_0049_att2",
+      "friendly_name": "《公开发行证券的公司信息披露编报规则第 4 号——保险公司信息披露特别规定（2024 年修订）》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0049_att2.md",
+      "domain": "regulatory"
+    },
+    "上市公司董事、监事和高级管理人员所持本公司股份及其变动管理规则": {
+      "doc_id": "csrc_0050_att1",
+      "friendly_name": "上市公司董事、监事和高级管理人员所持本公司股份及其变动管理规则",
+      "rel_path": "regulatory/attachments/csrc_0050_att1.md",
+      "domain": "regulatory"
+    },
+    "《上市公司董事、监事和高级管理人员所持本公司股份及其变动管理规则》修订说明": {
+      "doc_id": "csrc_0050_att2",
+      "friendly_name": "《上市公司董事、监事和高级管理人员所持本公司股份及其变动管理规则》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0050_att2.md",
+      "domain": "regulatory"
+    },
+    "证券市场程序化交易管理规定（试行）": {
+      "doc_id": "csrc_0051_att1",
+      "friendly_name": "证券市场程序化交易管理规定（试行）",
+      "rel_path": "regulatory/attachments/csrc_0051_att1.md",
+      "domain": "regulatory"
+    },
+    "《证券市场程序化交易管理规定（试行）》起草说明": {
+      "doc_id": "csrc_0051_att2",
+      "friendly_name": "《证券市场程序化交易管理规定（试行）》起草说明",
+      "rel_path": "regulatory/attachments/csrc_0051_att2.md",
+      "domain": "regulatory"
+    },
+    "关于修订《关于加强上市证券公司监管的规定》的决定": {
+      "doc_id": "csrc_0052_att1",
+      "friendly_name": "关于修订《关于加强上市证券公司监管的规定》的决定",
+      "rel_path": "regulatory/attachments/csrc_0052_att1.md",
+      "domain": "regulatory"
+    },
+    "关于修订《关于加强上市证券公司监管的规定》的说明": {
+      "doc_id": "csrc_0052_att2",
+      "friendly_name": "关于修订《关于加强上市证券公司监管的规定》的说明",
+      "rel_path": "regulatory/attachments/csrc_0052_att2.md",
+      "domain": "regulatory"
+    },
+    "关于修改《科创属性评价指引（试行）》的决定": {
+      "doc_id": "csrc_0053_att1",
+      "friendly_name": "关于修改《科创属性评价指引（试行）》的决定",
+      "rel_path": "regulatory/attachments/csrc_0053_att1.md",
+      "domain": "regulatory"
+    },
+    "关于《关于修改〈科创属性评价指引（试行）〉的决定》的说明": {
+      "doc_id": "csrc_0053_att2",
+      "friendly_name": "关于《关于修改〈科创属性评价指引（试行）〉的决定》的说明",
+      "rel_path": "regulatory/attachments/csrc_0053_att2.md",
+      "domain": "regulatory"
+    },
+    "关于修改《中国证监会随机抽查事项清单》的决定": {
+      "doc_id": "csrc_0054_att1",
+      "friendly_name": "关于修改《中国证监会随机抽查事项清单》的决定",
+      "rel_path": "regulatory/attachments/csrc_0054_att1.md",
+      "domain": "regulatory"
+    },
+    "关于修改《中国证监会随机抽查事项清单》的起草说明": {
+      "doc_id": "csrc_0054_att2",
+      "friendly_name": "关于修改《中国证监会随机抽查事项清单》的起草说明",
+      "rel_path": "regulatory/attachments/csrc_0054_att2.md",
+      "domain": "regulatory"
+    },
+    "投资研究时序数据参考模型": {
+      "doc_id": "csrc_0055_att1",
+      "friendly_name": "投资研究时序数据参考模型",
+      "rel_path": "regulatory/attachments/csrc_0055_att1.md",
+      "domain": "regulatory"
+    },
+    "证券期货业基础数据元规范第1部分：基础数据元": {
+      "doc_id": "csrc_0055_att2",
+      "friendly_name": "证券期货业基础数据元规范第1部分：基础数据元",
+      "rel_path": "regulatory/attachments/csrc_0055_att2.md",
+      "domain": "regulatory"
+    },
+    "证券期货业基础数据元规范": {
+      "doc_id": "csrc_0055_att3",
+      "friendly_name": "证券期货业基础数据元规范",
+      "rel_path": "regulatory/attachments/csrc_0055_att3.md",
+      "domain": "regulatory"
+    },
+    "公开募集证券投资基金证券交易费用管理规定": {
+      "doc_id": "csrc_0056_att1",
+      "friendly_name": "公开募集证券投资基金证券交易费用管理规定",
+      "rel_path": "regulatory/attachments/csrc_0056_att1.md",
+      "domain": "regulatory"
+    },
+    "《公开募集证券投资基金证券交易费用管理规定》": {
+      "doc_id": "csrc_0056_att2",
+      "friendly_name": "《公开募集证券投资基金证券交易费用管理规定》",
+      "rel_path": "regulatory/attachments/csrc_0056_att2.md",
+      "domain": "regulatory"
+    },
+    "首次公开发行股票并上市辅导监管规定": {
+      "doc_id": "csrc_0057_att1",
+      "friendly_name": "首次公开发行股票并上市辅导监管规定",
+      "rel_path": "regulatory/attachments/csrc_0057_att1.md",
+      "domain": "regulatory"
+    },
+    "《首次公开发行股票并上市辅导监管规定》修订说明": {
+      "doc_id": "csrc_0057_att2",
+      "friendly_name": "《首次公开发行股票并上市辅导监管规定》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0057_att2.md",
+      "domain": "regulatory"
+    },
+    "首发企业现场检查规定": {
+      "doc_id": "csrc_0058_att1",
+      "friendly_name": "首发企业现场检查规定",
+      "rel_path": "regulatory/attachments/csrc_0058_att1.md",
+      "domain": "regulatory"
+    },
+    "《首发企业现场检查规定》修订说明": {
+      "doc_id": "csrc_0058_att2",
+      "friendly_name": "《首发企业现场检查规定》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0058_att2.md",
+      "domain": "regulatory"
+    },
+    "监管规则适用指引— 债券类第 1 号：公开发行公司债券注册工作规程": {
+      "doc_id": "csrc_0059_att1",
+      "friendly_name": "监管规则适用指引— 债券类第 1 号：公开发行公司债券注册工作规程",
+      "rel_path": "regulatory/attachments/csrc_0059_att1.md",
+      "domain": "regulatory"
+    },
+    "监管规则适用指引— 评估类第 2 号": {
+      "doc_id": "csrc_0060_att1",
+      "friendly_name": "监管规则适用指引— 评估类第 2 号",
+      "rel_path": "regulatory/attachments/csrc_0060_att1.md",
+      "domain": "regulatory"
+    },
+    "关于《监管规则适用指引— 评估类第2号》的说明": {
+      "doc_id": "csrc_0060_att2",
+      "friendly_name": "关于《监管规则适用指引— 评估类第2号》的说明",
+      "rel_path": "regulatory/attachments/csrc_0060_att2.md",
+      "domain": "regulatory"
+    },
+    "监管规则适用指引— 会计类第 5 号": {
+      "doc_id": "csrc_0061_att1",
+      "friendly_name": "监管规则适用指引— 会计类第 5 号",
+      "rel_path": "regulatory/attachments/csrc_0061_att1.md",
+      "domain": "regulatory"
+    },
+    "关于《监管规则适用指引— 会计类第 5号》的说明": {
+      "doc_id": "csrc_0061_att2",
+      "friendly_name": "关于《监管规则适用指引— 会计类第 5号》的说明",
+      "rel_path": "regulatory/attachments/csrc_0061_att2.md",
+      "domain": "regulatory"
+    },
+    "关于《监管规则适用指引——机构类第4号》的说明": {
+      "doc_id": "csrc_0062_att1",
+      "friendly_name": "关于《监管规则适用指引——机构类第4号》的说明",
+      "rel_path": "regulatory/attachments/csrc_0062_att1.md",
+      "domain": "regulatory"
+    },
+    "关于《监管规则适用指引— 法律类第 4号》的说明": {
+      "doc_id": "csrc_0063_att1",
+      "friendly_name": "关于《监管规则适用指引— 法律类第 4号》的说明",
+      "rel_path": "regulatory/attachments/csrc_0063_att1.md",
+      "domain": "regulatory"
+    },
+    "《监管规则适用指引—发行类第 10 号》起草说明": {
+      "doc_id": "csrc_0064_att1",
+      "friendly_name": "《监管规则适用指引—发行类第 10 号》起草说明",
+      "rel_path": "regulatory/attachments/csrc_0064_att1.md",
+      "domain": "regulatory"
+    },
+    "监管规则适用指引— 境外发行上市类第 7号：关于境内企业由境外场外市场转至境外证券交易所实现境外发行上市的监管要求": {
+      "doc_id": "csrc_0065_att1",
+      "friendly_name": "监管规则适用指引— 境外发行上市类第 7号：关于境内企业由境外场外市场转至境外证券交易所实现境外发行上市的监管要求",
+      "rel_path": "regulatory/attachments/csrc_0065_att1.md",
+      "domain": "regulatory"
+    },
+    "关于《监管规则适用指引— 北京证券交易所类第 1 号：全国股转系统挂牌公司申请在北京证券交易所发行上市辅导监管指引》的起草说明": {
+      "doc_id": "csrc_0066_att1",
+      "friendly_name": "关于《监管规则适用指引— 北京证券交易所类第 1 号：全国股转系统挂牌公司申请在北京证券交易所发行上市辅导监管指引》的起草说明",
+      "rel_path": "regulatory/attachments/csrc_0066_att1.md",
+      "domain": "regulatory"
+    },
+    "关于《监管规则适用指引—机构类第 3 号》的说明": {
+      "doc_id": "csrc_0067_att1",
+      "friendly_name": "关于《监管规则适用指引—机构类第 3 号》的说明",
+      "rel_path": "regulatory/attachments/csrc_0067_att1.md",
+      "domain": "regulatory"
+    },
+    "监管规则适用指引— 会计类第 4 号": {
+      "doc_id": "csrc_0068_att1",
+      "friendly_name": "监管规则适用指引— 会计类第 4 号",
+      "rel_path": "regulatory/attachments/csrc_0068_att1.md",
+      "domain": "regulatory"
+    },
+    "关于《监管规则适用指引— 会计类第 4号》的说明": {
+      "doc_id": "csrc_0068_att2",
+      "friendly_name": "关于《监管规则适用指引— 会计类第 4号》的说明",
+      "rel_path": "regulatory/attachments/csrc_0068_att2.md",
+      "domain": "regulatory"
+    },
+    "【第233号令】《私募投资基金信息披露监督管理办法》": {
+      "doc_id": "csrc_0001",
+      "friendly_name": "【第233号令】《私募投资基金信息披露监督管理办法》",
+      "rel_path": "regulatory/html/csrc_0001.md",
+      "domain": "regulatory"
+    },
+    "【第232号令】《关于修改〈证券期货行政执法当事人承诺制度实施规定〉的决定》": {
+      "doc_id": "csrc_0002",
+      "friendly_name": "【第232号令】《关于修改〈证券期货行政执法当事人承诺制度实施规定〉的决定》",
+      "rel_path": "regulatory/html/csrc_0002.md",
+      "domain": "regulatory"
+    },
+    "【第2号公告】《证券期货业信息系统密码技术应用指引》《证券期货业信息系统分类与代码》": {
+      "doc_id": "csrc_0017",
+      "friendly_name": "【第2号公告】《证券期货业信息系统密码技术应用指引》《证券期货业信息系统分类与代码》",
+      "rel_path": "regulatory/html/csrc_0017.md",
+      "domain": "regulatory"
+    },
+    "【第22号公告】《公开募集证券投资基金销售费用管理规定》": {
+      "doc_id": "csrc_0018",
+      "friendly_name": "【第22号公告】《公开募集证券投资基金销售费用管理规定》",
+      "rel_path": "regulatory/html/csrc_0018.md",
+      "domain": "regulatory"
+    },
+    "【第21号公告】《中国证监会关于推出商业不动产投资信托基金试点的公告》": {
+      "doc_id": "csrc_0019",
+      "friendly_name": "【第21号公告】《中国证监会关于推出商业不动产投资信托基金试点的公告》",
+      "rel_path": "regulatory/html/csrc_0019.md",
+      "domain": "regulatory"
+    },
+    "【第23号公告】《证券期货违法行为“吹哨人”奖励工作规定》": {
+      "doc_id": "csrc_0020",
+      "friendly_name": "【第23号公告】《证券期货违法行为“吹哨人”奖励工作规定》",
+      "rel_path": "regulatory/html/csrc_0020.md",
+      "domain": "regulatory"
+    },
+    "【第20号公告】《证券结算风险基金管理办法》": {
+      "doc_id": "csrc_0021",
+      "friendly_name": "【第20号公告】《证券结算风险基金管理办法》",
+      "rel_path": "regulatory/html/csrc_0021.md",
+      "domain": "regulatory"
+    },
+    "【第19号公告】《关于加强资本市场中小投资者保护的若干意见》": {
+      "doc_id": "csrc_0022",
+      "friendly_name": "【第19号公告】《关于加强资本市场中小投资者保护的若干意见》",
+      "rel_path": "regulatory/html/csrc_0022.md",
+      "domain": "regulatory"
+    },
+    "【第18号公告】《上市公司治理准则》": {
+      "doc_id": "csrc_0023",
+      "friendly_name": "【第18号公告】《上市公司治理准则》",
+      "rel_path": "regulatory/html/csrc_0023.md",
+      "domain": "regulatory"
+    },
+    "【第17号公告】": {
+      "doc_id": "csrc_0024",
+      "friendly_name": "【第17号公告】",
+      "rel_path": "regulatory/html/csrc_0024.md",
+      "domain": "regulatory"
+    },
+    "【第16号公告】《期货公司分类评价规定》": {
+      "doc_id": "csrc_0025",
+      "friendly_name": "【第16号公告】《期货公司分类评价规定》",
+      "rel_path": "regulatory/html/csrc_0025.md",
+      "domain": "regulatory"
+    },
+    "【第15号公告】《期货公司互联网营销管理暂行规定》": {
+      "doc_id": "csrc_0026",
+      "friendly_name": "【第15号公告】《期货公司互联网营销管理暂行规定》",
+      "rel_path": "regulatory/html/csrc_0026.md",
+      "domain": "regulatory"
+    },
+    "【第10号公告】《上市公司募集资金监管规则》": {
+      "doc_id": "csrc_0031",
+      "friendly_name": "【第10号公告】《上市公司募集资金监管规则》",
+      "rel_path": "regulatory/html/csrc_0031.md",
+      "domain": "regulatory"
+    },
+    "【第9号公告】《证券期货业统计指标标准指引（2025年修订）》": {
+      "doc_id": "csrc_0032",
+      "friendly_name": "【第9号公告】《证券期货业统计指标标准指引（2025年修订）》",
+      "rel_path": "regulatory/html/csrc_0032.md",
+      "domain": "regulatory"
+    },
+    "【第8号公告】《上市公司信息披露暂缓与豁免管理规定》": {
+      "doc_id": "csrc_0033",
+      "friendly_name": "【第8号公告】《上市公司信息披露暂缓与豁免管理规定》",
+      "rel_path": "regulatory/html/csrc_0033.md",
+      "domain": "regulatory"
+    },
+    "【第7号公告】《上市公司股东会规则》": {
+      "doc_id": "csrc_0034",
+      "friendly_name": "【第7号公告】《上市公司股东会规则》",
+      "rel_path": "regulatory/html/csrc_0034.md",
+      "domain": "regulatory"
+    },
+    "【第6号公告】《上市公司章程指引》": {
+      "doc_id": "csrc_0035",
+      "friendly_name": "【第6号公告】《上市公司章程指引》",
+      "rel_path": "regulatory/html/csrc_0035.md",
+      "domain": "regulatory"
+    },
+    "【第5号公告】《关于修改、废止部分证券期货规范性文件的决定》": {
+      "doc_id": "csrc_0036",
+      "friendly_name": "【第5号公告】《关于修改、废止部分证券期货规范性文件的决定》",
+      "rel_path": "regulatory/html/csrc_0036.md",
+      "domain": "regulatory"
+    },
+    "【第4号公告】《公开发行证券的公司信息披露内容与格式准则第3号——半年度报告的内容与格式》": {
+      "doc_id": "csrc_0037",
+      "friendly_name": "【第4号公告】《公开发行证券的公司信息披露内容与格式准则第3号——半年度报告的内容与格式》",
+      "rel_path": "regulatory/html/csrc_0037.md",
+      "domain": "regulatory"
+    },
+    "【第3号公告】《公开发行证券的公司信息披露内容与格式准则第2号——年度报告的内容与格式》": {
+      "doc_id": "csrc_0038",
+      "friendly_name": "【第3号公告】《公开发行证券的公司信息披露内容与格式准则第2号——年度报告的内容与格式》",
+      "rel_path": "regulatory/html/csrc_0038.md",
+      "domain": "regulatory"
+    },
+    "【第2号公告】《上市公司监管指引第11号——上市公司破产重整相关事项》": {
+      "doc_id": "csrc_0039",
+      "friendly_name": "【第2号公告】《上市公司监管指引第11号——上市公司破产重整相关事项》",
+      "rel_path": "regulatory/html/csrc_0039.md",
+      "domain": "regulatory"
+    },
+    "【第1号公告】《证券期货法律适用意见第19号——<上市公司收购管理办法>第十三条、第十四条的适用意见》": {
+      "doc_id": "csrc_0040",
+      "friendly_name": "【第1号公告】《证券期货法律适用意见第19号——<上市公司收购管理办法>第十三条、第十四条的适用意见》",
+      "rel_path": "regulatory/html/csrc_0040.md",
+      "domain": "regulatory"
+    },
+    "【第18号公告】": {
+      "doc_id": "csrc_0041",
+      "friendly_name": "【第18号公告】",
+      "rel_path": "regulatory/html/csrc_0041.md",
+      "domain": "regulatory"
+    },
+    "【第17号公告】《香港互认基金管理规定》": {
+      "doc_id": "csrc_0042",
+      "friendly_name": "【第17号公告】《香港互认基金管理规定》",
+      "rel_path": "regulatory/html/csrc_0042.md",
+      "domain": "regulatory"
+    },
+    "【第16号公告】": {
+      "doc_id": "csrc_0043",
+      "friendly_name": "【第16号公告】",
+      "rel_path": "regulatory/html/csrc_0043.md",
+      "domain": "regulatory"
+    },
+    "【第15号公告】": {
+      "doc_id": "csrc_0044",
+      "friendly_name": "【第15号公告】",
+      "rel_path": "regulatory/html/csrc_0044.md",
+      "domain": "regulatory"
+    },
+    "【第14号公告】《上市公司监管指引第10号——市值管理》": {
+      "doc_id": "csrc_0045",
+      "friendly_name": "【第14号公告】《上市公司监管指引第10号——市值管理》",
+      "rel_path": "regulatory/html/csrc_0045.md",
+      "domain": "regulatory"
+    },
+    "【第13号公告】《证券公司风险控制指标计算标准规定》": {
+      "doc_id": "csrc_0046",
+      "friendly_name": "【第13号公告】《证券公司风险控制指标计算标准规定》",
+      "rel_path": "regulatory/html/csrc_0046.md",
+      "domain": "regulatory"
+    },
+    "【第12号公告】《证券发行人信息披露文件编码规则》": {
+      "doc_id": "csrc_0047",
+      "friendly_name": "【第12号公告】《证券发行人信息披露文件编码规则》",
+      "rel_path": "regulatory/html/csrc_0047.md",
+      "domain": "regulatory"
+    },
+    "【第11号公告】《证监会系统离职人员入股拟上市企业监管规定（试行）》": {
+      "doc_id": "csrc_0048",
+      "friendly_name": "【第11号公告】《证监会系统离职人员入股拟上市企业监管规定（试行）》",
+      "rel_path": "regulatory/html/csrc_0048.md",
+      "domain": "regulatory"
+    },
+    "【第10号公告】《公开发行证券的公司信息披露编报规则第4号——保险公司信息披露特别规定（2024年修订）》": {
+      "doc_id": "csrc_0049",
+      "friendly_name": "【第10号公告】《公开发行证券的公司信息披露编报规则第4号——保险公司信息披露特别规定（2024年修订）》",
+      "rel_path": "regulatory/html/csrc_0049.md",
+      "domain": "regulatory"
+    },
+    "【第9号公告】《上市公司董事、监事和高级管理人员所持本公司股份及其变动管理规则》": {
+      "doc_id": "csrc_0050",
+      "friendly_name": "【第9号公告】《上市公司董事、监事和高级管理人员所持本公司股份及其变动管理规则》",
+      "rel_path": "regulatory/html/csrc_0050.md",
+      "domain": "regulatory"
+    },
+    "【第8号公告】《证券市场程序化交易管理规定（试行）》": {
+      "doc_id": "csrc_0051",
+      "friendly_name": "【第8号公告】《证券市场程序化交易管理规定（试行）》",
+      "rel_path": "regulatory/html/csrc_0051.md",
+      "domain": "regulatory"
+    },
+    "【第7号公告】《关于修订〈关于加强上市证券公司监管的规定〉的决定》": {
+      "doc_id": "csrc_0052",
+      "friendly_name": "【第7号公告】《关于修订〈关于加强上市证券公司监管的规定〉的决定》",
+      "rel_path": "regulatory/html/csrc_0052.md",
+      "domain": "regulatory"
+    },
+    "【第6号公告】《关于修改〈科创属性评价指引（试行）〉的决定》": {
+      "doc_id": "csrc_0053",
+      "friendly_name": "【第6号公告】《关于修改〈科创属性评价指引（试行）〉的决定》",
+      "rel_path": "regulatory/html/csrc_0053.md",
+      "domain": "regulatory"
+    },
+    "【第5号公告】《关于修改〈中国证监会随机抽查事项清单〉的决定》": {
+      "doc_id": "csrc_0054",
+      "friendly_name": "【第5号公告】《关于修改〈中国证监会随机抽查事项清单〉的决定》",
+      "rel_path": "regulatory/html/csrc_0054.md",
+      "domain": "regulatory"
+    },
+    "【第4号公告】《投资研究时序数据参考模型》等3项金融行业标准": {
+      "doc_id": "csrc_0055",
+      "friendly_name": "【第4号公告】《投资研究时序数据参考模型》等3项金融行业标准",
+      "rel_path": "regulatory/html/csrc_0055.md",
+      "domain": "regulatory"
+    },
+    "【第3号公告】《公开募集证券投资基金证券交易费用管理规定》": {
+      "doc_id": "csrc_0056",
+      "friendly_name": "【第3号公告】《公开募集证券投资基金证券交易费用管理规定》",
+      "rel_path": "regulatory/html/csrc_0056.md",
+      "domain": "regulatory"
+    },
+    "【第2号公告】《首次公开发行股票并上市辅导监管规定》": {
+      "doc_id": "csrc_0057",
+      "friendly_name": "【第2号公告】《首次公开发行股票并上市辅导监管规定》",
+      "rel_path": "regulatory/html/csrc_0057.md",
+      "domain": "regulatory"
+    },
+    "【第1号公告】《首发企业现场检查规定》": {
+      "doc_id": "csrc_0058",
+      "friendly_name": "【第1号公告】《首发企业现场检查规定》",
+      "rel_path": "regulatory/html/csrc_0058.md",
+      "domain": "regulatory"
+    },
+    "监管规则适用指引——债券类第1号：公开发行公司债券注册工作规程": {
+      "doc_id": "csrc_0059",
+      "friendly_name": "监管规则适用指引——债券类第1号：公开发行公司债券注册工作规程",
+      "rel_path": "regulatory/html/csrc_0059.md",
+      "domain": "regulatory"
+    },
+    "监管规则适用指引——评估类第2号": {
+      "doc_id": "csrc_0060",
+      "friendly_name": "监管规则适用指引——评估类第2号",
+      "rel_path": "regulatory/html/csrc_0060.md",
+      "domain": "regulatory"
+    },
+    "监管规则适用指引——会计类第5号": {
+      "doc_id": "csrc_0061",
+      "friendly_name": "监管规则适用指引——会计类第5号",
+      "rel_path": "regulatory/html/csrc_0061.md",
+      "domain": "regulatory"
+    },
+    "监管规则适用指引——机构类第4号": {
+      "doc_id": "csrc_0062",
+      "friendly_name": "监管规则适用指引——机构类第4号",
+      "rel_path": "regulatory/html/csrc_0062.md",
+      "domain": "regulatory"
+    },
+    "监管规则适用指引——法律类第4号": {
+      "doc_id": "csrc_0063",
+      "friendly_name": "监管规则适用指引——法律类第4号",
+      "rel_path": "regulatory/html/csrc_0063.md",
+      "domain": "regulatory"
+    },
+    "监管规则适用指引——发行类第10号": {
+      "doc_id": "csrc_0064",
+      "friendly_name": "监管规则适用指引——发行类第10号",
+      "rel_path": "regulatory/html/csrc_0064.md",
+      "domain": "regulatory"
+    },
+    "监管规则适用指引——境外发行上市类第7号：关于境内企业由境外场外市场转至境外证券交易所实现境外发行上市的监管要求": {
+      "doc_id": "csrc_0065",
+      "friendly_name": "监管规则适用指引——境外发行上市类第7号：关于境内企业由境外场外市场转至境外证券交易所实现境外发行上市的监管要求",
+      "rel_path": "regulatory/html/csrc_0065.md",
+      "domain": "regulatory"
+    },
+    "监管规则适用指引——北京证券交易所类第1号：全国股转系统挂牌公司申请在北京证券交易所发行上市辅导监管指引": {
+      "doc_id": "csrc_0066",
+      "friendly_name": "监管规则适用指引——北京证券交易所类第1号：全国股转系统挂牌公司申请在北京证券交易所发行上市辅导监管指引",
+      "rel_path": "regulatory/html/csrc_0066.md",
+      "domain": "regulatory"
+    },
+    "监管规则适用指引——机构类第3号": {
+      "doc_id": "csrc_0067",
+      "friendly_name": "监管规则适用指引——机构类第3号",
+      "rel_path": "regulatory/html/csrc_0067.md",
+      "domain": "regulatory"
+    },
+    "监管规则适用指引——会计类第4号": {
+      "doc_id": "csrc_0068",
+      "friendly_name": "监管规则适用指引——会计类第4号",
+      "rel_path": "regulatory/html/csrc_0068.md",
+      "domain": "regulatory"
+    },
+    "中国证券监督管理委员会行政处罚决定书": {
+      "doc_id": "csrc_0130",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0130.md",
+      "domain": "regulatory"
+    },
+    "以海外银保为鉴，观我国寿险发展新格局": {
+      "doc_id": "pack2_text01",
+      "friendly_name": "以海外银保为鉴，观我国寿险发展新格局",
+      "rel_path": "research/pack2_text01.md",
+      "domain": "research"
+    },
+    "金融网络安全运营数智化 建设研究与实践": {
+      "doc_id": "pack2_text02",
+      "friendly_name": "金融网络安全运营数智化 建设研究与实践",
+      "rel_path": "research/pack2_text02.md",
+      "domain": "research"
+    },
+    "证券研究报告": {
+      "doc_id": "pack2_text03",
+      "friendly_name": "证券研究报告",
+      "rel_path": "research/pack2_text03.md",
+      "domain": "research"
+    },
+    "动储产销两旺， 量利双升， 继续强推电动车行业策略": {
+      "doc_id": "pack2_text04",
+      "friendly_name": "动储产销两旺， 量利双升， 继续强推电动车行业策略",
+      "rel_path": "research/pack2_text04.md",
+      "domain": "research"
+    },
+    "品牌转型，玉汝于成": {
+      "doc_id": "pack2_text05",
+      "friendly_name": "品牌转型，玉汝于成",
+      "rel_path": "research/pack2_text05.md",
+      "domain": "research"
+    },
+    "大化工周报：美伊谈判推进，油价下降带动化工品价格整体回落": {
+      "doc_id": "pack2_text06",
+      "friendly_name": "大化工周报：美伊谈判推进，油价下降带动化工品价格整体回落",
+      "rel_path": "research/pack2_text06.md",
+      "domain": "research"
+    },
+    "【中泰汽车·北京车展前瞻】": {
+      "doc_id": "pack2_text07",
+      "friendly_name": "【中泰汽车·北京车展前瞻】",
+      "rel_path": "research/pack2_text07.md",
+      "domain": "research"
+    },
+    "杠杆资金&股票型ETF分化加剧": {
+      "doc_id": "pack2_text08",
+      "friendly_name": "杠杆资金&股票型ETF分化加剧",
+      "rel_path": "research/pack2_text08.md",
+      "domain": "research"
+    },
+    "AI ASIC 领军者，迎接 ASIC 定制新纪元": {
+      "doc_id": "pack2_text09",
+      "friendly_name": "AI ASIC 领军者，迎接 ASIC 定制新纪元",
+      "rel_path": "research/pack2_text09.md",
+      "domain": "research"
+    },
+    "ROE 提升有道（一）—": {
+      "doc_id": "pack2_text10",
+      "friendly_name": "ROE 提升有道（一）—",
+      "rel_path": "research/pack2_text10.md",
+      "domain": "research"
+    },
+    "光模块行业延续高景气度，光纤产品量价齐升": {
+      "doc_id": "pack2_text11",
+      "friendly_name": "光模块行业延续高景气度，光纤产品量价齐升",
+      "rel_path": "research/pack2_text11.md",
+      "domain": "research"
+    },
+    "光模块设备：站在巨人的肩膀上，寻找中长期通胀方向": {
+      "doc_id": "pack2_text12",
+      "friendly_name": "光模块设备：站在巨人的肩膀上，寻找中长期通胀方向",
+      "rel_path": "research/pack2_text12.md",
+      "domain": "research"
+    },
+    "农林牧渔": {
+      "doc_id": "pack2_text13",
+      "friendly_name": "农林牧渔",
+      "rel_path": "research/pack2_text13.md",
+      "domain": "research"
+    },
+    "“资产荒”的新叙事": {
+      "doc_id": "pack2_text20",
+      "friendly_name": "“资产荒”的新叙事",
+      "rel_path": "research/pack2_text20.md",
+      "domain": "research"
+    },
+    "改革红利兑现，增量价值开启新一轮资负共振": {
+      "doc_id": "pack2_text15",
+      "friendly_name": "改革红利兑现，增量价值开启新一轮资负共振",
+      "rel_path": "research/pack2_text15.md",
+      "domain": "research"
+    },
+    "农林牧渔 | 养殖业": {
+      "doc_id": "pack2_text16",
+      "friendly_name": "农林牧渔 | 养殖业",
+      "rel_path": "research/pack2_text16.md",
+      "domain": "research"
+    },
+    "非银金融行业深度报告": {
+      "doc_id": "pack2_text17",
+      "friendly_name": "非银金融行业深度报告",
+      "rel_path": "research/pack2_text17.md",
+      "domain": "research"
+    },
+    "大族激光（002008.SZ）": {
+      "doc_id": "pack2_text18",
+      "friendly_name": "大族激光（002008.SZ）",
+      "rel_path": "research/pack2_text18.md",
+      "domain": "research"
+    },
+    "远望谷（002161.SZ）": {
+      "doc_id": "pack2_text19",
+      "friendly_name": "远望谷（002161.SZ）",
+      "rel_path": "research/pack2_text19.md",
+      "domain": "research"
+    }
+  },
+  "all_docs": [
+    {
+      "doc_id": "text01",
+      "friendly_name": "广东省广晟控股集团有限公司",
+      "rel_path": "financial_contracts/text01.md",
+      "domain": "financial_contracts"
+    },
+    {
+      "doc_id": "text02",
+      "friendly_name": "6 年面向专业投资者公开发行科技",
+      "rel_path": "financial_contracts/text02.md",
+      "domain": "financial_contracts"
+    },
+    {
+      "doc_id": "text03",
+      "friendly_name": "厦门金圆投资集团有限公司",
+      "rel_path": "financial_contracts/text03.md",
+      "domain": "financial_contracts"
+    },
+    {
+      "doc_id": "text04",
+      "friendly_name": "Anker",
+      "rel_path": "financial_contracts/text04.md",
+      "domain": "financial_contracts"
+    },
+    {
+      "doc_id": "text05",
+      "friendly_name": "江苏本川智能电路科技股份有限公司",
+      "rel_path": "financial_contracts/text05.md",
+      "domain": "financial_contracts"
+    },
+    {
+      "doc_id": "text06",
+      "friendly_name": "鼎捷数 公司",
+      "rel_path": "financial_contracts/text06.md",
+      "domain": "financial_contracts"
+    },
+    {
+      "doc_id": "text07",
+      "friendly_name": "海南海峡航运股份有限公司",
+      "rel_path": "financial_contracts/text07.md",
+      "domain": "financial_contracts"
+    },
+    {
+      "doc_id": "text08",
+      "friendly_name": "苏州华亚智能科技股份有限公司",
+      "rel_path": "financial_contracts/text08.md",
+      "domain": "financial_contracts"
+    },
+    {
+      "doc_id": "text09",
+      "friendly_name": "金达威集团",
+      "rel_path": "financial_contracts/text09.md",
+      "domain": "financial_contracts"
+    },
+    {
+      "doc_id": "text10",
+      "friendly_name": "科源製藥",
+      "rel_path": "financial_contracts/text10.md",
+      "domain": "financial_contracts"
+    },
+    {
+      "doc_id": "text11",
+      "friendly_name": "Pansoft Company Limited",
+      "rel_path": "financial_contracts/text11.md",
+      "domain": "financial_contracts"
+    },
+    {
+      "doc_id": "text12",
+      "friendly_name": "陕西省国际信托股份有限公司",
+      "rel_path": "financial_contracts/text12.md",
+      "domain": "financial_contracts"
+    },
+    {
+      "doc_id": "text13",
+      "friendly_name": "2026年度中国铁路建设债券",
+      "rel_path": "financial_contracts/text13.md",
+      "domain": "financial_contracts"
+    },
+    {
+      "doc_id": "text14",
+      "friendly_name": "西部证券股份有限公司",
+      "rel_path": "financial_contracts/text14.md",
+      "domain": "financial_contracts"
+    },
+    {
+      "doc_id": "annual_byd_2024_report",
+      "friendly_name": "比亚迪股份有限公司",
+      "rel_path": "financial_reports/annual_byd_2024_report.md",
+      "domain": "financial_reports"
+    },
+    {
+      "doc_id": "annual_byd_2025_report",
+      "friendly_name": "比亚迪股份有限公司",
+      "rel_path": "financial_reports/annual_byd_2025_report.md",
+      "domain": "financial_reports"
+    },
+    {
+      "doc_id": "annual_catl_2024_report",
+      "friendly_name": "CATL",
+      "rel_path": "financial_reports/annual_catl_2024_report.md",
+      "domain": "financial_reports"
+    },
+    {
+      "doc_id": "annual_catl_2025_report",
+      "friendly_name": "CATL",
+      "rel_path": "financial_reports/annual_catl_2025_report.md",
+      "domain": "financial_reports"
+    },
+    {
+      "doc_id": "annual_chinamobile_2025_report",
+      "friendly_name": "中国移动",
+      "rel_path": "financial_reports/annual_chinamobile_2025_report.md",
+      "domain": "financial_reports"
+    },
+    {
+      "doc_id": "annual_cmb_2025_report",
+      "friendly_name": "2025年度报告",
+      "rel_path": "financial_reports/annual_cmb_2025_report.md",
+      "domain": "financial_reports"
+    },
+    {
+      "doc_id": "annual_cscec_2024_report",
+      "friendly_name": "2024",
+      "rel_path": "financial_reports/annual_cscec_2024_report.md",
+      "domain": "financial_reports"
+    },
+    {
+      "doc_id": "annual_cscec_2025_report",
+      "friendly_name": "2025",
+      "rel_path": "financial_reports/annual_cscec_2025_report.md",
+      "domain": "financial_reports"
+    },
+    {
+      "doc_id": "annual_midea_2024_report",
+      "friendly_name": "雨V 美的集",
+      "rel_path": "financial_reports/annual_midea_2024_report.md",
+      "domain": "financial_reports"
+    },
+    {
+      "doc_id": "annual_midea_2025_report",
+      "friendly_name": "我们总有道路",
+      "rel_path": "financial_reports/annual_midea_2025_report.md",
+      "domain": "financial_reports"
+    },
+    {
+      "doc_id": "1",
+      "friendly_name": "平安智盈金生专属商业养老保险",
+      "rel_path": "insurance/1.md",
+      "domain": "insurance"
+    },
+    {
+      "doc_id": "10",
+      "friendly_name": "众安在线财产保险股份有限公司特种车商业保险示范条款（2020版）",
+      "rel_path": "insurance/10.md",
+      "domain": "insurance"
+    },
+    {
+      "doc_id": "11",
+      "friendly_name": "中国平安财产保险股份有限公司",
+      "rel_path": "insurance/11.md",
+      "domain": "insurance"
+    },
+    {
+      "doc_id": "12",
+      "friendly_name": "众安在线财产保险股份有限公司",
+      "rel_path": "insurance/12.md",
+      "domain": "insurance"
+    },
+    {
+      "doc_id": "13",
+      "friendly_name": "众安在线财产保险股份有限公司",
+      "rel_path": "insurance/13.md",
+      "domain": "insurance"
+    },
+    {
+      "doc_id": "14",
+      "friendly_name": "中国平安财产保险股份有限公司",
+      "rel_path": "insurance/14.md",
+      "domain": "insurance"
+    },
+    {
+      "doc_id": "15",
+      "friendly_name": "阅读指引",
+      "rel_path": "insurance/15.md",
+      "domain": "insurance"
+    },
+    {
+      "doc_id": "16",
+      "friendly_name": "平安养老保险股份有限公司",
+      "rel_path": "insurance/16.md",
+      "domain": "insurance"
+    },
+    {
+      "doc_id": "2",
+      "friendly_name": "阅读指引",
+      "rel_path": "insurance/2.md",
+      "domain": "insurance"
+    },
+    {
+      "doc_id": "3",
+      "friendly_name": "众安在线财产保险股份有限公司",
+      "rel_path": "insurance/3.md",
+      "domain": "insurance"
+    },
+    {
+      "doc_id": "4",
+      "friendly_name": "平安安佑福重大疾病保险产品提供重大疾病及身故保障",
+      "rel_path": "insurance/4.md",
+      "domain": "insurance"
+    },
+    {
+      "doc_id": "5",
+      "friendly_name": "阅 读 指 引",
+      "rel_path": "insurance/5.md",
+      "domain": "insurance"
+    },
+    {
+      "doc_id": "6",
+      "friendly_name": "太平洋健康保险股份有限公司",
+      "rel_path": "insurance/6.md",
+      "domain": "insurance"
+    },
+    {
+      "doc_id": "7",
+      "friendly_name": "中国平安财产保险股份有限公司",
+      "rel_path": "insurance/7.md",
+      "domain": "insurance"
+    },
+    {
+      "doc_id": "8",
+      "friendly_name": "众安在线财产保险股份有限公司",
+      "rel_path": "insurance/8.md",
+      "domain": "insurance"
+    },
+    {
+      "doc_id": "9",
+      "friendly_name": "中国平安财产保险股份有限公司",
+      "rel_path": "insurance/9.md",
+      "domain": "insurance"
+    },
+    {
+      "doc_id": "csrc_0001_att1",
+      "friendly_name": "私募投资基金信息披露监督管理办法",
+      "rel_path": "regulatory/attachments/csrc_0001_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0001_att2",
+      "friendly_name": "《私募投资基金信息披露监督管理办法》立法说明",
+      "rel_path": "regulatory/attachments/csrc_0001_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0002_att1",
+      "friendly_name": "关于修改《证券期货行政执法当事人承诺制度实施规定》的决定",
+      "rel_path": "regulatory/attachments/csrc_0002_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0002_att2",
+      "friendly_name": "《关于修改〈证券期货行政执法当事人承诺制度实施规定〉的决定》立法说明",
+      "rel_path": "regulatory/attachments/csrc_0002_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0003_att1",
+      "friendly_name": "证券期货市场监督管理措施实施办法",
+      "rel_path": "regulatory/attachments/csrc_0003_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0003_att2",
+      "friendly_name": "关于《证券期货市场监督管理措施实施办法》的说明",
+      "rel_path": "regulatory/attachments/csrc_0003_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0004_att1",
+      "friendly_name": "金融基础设施监督管理办法",
+      "rel_path": "regulatory/attachments/csrc_0004_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0005_att1",
+      "friendly_name": "关于修改《上市公司重大资产重组管理办法》的决定",
+      "rel_path": "regulatory/attachments/csrc_0005_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0005_att2",
+      "friendly_name": "关于《关于修改<上市公司重大资产重组管理办法>的决定》的立法说明",
+      "rel_path": "regulatory/attachments/csrc_0005_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0006_att1",
+      "friendly_name": "中国证监会派出机构监管职责规定",
+      "rel_path": "regulatory/attachments/csrc_0006_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0006_att2",
+      "friendly_name": "关于《中国证监会派出机构监管职责规定》的修订说明",
+      "rel_path": "regulatory/attachments/csrc_0006_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0007_att1",
+      "friendly_name": "关于修改《证券发行与承销管理办法》的决定",
+      "rel_path": "regulatory/attachments/csrc_0007_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0007_att2",
+      "friendly_name": "《关于修改<证券发行与承销管理办法>的决定》的立法说明",
+      "rel_path": "regulatory/attachments/csrc_0007_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0008_att1",
+      "friendly_name": "关于修改部分证券期货规章的决定",
+      "rel_path": "regulatory/attachments/csrc_0008_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0008_att2",
+      "friendly_name": "《关于修改部分证券期货规章的决定》立法说明",
+      "rel_path": "regulatory/attachments/csrc_0008_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0009_att1",
+      "friendly_name": "上市公司信息披露管理办法",
+      "rel_path": "regulatory/attachments/csrc_0009_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0009_att2",
+      "friendly_name": "《上市公司信息披露管理办法》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0009_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0010_att1",
+      "friendly_name": "中国证监会行政处罚裁量基本规则",
+      "rel_path": "regulatory/attachments/csrc_0010_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0010_att2",
+      "friendly_name": "《中国证监会行政处罚裁量基本规则》立法说明",
+      "rel_path": "regulatory/attachments/csrc_0010_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0011_att1",
+      "friendly_name": "上市公司股东减持股份管理暂行办法",
+      "rel_path": "regulatory/attachments/csrc_0011_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0011_att2",
+      "friendly_name": "《上市公司股东减持股份管理暂行办法》立法说明",
+      "rel_path": "regulatory/attachments/csrc_0011_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0012_att1",
+      "friendly_name": "关于修改《〈上市公司证券发行注册管理办法〉第九条、第十条、第十一条、第十三条、第四十条、第五十七条、第六十条有关规定的适用意见——证券期货法律适用意见第 18号》的决定",
+      "rel_path": "regulatory/attachments/csrc_0012_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0012_att2",
+      "friendly_name": "《关于修改〈《上市公司证券发行注册管理办法》第九条、第十条、第十一条、第十三条、第四十条、第五十七条、第六十条有关规定的适用意见——证券期货法律适用意见第 18 号〉的决定》立法说明",
+      "rel_path": "regulatory/attachments/csrc_0012_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0013_att1",
+      "friendly_name": "公开募集证券投资基金信息披露内容与格式准则第 2 号—定期报告的内容与格式",
+      "rel_path": "regulatory/attachments/csrc_0013_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0013_att2",
+      "friendly_name": "《公开募集证券投资基金信息披露内容与格式准则第 2 号—定期报告的内容与格式》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0013_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0014_att1",
+      "friendly_name": "关于短线交易监管的若干规定",
+      "rel_path": "regulatory/attachments/csrc_0014_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0014_att2",
+      "friendly_name": "《关于短线交易监管的若干规定》起草说明",
+      "rel_path": "regulatory/attachments/csrc_0014_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0015_att1",
+      "friendly_name": "关于境内资产境外发行资产支持证券代币的监管指引",
+      "rel_path": "regulatory/attachments/csrc_0015_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0016_att1",
+      "friendly_name": "公开募集证券投资基金业绩比较基准指引",
+      "rel_path": "regulatory/attachments/csrc_0016_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0016_att2",
+      "friendly_name": "《公开募集证券投资基金业绩比较基准指引》起草说明",
+      "rel_path": "regulatory/attachments/csrc_0016_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0017_att1",
+      "friendly_name": "证券期货业信息系统密码技术应用指引",
+      "rel_path": "regulatory/attachments/csrc_0017_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0017_att2",
+      "friendly_name": "证券期货业信息系统分类与代码",
+      "rel_path": "regulatory/attachments/csrc_0017_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0018_att1",
+      "friendly_name": "公开募集证券投资基金销售费用管理规定",
+      "rel_path": "regulatory/attachments/csrc_0018_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0018_att2",
+      "friendly_name": "《公开募集证券投资基金销售费用管理规定》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0018_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0019_att1",
+      "friendly_name": "中国证监会关于推出商业不动产投资信托基金试点的公告",
+      "rel_path": "regulatory/attachments/csrc_0019_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0019_att2",
+      "friendly_name": "《中国证监会关于推出商业不动产投资信托基金试点的公告》起草说明",
+      "rel_path": "regulatory/attachments/csrc_0019_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0020_att1",
+      "friendly_name": "证券期货违法行为“吹哨人”奖励工作规定",
+      "rel_path": "regulatory/attachments/csrc_0020_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0020_att2",
+      "friendly_name": "《证券期货违法行为“吹哨人”奖励工作规定》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0020_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0021_att1",
+      "friendly_name": "证券结算风险基金管理办法",
+      "rel_path": "regulatory/attachments/csrc_0021_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0021_att2",
+      "friendly_name": "《证券结算风险基金管理办法》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0021_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0022_att1",
+      "friendly_name": "关于加强资本市场中小投资者保护的若干意见",
+      "rel_path": "regulatory/attachments/csrc_0022_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0023_att1",
+      "friendly_name": "上市公司治理准则",
+      "rel_path": "regulatory/attachments/csrc_0023_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0023_att2",
+      "friendly_name": "《上市公司治理准则》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0023_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0024_att1",
+      "friendly_name": "证券期货业业务域数据元规范第4 部分：证券交易所",
+      "rel_path": "regulatory/attachments/csrc_0024_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0024_att2",
+      "friendly_name": "证券期货业业务域数据元规范 第 5 部分：企业资产证券化业务",
+      "rel_path": "regulatory/attachments/csrc_0024_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0024_att3",
+      "friendly_name": "期货公司监管数据采集规范",
+      "rel_path": "regulatory/attachments/csrc_0024_att3.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0025_att1",
+      "friendly_name": "期货公司分类评价规定",
+      "rel_path": "regulatory/attachments/csrc_0025_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0025_att2",
+      "friendly_name": "《期货公司分类评价规定》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0025_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0026_att1",
+      "friendly_name": "期货公司互联网营销管理暂行规定",
+      "rel_path": "regulatory/attachments/csrc_0026_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0026_att2",
+      "friendly_name": "《期货公司互联网营销管理暂行规定》起草说明",
+      "rel_path": "regulatory/attachments/csrc_0026_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0027_att1",
+      "friendly_name": "关于修改《证券公司分类监管规定》的决定",
+      "rel_path": "regulatory/attachments/csrc_0027_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0027_att2",
+      "friendly_name": "关于修改《证券公司分类监管规定》的说明",
+      "rel_path": "regulatory/attachments/csrc_0027_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0029_att1",
+      "friendly_name": "期货市场程序化交易管理规定（试行）",
+      "rel_path": "regulatory/attachments/csrc_0029_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0029_att2",
+      "friendly_name": "《期货市场程序化交易管理规定（试行）》起草说明",
+      "rel_path": "regulatory/attachments/csrc_0029_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0030_att1",
+      "friendly_name": "上市公司监管指引第9号— 上市公司筹划和实施重大资产重组的监管要求",
+      "rel_path": "regulatory/attachments/csrc_0030_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0030_att2",
+      "friendly_name": "关于《上市公司监管指引第 9 号— 上市公司筹划和实施重大资产重组的监管要求》的说明",
+      "rel_path": "regulatory/attachments/csrc_0030_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0031_att1",
+      "friendly_name": "上市公司募集资金监管规则",
+      "rel_path": "regulatory/attachments/csrc_0031_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0031_att2",
+      "friendly_name": "《上市公司募集资金监管规则》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0031_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0032_att1",
+      "friendly_name": "证券期货业统计指标标准指引",
+      "rel_path": "regulatory/attachments/csrc_0032_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0033_att1",
+      "friendly_name": "上市公司信息披露暂缓与豁免管理规定",
+      "rel_path": "regulatory/attachments/csrc_0033_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0033_att2",
+      "friendly_name": "《上市公司信息披露暂缓与豁免管理规定》立法说明",
+      "rel_path": "regulatory/attachments/csrc_0033_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0034_att1",
+      "friendly_name": "上市公司股东会规则",
+      "rel_path": "regulatory/attachments/csrc_0034_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0034_att2",
+      "friendly_name": "《上市公司股东会规则》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0034_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0035_att1",
+      "friendly_name": "上市公司章程指引",
+      "rel_path": "regulatory/attachments/csrc_0035_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0035_att2",
+      "friendly_name": "《上市公司章程指引》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0035_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0036_att1",
+      "friendly_name": "关于修改、废止部分证券期货规范性文件的决定",
+      "rel_path": "regulatory/attachments/csrc_0036_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0036_att2",
+      "friendly_name": "附件1：",
+      "rel_path": "regulatory/attachments/csrc_0036_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0036_att3",
+      "friendly_name": "中国证监会决定废止的规范性文件",
+      "rel_path": "regulatory/attachments/csrc_0036_att3.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0036_att4",
+      "friendly_name": "《关于修改、废止部分证券期货规范性文件的决定》立法说明",
+      "rel_path": "regulatory/attachments/csrc_0036_att4.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0037_att1",
+      "friendly_name": "公开发行证券的公司信息披露内容与格式准则第 3 号— 半年度报告的内容与格式",
+      "rel_path": "regulatory/attachments/csrc_0037_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0037_att2",
+      "friendly_name": "《公开发行证券的公司信息披露内容与格式准则第 3 号——半年度报告的内容与格式》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0037_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0038_att1",
+      "friendly_name": "公开发行证券的公司信息披露内容与格式准则第 2 号— 年度报告的内容与格式",
+      "rel_path": "regulatory/attachments/csrc_0038_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0038_att2",
+      "friendly_name": "《公开发行证券的公司信息披露内容与格式准则第2号——年度报告的内容与格式》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0038_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0039_att1",
+      "friendly_name": "上市公司监管指引第 11号——上市公司破产重整相关事项",
+      "rel_path": "regulatory/attachments/csrc_0039_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0039_att2",
+      "friendly_name": "起草说明",
+      "rel_path": "regulatory/attachments/csrc_0039_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0040_att1",
+      "friendly_name": "证券期货法律适用意见第 19 号《上市公司收购管理办法》第十三条、第十四条的适用意见",
+      "rel_path": "regulatory/attachments/csrc_0040_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0040_att2",
+      "friendly_name": "关于《证券期货法律适用意见第 19 号—上市公司收购管理办法>第十三条、第十四条的适用意见》的立法说明",
+      "rel_path": "regulatory/attachments/csrc_0040_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0041_att1",
+      "friendly_name": "期货经纪合同要素",
+      "rel_path": "regulatory/attachments/csrc_0041_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0041_att2",
+      "friendly_name": "证券期货业信息系统备份能力规范",
+      "rel_path": "regulatory/attachments/csrc_0041_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0041_att3",
+      "friendly_name": "证券期货业数据模型 第 5 部分：期货公司逻辑模型",
+      "rel_path": "regulatory/attachments/csrc_0041_att3.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0041_att4",
+      "friendly_name": "区域性股权市场分布式数字身份技术规范",
+      "rel_path": "regulatory/attachments/csrc_0041_att4.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0041_att5",
+      "friendly_name": "区域性股权市场企业、产品和投资者编码规范",
+      "rel_path": "regulatory/attachments/csrc_0041_att5.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0042_att1",
+      "friendly_name": "香港互认基金管理规定",
+      "rel_path": "regulatory/attachments/csrc_0042_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0042_att2",
+      "friendly_name": "《香港互认基金管理暂行规定》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0042_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0043_att1",
+      "friendly_name": "上市公司行业统计分类与代码",
+      "rel_path": "regulatory/attachments/csrc_0043_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0043_att2",
+      "friendly_name": "区域性股权市场跨链技术规范",
+      "rel_path": "regulatory/attachments/csrc_0043_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0043_att3",
+      "friendly_name": "区域性股权市场跨链数据规范",
+      "rel_path": "regulatory/attachments/csrc_0043_att3.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0043_att4",
+      "friendly_name": "区域性股权市场跨链认证安全规范",
+      "rel_path": "regulatory/attachments/csrc_0043_att4.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0043_att5",
+      "friendly_name": "区域性股权市场区块链通用基础设施通讯指南",
+      "rel_path": "regulatory/attachments/csrc_0043_att5.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0045_att1",
+      "friendly_name": "上市公司监管指引第 10 号— 市值管理",
+      "rel_path": "regulatory/attachments/csrc_0045_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0045_att2",
+      "friendly_name": "起草说明",
+      "rel_path": "regulatory/attachments/csrc_0045_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0046_att1",
+      "friendly_name": "证券公司风险控制指标计算标准规定",
+      "rel_path": "regulatory/attachments/csrc_0046_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0046_att2",
+      "friendly_name": "关于修订《证券公司风险控制指标计算标准规定》的说明",
+      "rel_path": "regulatory/attachments/csrc_0046_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0047_att1",
+      "friendly_name": "证券发行人信息披露文件编码规则",
+      "rel_path": "regulatory/attachments/csrc_0047_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0048_att1",
+      "friendly_name": "证监会系统离职人员入股拟上市企业监管规定（试行）",
+      "rel_path": "regulatory/attachments/csrc_0048_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0048_att2",
+      "friendly_name": "关于《证监会系统离职人员入股拟上市企业监管规定（试行）》的起草说明",
+      "rel_path": "regulatory/attachments/csrc_0048_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0049_att1",
+      "friendly_name": "公开发行证券的公司信息披露编报规则第 4 号——保险公司信息披露特别规定（2024 年修订）",
+      "rel_path": "regulatory/attachments/csrc_0049_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0049_att2",
+      "friendly_name": "《公开发行证券的公司信息披露编报规则第 4 号——保险公司信息披露特别规定（2024 年修订）》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0049_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0050_att1",
+      "friendly_name": "上市公司董事、监事和高级管理人员所持本公司股份及其变动管理规则",
+      "rel_path": "regulatory/attachments/csrc_0050_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0050_att2",
+      "friendly_name": "《上市公司董事、监事和高级管理人员所持本公司股份及其变动管理规则》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0050_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0051_att1",
+      "friendly_name": "证券市场程序化交易管理规定（试行）",
+      "rel_path": "regulatory/attachments/csrc_0051_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0051_att2",
+      "friendly_name": "《证券市场程序化交易管理规定（试行）》起草说明",
+      "rel_path": "regulatory/attachments/csrc_0051_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0052_att1",
+      "friendly_name": "关于修订《关于加强上市证券公司监管的规定》的决定",
+      "rel_path": "regulatory/attachments/csrc_0052_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0052_att2",
+      "friendly_name": "关于修订《关于加强上市证券公司监管的规定》的说明",
+      "rel_path": "regulatory/attachments/csrc_0052_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0053_att1",
+      "friendly_name": "关于修改《科创属性评价指引（试行）》的决定",
+      "rel_path": "regulatory/attachments/csrc_0053_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0053_att2",
+      "friendly_name": "关于《关于修改〈科创属性评价指引（试行）〉的决定》的说明",
+      "rel_path": "regulatory/attachments/csrc_0053_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0054_att1",
+      "friendly_name": "关于修改《中国证监会随机抽查事项清单》的决定",
+      "rel_path": "regulatory/attachments/csrc_0054_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0054_att2",
+      "friendly_name": "关于修改《中国证监会随机抽查事项清单》的起草说明",
+      "rel_path": "regulatory/attachments/csrc_0054_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0055_att1",
+      "friendly_name": "投资研究时序数据参考模型",
+      "rel_path": "regulatory/attachments/csrc_0055_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0055_att2",
+      "friendly_name": "证券期货业基础数据元规范第1部分：基础数据元",
+      "rel_path": "regulatory/attachments/csrc_0055_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0055_att3",
+      "friendly_name": "证券期货业基础数据元规范",
+      "rel_path": "regulatory/attachments/csrc_0055_att3.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0056_att1",
+      "friendly_name": "公开募集证券投资基金证券交易费用管理规定",
+      "rel_path": "regulatory/attachments/csrc_0056_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0056_att2",
+      "friendly_name": "《公开募集证券投资基金证券交易费用管理规定》",
+      "rel_path": "regulatory/attachments/csrc_0056_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0057_att1",
+      "friendly_name": "首次公开发行股票并上市辅导监管规定",
+      "rel_path": "regulatory/attachments/csrc_0057_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0057_att2",
+      "friendly_name": "《首次公开发行股票并上市辅导监管规定》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0057_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0058_att1",
+      "friendly_name": "首发企业现场检查规定",
+      "rel_path": "regulatory/attachments/csrc_0058_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0058_att2",
+      "friendly_name": "《首发企业现场检查规定》修订说明",
+      "rel_path": "regulatory/attachments/csrc_0058_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0059_att1",
+      "friendly_name": "监管规则适用指引— 债券类第 1 号：公开发行公司债券注册工作规程",
+      "rel_path": "regulatory/attachments/csrc_0059_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0060_att1",
+      "friendly_name": "监管规则适用指引— 评估类第 2 号",
+      "rel_path": "regulatory/attachments/csrc_0060_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0060_att2",
+      "friendly_name": "关于《监管规则适用指引— 评估类第2号》的说明",
+      "rel_path": "regulatory/attachments/csrc_0060_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0061_att1",
+      "friendly_name": "监管规则适用指引— 会计类第 5 号",
+      "rel_path": "regulatory/attachments/csrc_0061_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0061_att2",
+      "friendly_name": "关于《监管规则适用指引— 会计类第 5号》的说明",
+      "rel_path": "regulatory/attachments/csrc_0061_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0062_att1",
+      "friendly_name": "关于《监管规则适用指引——机构类第4号》的说明",
+      "rel_path": "regulatory/attachments/csrc_0062_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0063_att1",
+      "friendly_name": "关于《监管规则适用指引— 法律类第 4号》的说明",
+      "rel_path": "regulatory/attachments/csrc_0063_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0064_att1",
+      "friendly_name": "《监管规则适用指引—发行类第 10 号》起草说明",
+      "rel_path": "regulatory/attachments/csrc_0064_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0065_att1",
+      "friendly_name": "监管规则适用指引— 境外发行上市类第 7号：关于境内企业由境外场外市场转至境外证券交易所实现境外发行上市的监管要求",
+      "rel_path": "regulatory/attachments/csrc_0065_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0066_att1",
+      "friendly_name": "关于《监管规则适用指引— 北京证券交易所类第 1 号：全国股转系统挂牌公司申请在北京证券交易所发行上市辅导监管指引》的起草说明",
+      "rel_path": "regulatory/attachments/csrc_0066_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0067_att1",
+      "friendly_name": "关于《监管规则适用指引—机构类第 3 号》的说明",
+      "rel_path": "regulatory/attachments/csrc_0067_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0068_att1",
+      "friendly_name": "监管规则适用指引— 会计类第 4 号",
+      "rel_path": "regulatory/attachments/csrc_0068_att1.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0068_att2",
+      "friendly_name": "关于《监管规则适用指引— 会计类第 4号》的说明",
+      "rel_path": "regulatory/attachments/csrc_0068_att2.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0001",
+      "friendly_name": "【第233号令】《私募投资基金信息披露监督管理办法》",
+      "rel_path": "regulatory/html/csrc_0001.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0002",
+      "friendly_name": "【第232号令】《关于修改〈证券期货行政执法当事人承诺制度实施规定〉的决定》",
+      "rel_path": "regulatory/html/csrc_0002.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0017",
+      "friendly_name": "【第2号公告】《证券期货业信息系统密码技术应用指引》《证券期货业信息系统分类与代码》",
+      "rel_path": "regulatory/html/csrc_0017.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0018",
+      "friendly_name": "【第22号公告】《公开募集证券投资基金销售费用管理规定》",
+      "rel_path": "regulatory/html/csrc_0018.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0019",
+      "friendly_name": "【第21号公告】《中国证监会关于推出商业不动产投资信托基金试点的公告》",
+      "rel_path": "regulatory/html/csrc_0019.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0020",
+      "friendly_name": "【第23号公告】《证券期货违法行为“吹哨人”奖励工作规定》",
+      "rel_path": "regulatory/html/csrc_0020.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0021",
+      "friendly_name": "【第20号公告】《证券结算风险基金管理办法》",
+      "rel_path": "regulatory/html/csrc_0021.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0022",
+      "friendly_name": "【第19号公告】《关于加强资本市场中小投资者保护的若干意见》",
+      "rel_path": "regulatory/html/csrc_0022.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0023",
+      "friendly_name": "【第18号公告】《上市公司治理准则》",
+      "rel_path": "regulatory/html/csrc_0023.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0024",
+      "friendly_name": "【第17号公告】",
+      "rel_path": "regulatory/html/csrc_0024.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0025",
+      "friendly_name": "【第16号公告】《期货公司分类评价规定》",
+      "rel_path": "regulatory/html/csrc_0025.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0026",
+      "friendly_name": "【第15号公告】《期货公司互联网营销管理暂行规定》",
+      "rel_path": "regulatory/html/csrc_0026.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0031",
+      "friendly_name": "【第10号公告】《上市公司募集资金监管规则》",
+      "rel_path": "regulatory/html/csrc_0031.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0032",
+      "friendly_name": "【第9号公告】《证券期货业统计指标标准指引（2025年修订）》",
+      "rel_path": "regulatory/html/csrc_0032.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0033",
+      "friendly_name": "【第8号公告】《上市公司信息披露暂缓与豁免管理规定》",
+      "rel_path": "regulatory/html/csrc_0033.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0034",
+      "friendly_name": "【第7号公告】《上市公司股东会规则》",
+      "rel_path": "regulatory/html/csrc_0034.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0035",
+      "friendly_name": "【第6号公告】《上市公司章程指引》",
+      "rel_path": "regulatory/html/csrc_0035.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0036",
+      "friendly_name": "【第5号公告】《关于修改、废止部分证券期货规范性文件的决定》",
+      "rel_path": "regulatory/html/csrc_0036.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0037",
+      "friendly_name": "【第4号公告】《公开发行证券的公司信息披露内容与格式准则第3号——半年度报告的内容与格式》",
+      "rel_path": "regulatory/html/csrc_0037.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0038",
+      "friendly_name": "【第3号公告】《公开发行证券的公司信息披露内容与格式准则第2号——年度报告的内容与格式》",
+      "rel_path": "regulatory/html/csrc_0038.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0039",
+      "friendly_name": "【第2号公告】《上市公司监管指引第11号——上市公司破产重整相关事项》",
+      "rel_path": "regulatory/html/csrc_0039.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0040",
+      "friendly_name": "【第1号公告】《证券期货法律适用意见第19号——<上市公司收购管理办法>第十三条、第十四条的适用意见》",
+      "rel_path": "regulatory/html/csrc_0040.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0041",
+      "friendly_name": "【第18号公告】",
+      "rel_path": "regulatory/html/csrc_0041.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0042",
+      "friendly_name": "【第17号公告】《香港互认基金管理规定》",
+      "rel_path": "regulatory/html/csrc_0042.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0043",
+      "friendly_name": "【第16号公告】",
+      "rel_path": "regulatory/html/csrc_0043.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0044",
+      "friendly_name": "【第15号公告】",
+      "rel_path": "regulatory/html/csrc_0044.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0045",
+      "friendly_name": "【第14号公告】《上市公司监管指引第10号——市值管理》",
+      "rel_path": "regulatory/html/csrc_0045.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0046",
+      "friendly_name": "【第13号公告】《证券公司风险控制指标计算标准规定》",
+      "rel_path": "regulatory/html/csrc_0046.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0047",
+      "friendly_name": "【第12号公告】《证券发行人信息披露文件编码规则》",
+      "rel_path": "regulatory/html/csrc_0047.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0048",
+      "friendly_name": "【第11号公告】《证监会系统离职人员入股拟上市企业监管规定（试行）》",
+      "rel_path": "regulatory/html/csrc_0048.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0049",
+      "friendly_name": "【第10号公告】《公开发行证券的公司信息披露编报规则第4号——保险公司信息披露特别规定（2024年修订）》",
+      "rel_path": "regulatory/html/csrc_0049.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0050",
+      "friendly_name": "【第9号公告】《上市公司董事、监事和高级管理人员所持本公司股份及其变动管理规则》",
+      "rel_path": "regulatory/html/csrc_0050.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0051",
+      "friendly_name": "【第8号公告】《证券市场程序化交易管理规定（试行）》",
+      "rel_path": "regulatory/html/csrc_0051.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0052",
+      "friendly_name": "【第7号公告】《关于修订〈关于加强上市证券公司监管的规定〉的决定》",
+      "rel_path": "regulatory/html/csrc_0052.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0053",
+      "friendly_name": "【第6号公告】《关于修改〈科创属性评价指引（试行）〉的决定》",
+      "rel_path": "regulatory/html/csrc_0053.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0054",
+      "friendly_name": "【第5号公告】《关于修改〈中国证监会随机抽查事项清单〉的决定》",
+      "rel_path": "regulatory/html/csrc_0054.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0055",
+      "friendly_name": "【第4号公告】《投资研究时序数据参考模型》等3项金融行业标准",
+      "rel_path": "regulatory/html/csrc_0055.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0056",
+      "friendly_name": "【第3号公告】《公开募集证券投资基金证券交易费用管理规定》",
+      "rel_path": "regulatory/html/csrc_0056.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0057",
+      "friendly_name": "【第2号公告】《首次公开发行股票并上市辅导监管规定》",
+      "rel_path": "regulatory/html/csrc_0057.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0058",
+      "friendly_name": "【第1号公告】《首发企业现场检查规定》",
+      "rel_path": "regulatory/html/csrc_0058.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0059",
+      "friendly_name": "监管规则适用指引——债券类第1号：公开发行公司债券注册工作规程",
+      "rel_path": "regulatory/html/csrc_0059.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0060",
+      "friendly_name": "监管规则适用指引——评估类第2号",
+      "rel_path": "regulatory/html/csrc_0060.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0061",
+      "friendly_name": "监管规则适用指引——会计类第5号",
+      "rel_path": "regulatory/html/csrc_0061.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0062",
+      "friendly_name": "监管规则适用指引——机构类第4号",
+      "rel_path": "regulatory/html/csrc_0062.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0063",
+      "friendly_name": "监管规则适用指引——法律类第4号",
+      "rel_path": "regulatory/html/csrc_0063.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0064",
+      "friendly_name": "监管规则适用指引——发行类第10号",
+      "rel_path": "regulatory/html/csrc_0064.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0065",
+      "friendly_name": "监管规则适用指引——境外发行上市类第7号：关于境内企业由境外场外市场转至境外证券交易所实现境外发行上市的监管要求",
+      "rel_path": "regulatory/html/csrc_0065.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0066",
+      "friendly_name": "监管规则适用指引——北京证券交易所类第1号：全国股转系统挂牌公司申请在北京证券交易所发行上市辅导监管指引",
+      "rel_path": "regulatory/html/csrc_0066.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0067",
+      "friendly_name": "监管规则适用指引——机构类第3号",
+      "rel_path": "regulatory/html/csrc_0067.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0068",
+      "friendly_name": "监管规则适用指引——会计类第4号",
+      "rel_path": "regulatory/html/csrc_0068.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0069",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0069.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0070",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0070.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0071",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0071.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0072",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0072.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0073",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0073.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0074",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0074.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0075",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0075.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0076",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0076.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0077",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0077.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0078",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0078.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0079",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0079.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0080",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0080.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0081",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0081.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0082",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0082.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0083",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0083.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0084",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0084.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0085",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0085.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0086",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0086.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0087",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0087.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0088",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0088.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0089",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0089.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0090",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0090.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0091",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0091.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0092",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0092.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0093",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0093.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0094",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0094.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0095",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0095.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0096",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0096.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0097",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0097.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0098",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0098.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0099",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0099.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0100",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0100.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0101",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0101.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0102",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0102.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0103",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0103.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0104",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0104.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0105",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0105.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0106",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0106.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0107",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0107.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0108",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0108.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0109",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0109.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0110",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0110.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0111",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0111.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0112",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0112.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0113",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0113.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0114",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0114.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0115",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0115.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0116",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0116.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0117",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0117.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0118",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0118.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0119",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0119.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0120",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0120.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0121",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0121.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0122",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0122.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0123",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0123.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0124",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0124.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0125",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0125.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0126",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0126.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0127",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0127.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0128",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0128.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0129",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0129.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "csrc_0130",
+      "friendly_name": "中国证券监督管理委员会行政处罚决定书",
+      "rel_path": "regulatory/html/csrc_0130.md",
+      "domain": "regulatory"
+    },
+    {
+      "doc_id": "pack2_text01",
+      "friendly_name": "以海外银保为鉴，观我国寿险发展新格局",
+      "rel_path": "research/pack2_text01.md",
+      "domain": "research"
+    },
+    {
+      "doc_id": "pack2_text02",
+      "friendly_name": "金融网络安全运营数智化 建设研究与实践",
+      "rel_path": "research/pack2_text02.md",
+      "domain": "research"
+    },
+    {
+      "doc_id": "pack2_text03",
+      "friendly_name": "证券研究报告",
+      "rel_path": "research/pack2_text03.md",
+      "domain": "research"
+    },
+    {
+      "doc_id": "pack2_text04",
+      "friendly_name": "动储产销两旺， 量利双升， 继续强推电动车行业策略",
+      "rel_path": "research/pack2_text04.md",
+      "domain": "research"
+    },
+    {
+      "doc_id": "pack2_text05",
+      "friendly_name": "品牌转型，玉汝于成",
+      "rel_path": "research/pack2_text05.md",
+      "domain": "research"
+    },
+    {
+      "doc_id": "pack2_text06",
+      "friendly_name": "大化工周报：美伊谈判推进，油价下降带动化工品价格整体回落",
+      "rel_path": "research/pack2_text06.md",
+      "domain": "research"
+    },
+    {
+      "doc_id": "pack2_text07",
+      "friendly_name": "【中泰汽车·北京车展前瞻】",
+      "rel_path": "research/pack2_text07.md",
+      "domain": "research"
+    },
+    {
+      "doc_id": "pack2_text08",
+      "friendly_name": "杠杆资金&股票型ETF分化加剧",
+      "rel_path": "research/pack2_text08.md",
+      "domain": "research"
+    },
+    {
+      "doc_id": "pack2_text09",
+      "friendly_name": "AI ASIC 领军者，迎接 ASIC 定制新纪元",
+      "rel_path": "research/pack2_text09.md",
+      "domain": "research"
+    },
+    {
+      "doc_id": "pack2_text10",
+      "friendly_name": "ROE 提升有道（一）—",
+      "rel_path": "research/pack2_text10.md",
+      "domain": "research"
+    },
+    {
+      "doc_id": "pack2_text11",
+      "friendly_name": "光模块行业延续高景气度，光纤产品量价齐升",
+      "rel_path": "research/pack2_text11.md",
+      "domain": "research"
+    },
+    {
+      "doc_id": "pack2_text12",
+      "friendly_name": "光模块设备：站在巨人的肩膀上，寻找中长期通胀方向",
+      "rel_path": "research/pack2_text12.md",
+      "domain": "research"
+    },
+    {
+      "doc_id": "pack2_text13",
+      "friendly_name": "农林牧渔",
+      "rel_path": "research/pack2_text13.md",
+      "domain": "research"
+    },
+    {
+      "doc_id": "pack2_text14",
+      "friendly_name": "“资产荒”的新叙事",
+      "rel_path": "research/pack2_text14.md",
+      "domain": "research"
+    },
+    {
+      "doc_id": "pack2_text15",
+      "friendly_name": "改革红利兑现，增量价值开启新一轮资负共振",
+      "rel_path": "research/pack2_text15.md",
+      "domain": "research"
+    },
+    {
+      "doc_id": "pack2_text16",
+      "friendly_name": "农林牧渔 | 养殖业",
+      "rel_path": "research/pack2_text16.md",
+      "domain": "research"
+    },
+    {
+      "doc_id": "pack2_text17",
+      "friendly_name": "非银金融行业深度报告",
+      "rel_path": "research/pack2_text17.md",
+      "domain": "research"
+    },
+    {
+      "doc_id": "pack2_text18",
+      "friendly_name": "大族激光（002008.SZ）",
+      "rel_path": "research/pack2_text18.md",
+      "domain": "research"
+    },
+    {
+      "doc_id": "pack2_text19",
+      "friendly_name": "远望谷（002161.SZ）",
+      "rel_path": "research/pack2_text19.md",
+      "domain": "research"
+    },
+    {
+      "doc_id": "pack2_text20",
+      "friendly_name": "“资产荒”的新叙事",
+      "rel_path": "research/pack2_text20.md",
+      "domain": "research"
+    }
+  ]
+}

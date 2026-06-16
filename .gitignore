@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+*.pdf
+*.PDF
+results/
+*.zip
+*.log
+*.jpg
+*.png
+*.jpeg
+*.gif
+*.bmp
+*.zip
+indices/heading_index.json
