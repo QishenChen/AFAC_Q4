@@ -114,6 +114,12 @@ def collect_files():
             if ftype == 'pdf':
                 pages = get_page_count(abs_path)
                 if pages and pages > PAGE_LIMIT:
+                    # Check if the merged output already exists (from a previous run)
+                    orig_base = rel_path.rsplit('.', 1)[0]
+                    merged_md = os.path.join(OUTPUT_DIR, orig_base + '.md')
+                    if os.path.exists(merged_md):
+                        # Already extracted — skip this PDF entirely
+                        continue
                     # Split this PDF into chunks
                     chunks = split_pdf(abs_path, PAGE_LIMIT)
                     if chunks:
