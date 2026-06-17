@@ -11,10 +11,27 @@ import requests
 
 from agent.question_loader import estimate_tokens
 
+# ── Load .env file ──
+def _load_dotenv(path: str = ".env"):
+    """Load key=value pairs from a .env file into os.environ (simple, no dependencies)."""
+    if not os.path.isfile(path):
+        return
+    with open(path, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            key, _, val = line.partition("=")
+            key, val = key.strip(), val.strip()
+            if key and val and key not in os.environ:
+                os.environ[key] = val
+
+_load_dotenv()
+
 # ── Default config ──
 DEFAULT_CONFIG = {
     "api_base": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-    "api_key": "sk-cd42f35c69e849aebc79e798ff2f273b",
+    "api_key": "",
     "model": "qwen-plus-latest",
     "temperature": 0.0,
     "max_tokens": 2048,
@@ -22,7 +39,7 @@ DEFAULT_CONFIG = {
 
 
 def get_llm_config():
-    """Get LLM configuration from environment or defaults."""
+    """Get LLM configuration from environment (loaded from .env or system env)."""
     return {
         "api_base": os.environ.get("LLM_API_BASE", DEFAULT_CONFIG["api_base"]),
         "api_key": os.environ.get("LLM_API_KEY", os.environ.get("OPENAI_API_KEY", DEFAULT_CONFIG["api_key"])),

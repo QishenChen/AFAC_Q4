@@ -12,3 +12,4 @@ results/
 *.bmp
 *.zip
 indices/heading_index.json
+.env
