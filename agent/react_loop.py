@@ -60,7 +60,7 @@ def observe_result(tool_name, act_result):
         return {"type": "empty", "summary": "No results returned"}
     if tool_name in ("search_headings", "search_headings_doc"):
         hr = act_result if isinstance(act_result, list) else []
-        return {"type": "headings", "count": len(hr), "results": [f"{h.get('doc','')} > {h.get('title','')}" for h in hr[:8]]}
+        return {"type": "headings", "count": len(hr), "results": [f"{h.get('doc','')} > {h.get('title','')}" for h in hr[:5]]}
     if tool_name == "get_section":
         if act_result:
             from utils.text_utils import strip_html_tags
@@ -68,14 +68,14 @@ def observe_result(tool_name, act_result):
             return {"type": "section", "found": True, "heading": act_result.get("heading", "")[:100],
                     "content_preview": strip_html_tags(act_result.get("content", ""))[:2000],
                     "table_count": len(tables_found),
-                    "tables": [format_table_for_context(t) for t in tables_found[:8]]}
+                    "tables": [format_table_for_context(t) for t in tables_found[:4]]}
         return {"type": "section", "found": False}
     if tool_name == "search_tables":
         tr = act_result if isinstance(act_result, list) else []
-        return {"type": "tables", "count": len(tr), "tables": [format_table_for_context(t) for t in tr[:8]]}
+        return {"type": "tables", "count": len(tr), "tables": [format_table_for_context(t) for t in tr[:4]]}
     if tool_name == "search_section_text":
         st = act_result if isinstance(act_result, list) else []
-        return {"type": "section_text", "count": len(st), "matches": [f"L{m.get('line_num','?')}: {m.get('text','')}" for m in st[:8]]}
+        return {"type": "section_text", "count": len(st), "matches": [f"L{m.get('line_num','?')}: {m.get('text','')}" for m in st[:5]]}
     return {"type": "raw", "preview": str(act_result)[:1000]}
 
 

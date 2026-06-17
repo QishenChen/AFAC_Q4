@@ -166,7 +166,7 @@ IMPORTANT RULES:
 - Do NOT include "judgment" unless you are confident. If unsure, just request more tools.
 - In round 6 you MUST include a judgment even if uncertain — use VAGUE if data is insufficient.
 - TRUE = data clearly supports the claim. FALSE = data clearly contradicts. VAGUE = insufficient or ambiguous.
-- After search_headings finds relevant headings, immediately call get_section to read the full text. Never judge based on heading titles alone.
+- Prefer search_headings, search_section_text, and search_tables in early rounds — they return targeted data with low token cost. Reserve get_section for later rounds (4+) when lighter tools haven't yielded enough context, as it returns full section text and many tables (high token cost). Never judge based on heading titles alone.
 - Use Chinese keywords for Chinese documents. Use | to separate multiple search terms.
 - Do NOT include any text outside the JSON."""
 

@@ -27,7 +27,7 @@ DOC_REGISTRY_PATH = os.path.join(INDICES_DIR, "doc_registry.json")
 FINANCIAL_TERMS_PATH = "config/financial_terms.json"
 
 # Minimum fuzzy match score to consider a table/heading relevant
-MIN_SCORE = 0.15
+MIN_SCORE = 0.25
 
 # Financial keywords for filtering search_by_year results
 FINANCIAL_KEYWORDS = {
