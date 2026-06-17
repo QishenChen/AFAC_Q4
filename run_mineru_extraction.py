@@ -547,6 +547,12 @@ def main():
     if not remaining:
         # Check if any split integrations are still pending
         check_and_integrate_splits(completed, failed, split_map)
+        save_state(completed, failed, pending_batches, split_map)
+        # Re-check: integration may have marked chunks done, but originals from other categories may still be pending
+        remaining = [f for f in all_files
+                     if f['rel_path'] not in completed
+                     and f['rel_path'] not in failed
+                     and f['rel_path'] not in OVER_PAGE_LIMIT]
         if not remaining:
             print("All done!")
             return
