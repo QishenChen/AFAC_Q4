@@ -79,6 +79,12 @@ def call_llm(messages: list[dict], config: dict | None = None) -> dict:
         resp.raise_for_status()
         result = resp.json()
         content = result["choices"][0]["message"]["content"]
+        # Debug: log raw LLM responses
+        import datetime
+        with open("/tmp/llm_debug.log", "a", encoding="utf-8") as df:
+            df.write(f"\n=== {datetime.datetime.now()} ===\n")
+            df.write(f"Response:\n{content}\n")
+            df.write(f"Usage: {result.get('usage', {})}\n")
         return {
             "content": content,
             "usage": result.get("usage", {}),
@@ -181,6 +187,7 @@ IMPORTANT RULES:
 2. JUDGMENT RULES:
    - TRUE = data clearly supports the claim. FALSE = data clearly contradicts. VAGUE = insufficient.
    - Do NOT judge unless confident. Round 6: you MUST judge even if uncertain, use VAGUE.
+   - Match document claims to question claims semantically, not literally.
 
 3. TOOL PREFERENCE:
    - Rounds 1–3: search_headings, search_section_text, search_tables (low cost)
@@ -252,6 +259,13 @@ def llm_think(question: dict, doc_status: dict, round_log: list[dict], round_num
         # Legacy format: {"tool": "...", "params": {...}, "reasoning": "..."}
         response["tool"] = parsed.get("tool", "done")
         response["params"] = parsed.get("params", {})
+    # Propagate judgment, evidence, and keep if the LLM provided them
+    if "judgment" in parsed:
+        response["judgment"] = parsed["judgment"]
+    if "evidence" in parsed:
+        response["evidence"] = parsed["evidence"]
+    if "keep" in parsed:
+        response["keep"] = parsed["keep"]
     return response
 
 
