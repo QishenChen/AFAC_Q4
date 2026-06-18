@@ -165,14 +165,31 @@ Format when you are CONFIDENT and ready to judge (any round):
 {{"actions": [], "keep": ["R1", "R4", "R8"], "reasoning": "brief explain", "judgment": "TRUE|FALSE|VAGUE", "evidence": "table ID / row / data"}}
 
 IMPORTANT RULES:
-- Do NOT include "judgment" unless you are confident. If unsure, just request more tools.
-- In round 6 you MUST include a judgment even if uncertain — use VAGUE if data is insufficient.
-- TRUE = data clearly supports the claim. FALSE = data clearly contradicts. VAGUE = insufficient or ambiguous.
-- Search results are labeled R1, R2, R3... in observations. Use "keep": ["R1", "R3"] to retain only relevant clues. Irrelevant ones will be removed from future context.
-- Prefer search_headings, search_section_text, and search_tables in early rounds — they return targeted data with low token cost. Reserve get_section for later rounds (4+) when lighter tools haven't yielded enough context, as it returns full section text and many tables (high token cost). Never judge based on heading titles alone.
-- ALL numerical calculations MUST use the compute() tool — pass the full expression with units. Never calculate percentages, sums, or ratios yourself. Trust compute() results unconditionally.
-- Use Chinese keywords for Chinese documents. Use | to separate multiple search terms.
-- Do NOT include any text outside the JSON."""
+
+1. MANDATORY TOOLS:
+   - EVERY observation must include "keep" listing relevant labels (e.g. "keep": ["R1","R3"]).
+     Irrelevant clues clutter context and cause wrong answers.
+   - EVERY numerical calculation MUST call compute(). Never do arithmetic in your head —
+     you WILL make errors with unit conversion, decimal placement, and percentages.
+   - Examples that REQUIRE compute():
+     * Growth rate: compute("(new - old) / old", output_unit="%")
+     * Unit conversion: compute("133,219,982千元", output_unit="亿")
+     * Sum comparison: compute("A + B")
+     * Ratio: compute("part / whole", output_unit="%")
+     * Cross-unit compare: compute("1,050,187百万 > 423,701,834千元 * 2")
+
+2. JUDGMENT RULES:
+   - TRUE = data clearly supports the claim. FALSE = data clearly contradicts. VAGUE = insufficient.
+   - Do NOT judge unless confident. Round 6: you MUST judge even if uncertain, use VAGUE.
+
+3. TOOL PREFERENCE:
+   - Rounds 1–3: search_headings, search_section_text, search_tables (low cost)
+   - Rounds 4+: get_section allowed (high cost, use only when needed)
+   - Never judge based on heading titles alone — always read the actual data.
+
+4. FORMAT:
+   - Use Chinese keywords. Use | to separate.
+   - Do NOT include any text outside the JSON."""
 
     user = f"""Question: {question.get('question', '')}
 

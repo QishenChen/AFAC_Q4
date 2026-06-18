@@ -112,8 +112,10 @@ def _format_result(value, output_unit):
         return {"result": round(value, 6) if isinstance(value, float) else value}
 
     unit_map = {
-        '万亿': 1_000_000_000_000, '亿': 100_000_000, '千万': 10_000_000,
-        '百万': 1_000_000, '万': 10_000, '千': 1_000, '百': 100,
+        '万亿': 1_000_000_000_000, '亿': 100_000_000, '亿元': 100_000_000,
+        '千万': 10_000_000, '百万': 1_000_000, '百万元': 1_000_000,
+        '万': 10_000, '万元': 10_000,
+        '千': 1_000, '千元': 1_000, '百': 100,
         '%': 100,  # multiply by 100 for percentage display
     }
     multiplier = unit_map.get(output_unit)
