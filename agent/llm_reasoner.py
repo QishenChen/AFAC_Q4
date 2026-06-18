@@ -130,7 +130,7 @@ Available tools (use | to separate multiple keywords, e.g. "利润|资产|负债
    • keyword search: set query (use | for multi-keyword), optional doc/domain
    • by ID: set table_id="T_02828"
    • under heading: set doc + heading_title
-3. search_section_text(doc, query) — Search RAW TEXT (not tables) in a doc. doc is REQUIRED.
+3. search_text(doc, query) — Search RAW TEXT (not tables) in a doc. doc is REQUIRED.
 4. get_section(doc, heading_path) — Get FULL text + ALL tables under a heading.
 5. compute(expression) — Evaluate arithmetic with unit-aware numbers. Supports 万亿/亿/万/千/百/元/M/K/B/%.
    The result is ground truth — do NOT question or re-compute it.
@@ -165,7 +165,7 @@ def build_think_prompt(question: dict, doc_status: dict, round_log: list[dict], 
 You must respond with a JSON object. You can request MULTIPLE tools in one round — they will run in parallel.
 
 Format when you need more data:
-{{"actions": [{{"tool": "search_tables", "params": {{"doc": "text10", "query": "力诺投资|资产负债率"}}}}, {{"tool": "search_section_text", "params": {{"doc": "text10", "query": "力诺投资|资产负债率"}}}}], "keep": ["R1", "R3"], "reasoning": "I need both table data and raw text from text10. R2 is irrelevant."}}
+{{"actions": [{{"tool": "search_tables", "params": {{"doc": "text10", "query": "力诺投资|资产负债率"}}}}, {{"tool": "search_text", "params": {{"doc": "text10", "query": "力诺投资|资产负债率"}}}}], "keep": ["R1", "R3"], "reasoning": "I need both table data and raw text from text10. R2 is irrelevant."}}
 
 Format when you are CONFIDENT and ready to judge (any round):
 {{"actions": [], "keep": ["R1", "R4", "R8"], "reasoning": "brief explain", "judgment": "TRUE|FALSE|VAGUE", "evidence": "table ID / row / data"}}
@@ -190,7 +190,7 @@ IMPORTANT RULES:
    - Match document claims to question claims semantically, not literally.
 
 3. TOOL PREFERENCE:
-   - Rounds 1–3: search_headings, search_section_text, search_tables (low cost)
+   - Rounds 1–3: search_headings, search_text, search_tables (low cost)
    - Rounds 4+: get_section allowed (high cost, use only when needed)
    - Never judge based on heading titles alone — always read the actual data.
 

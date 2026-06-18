@@ -104,7 +104,7 @@ def observe_result(tool_name, act_result, label_counter=None):
                 "name": t.get("name", ""), "text": format_table_for_context(t),
             })
         return {"type": "tables", "count": len(tr), "tables": items}
-    if tool_name == "search_section_text":
+    if tool_name == "search_text":
         st = act_result if isinstance(act_result, list) else []
         items = []
         for m in st[:5]:
@@ -144,7 +144,7 @@ def _gather_data(tool_name, act_result, gathered_tables, gathered_sections, doc_
             if i < len(tbl_entries):
                 t["__label__"] = tbl_entries[i].get("label", "")
         gathered_tables.extend(tr)
-    elif tool_name == "search_section_text" and act_result:
+    elif tool_name == "search_text" and act_result:
         available = [k for k, v in doc_status.items() if v.get("available")]
         obs_data = obs_result or {}
         matches = obs_data.get("matches", [])

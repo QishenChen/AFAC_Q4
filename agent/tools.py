@@ -193,10 +193,10 @@ TOOLS = {
         ),
     },
     # ── Raw text search ──
-    "search_section_text": {
-        "name": "search_section_text",
-        "desc": "Search RAW TEXT (not tables) in a document. Finds clauses, disclosures, narrative content. doc is REQUIRED.",
-        "params": ["doc: str", "query: str", "max_results: int=8"],
+    "search_text": {
+        "name": "search_text",
+        "desc": "Search RAW TEXT (not tables) in a document. Split query into individual terms with | (e.g. '净利润|下滑|2025', not '净利润下滑'). doc is REQUIRED.",
+        "params": ["doc: str", "query: str — use | to split terms", "max_results: int=8"],
         "fn": lambda doc, query, max_results=8: get_retriever().search_section_text(doc, query, max_results=max_results),
     },
     # ── Full section content + tables ──
