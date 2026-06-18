@@ -31,6 +31,13 @@ def format_table_for_context(table: dict) -> str:
     return "\n".join(lines)
 
 
+def _make_label(label_counter):
+    """Generate next label R1, R2, R3..."""
+    lbl = f"R{label_counter[0]}"
+    label_counter[0] += 1
+    return lbl
+
+
 def build_single_option_context(question, option_key, option_text, gathered_tables, gathered_sections, doc_status):
     parts = []
     parts.append(f"问题: {question.get('question', '')}")
@@ -55,27 +62,58 @@ def build_single_option_context(question, option_key, option_text, gathered_tabl
     return "\n".join(parts)
 
 
-def observe_result(tool_name, act_result):
+def observe_result(tool_name, act_result, label_counter=None):
+    if label_counter is None:
+        label_counter = [1]
     if not act_result:
         return {"type": "empty", "summary": "No results returned"}
     if tool_name in ("search_headings", "search_headings_doc"):
         hr = act_result if isinstance(act_result, list) else []
-        return {"type": "headings", "count": len(hr), "results": [f"{h.get('doc','')} > {h.get('title','')}" for h in hr[:5]]}
+        items = []
+        for h in hr[:5]:
+            lbl = _make_label(label_counter)
+            items.append({
+                "label": lbl,
+                "heading": h.get("title", ""),
+                "doc": h.get("doc", ""),
+                "path": " > ".join(h.get("path", [])),
+            })
+        return {"type": "headings", "count": len(hr), "results": items}
     if tool_name == "get_section":
         if act_result:
             from utils.text_utils import strip_html_tags
             tables_found = act_result.get("tables", [])
+            tbl_items = []
+            for t in tables_found[:4]:
+                lbl = _make_label(label_counter)
+                tbl_items.append({
+                    "label": lbl, "table_id": t.get("table_id", ""),
+                    "name": t.get("name", ""), "text": format_table_for_context(t),
+                })
             return {"type": "section", "found": True, "heading": act_result.get("heading", "")[:100],
                     "content_preview": strip_html_tags(act_result.get("content", ""))[:2000],
-                    "table_count": len(tables_found),
-                    "tables": [format_table_for_context(t) for t in tables_found[:4]]}
+                    "table_count": len(tables_found), "tables": tbl_items}
         return {"type": "section", "found": False}
     if tool_name == "search_tables":
         tr = act_result if isinstance(act_result, list) else []
-        return {"type": "tables", "count": len(tr), "tables": [format_table_for_context(t) for t in tr[:4]]}
+        items = []
+        for t in tr[:4]:
+            lbl = _make_label(label_counter)
+            items.append({
+                "label": lbl, "table_id": t.get("table_id", ""),
+                "name": t.get("name", ""), "text": format_table_for_context(t),
+            })
+        return {"type": "tables", "count": len(tr), "tables": items}
     if tool_name == "search_section_text":
         st = act_result if isinstance(act_result, list) else []
-        return {"type": "section_text", "count": len(st), "matches": [f"L{m.get('line_num','?')}: {m.get('text','')}" for m in st[:5]]}
+        items = []
+        for m in st[:5]:
+            lbl = _make_label(label_counter)
+            items.append({
+                "label": lbl, "line": m.get("line_num", "?"),
+                "text": m.get("text", ""),
+            })
+        return {"type": "section_text", "count": len(st), "matches": items}
     if tool_name == "compute":
         res = act_result.get("result") if isinstance(act_result, dict) else act_result
         err = act_result.get("error") if isinstance(act_result, dict) else None
@@ -85,23 +123,69 @@ def observe_result(tool_name, act_result):
     return {"type": "raw", "preview": str(act_result)[:1000]}
 
 
-def _gather_data(tool_name, act_result, gathered_tables, gathered_sections, doc_status):
-    """Collect data from tool results into gathered_tables/sections."""
+def _gather_data(tool_name, act_result, gathered_tables, gathered_sections, doc_status, obs_result=None):
+    """Collect data from tool results into gathered_tables/sections. Attach labels for pruning."""
+    label_map = {}
+    if obs_result:
+        # Build label→item mapping from the observation for later pruning
+        for key, lst in [("tables", gathered_tables), ("headings", None)]:
+            pass  # handled per-tool below
+
     if tool_name == "get_section" and act_result:
         gathered_sections.append(act_result)
         for t in act_result.get("tables", []):
             gathered_tables.append(t)
     elif tool_name == "search_tables":
         tr = act_result if isinstance(act_result, list) else []
+        # Attach labels to gathered tables so _prune_by_keep can find them
+        obs_data = obs_result or {}
+        tbl_entries = obs_data.get("tables", [])
+        for i, t in enumerate(tr):
+            if i < len(tbl_entries):
+                t["__label__"] = tbl_entries[i].get("label", "")
         gathered_tables.extend(tr)
     elif tool_name == "search_section_text" and act_result:
         available = [k for k, v in doc_status.items() if v.get("available")]
-        for match in (act_result if isinstance(act_result, list) else []):
+        obs_data = obs_result or {}
+        matches = obs_data.get("matches", [])
+        for i, match in enumerate(act_result if isinstance(act_result, list) else []):
+            lbl = matches[i].get("label", "") if i < len(matches) else ""
             gathered_sections.append({
                 "heading": f"文本匹配 L{match.get('line_num', '?')}",
                 "doc": doc_status.get(available[0], {}).get("rel_path", "") if available else "",
                 "content": match.get("text", ""),
+                "__label__": lbl,
             })
+
+
+def _prune_by_keep(keep_labels, gathered_tables, gathered_sections, round_log):
+    """Remove items not in keep_labels from gathered context and round_log observations."""
+    if not keep_labels:
+        return
+    keep = set(keep_labels)
+    # Prune gathered_tables
+    gathered_tables[:] = [t for t in gathered_tables if t.get("__label__") in keep]
+    # Prune gathered_sections
+    gathered_sections[:] = [s for s in gathered_sections if s.get("__label__") in keep]
+    # Prune round_log OBSERVE entries
+    for entry in round_log:
+        if entry.get("phase") != "OBSERVE" or not entry.get("data"):
+            continue
+        data = entry["data"]
+        for result_group in data.get("results", []):
+            for tool_name, obs in result_group.items():
+                # Filter tables
+                if "tables" in obs:
+                    obs["tables"] = [t for t in obs["tables"] if t.get("label") in keep]
+                    obs["table_count"] = len(obs.get("tables", []))
+                # Filter headings
+                if "results" in obs and obs.get("type") == "headings":
+                    obs["results"] = [h for h in obs["results"] if h.get("label") in keep]
+                    obs["count"] = len(obs.get("results", []))
+                # Filter section_text matches
+                if "matches" in obs:
+                    obs["matches"] = [m for m in obs["matches"] if m.get("label") in keep]
+                    obs["count"] = len(obs.get("matches", []))
 
 
 def _parse_multi_actions(plan, round_log, rnd):
@@ -126,6 +210,7 @@ def react_solve_one_option(question, option_key, option_text, doc_status, config
     round_log = []
     gathered_tables = []
     gathered_sections = []
+    label_counter = [1]  # mutable counter for global R1, R2, ...
 
     # For T/F questions, include the parent question statement so LLM knows what to evaluate
     parent_question = question.get("question", "")
@@ -161,6 +246,11 @@ def react_solve_one_option(question, option_key, option_text, doc_status, config
         prompt_tokens += llm_usage.get("prompt_tokens", 0)
         completion_tokens += llm_usage.get("completion_tokens", 0)
         round_log.append({"round": rnd, "phase": "THINK", "text": think_text})
+
+        # Prune irrelevant clues before executing actions
+        keep_labels = plan.get("keep")
+        if keep_labels:
+            _prune_by_keep(keep_labels, gathered_tables, gathered_sections, round_log)
 
         actions = _parse_multi_actions(plan, round_log, rnd)
         if not actions:
@@ -203,8 +293,8 @@ def react_solve_one_option(question, option_key, option_text, doc_status, config
             result = execute_tool(tool_name, **params)
             act_result = result.get("result", {})
 
-            _gather_data(tool_name, act_result, gathered_tables, gathered_sections, doc_status)
-            obs = observe_result(tool_name, act_result)
+            obs = observe_result(tool_name, act_result, label_counter)
+            _gather_data(tool_name, act_result, gathered_tables, gathered_sections, doc_status, obs_result=obs)
             all_obs.append({f"tool_{tool_name}": obs})
 
         merged_obs = {"type": "multi_action", "count": len(all_obs), "results": all_obs}

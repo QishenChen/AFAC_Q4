@@ -159,15 +159,16 @@ def build_think_prompt(question: dict, doc_status: dict, round_log: list[dict], 
 You must respond with a JSON object. You can request MULTIPLE tools in one round — they will run in parallel.
 
 Format when you need more data:
-{{"actions": [{{"tool": "search_tables", "params": {{"doc": "text10", "query": "力诺投资|资产负债率"}}}}, {{"tool": "search_section_text", "params": {{"doc": "text10", "query": "力诺投资|资产负债率"}}}}], "reasoning": "I need both table data and raw text from text10"}}
+{{"actions": [{{"tool": "search_tables", "params": {{"doc": "text10", "query": "力诺投资|资产负债率"}}}}, {{"tool": "search_section_text", "params": {{"doc": "text10", "query": "力诺投资|资产负债率"}}}}], "keep": ["R1", "R3"], "reasoning": "I need both table data and raw text from text10. R2 is irrelevant."}}
 
 Format when you are CONFIDENT and ready to judge (any round):
-{{"actions": [], "reasoning": "brief explain", "judgment": "TRUE|FALSE|VAGUE", "evidence": "table ID / row / data"}}
+{{"actions": [], "keep": ["R1", "R4", "R8"], "reasoning": "brief explain", "judgment": "TRUE|FALSE|VAGUE", "evidence": "table ID / row / data"}}
 
 IMPORTANT RULES:
 - Do NOT include "judgment" unless you are confident. If unsure, just request more tools.
 - In round 6 you MUST include a judgment even if uncertain — use VAGUE if data is insufficient.
 - TRUE = data clearly supports the claim. FALSE = data clearly contradicts. VAGUE = insufficient or ambiguous.
+- Search results are labeled R1, R2, R3... in observations. Use "keep": ["R1", "R3"] to retain only relevant clues. Irrelevant ones will be removed from future context.
 - Prefer search_headings, search_section_text, and search_tables in early rounds — they return targeted data with low token cost. Reserve get_section for later rounds (4+) when lighter tools haven't yielded enough context, as it returns full section text and many tables (high token cost). Never judge based on heading titles alone.
 - ALL numerical calculations MUST use the compute() tool — pass the full expression with units. Never calculate percentages, sums, or ratios yourself. Trust compute() results unconditionally.
 - Use Chinese keywords for Chinese documents. Use | to separate multiple search terms.
