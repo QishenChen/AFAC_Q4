@@ -57,6 +57,24 @@ def _multi_fuzzy_match(query: str, target: str) -> float:
     return max(fuzzy_match(t, target) for t in terms)
 
 
+def _multi_fuzzy_match_and(query: str, target: str) -> float:
+    """
+    Geometric mean of individual term scores — requires ALL terms present (AND logic).
+    Returns 0 if any term scores 0.
+    """
+    terms = _split_pipe_query(query)
+    if len(terms) <= 1:
+        return fuzzy_match(query, target)
+    scores = [fuzzy_match(t, target) for t in terms]
+    # Any zero → result is zero
+    if any(s == 0 for s in scores):
+        return 0.0
+    prod = 1.0
+    for s in scores:
+        prod *= s
+    return prod ** (1.0 / len(scores))
+
+
 FINANCIAL_KW_PATTERN = re.compile(
     "|".join(re.escape(kw) for kw in FINANCIAL_KEYWORDS)
 )
@@ -220,13 +238,16 @@ class Retriever:
         with open(filepath, "r", encoding="utf-8") as f:
             content = f.read()
         clean = strip_html_tags(content)
-        lines = [l.strip() for l in clean.split("\n") if l.strip()]
+        raw_lines = clean.split("\n")
         matches = []
-        for i, line in enumerate(lines):
-            if _multi_fuzzy_match(query, line) >= MIN_SCORE:
+        for i, line in enumerate(raw_lines):
+            stripped = line.strip()
+            if not stripped:
+                continue
+            if _multi_fuzzy_match_and(query, stripped) >= MIN_SCORE:
                 start = max(0, i - 2)
-                end = min(len(lines), i + 3)
-                ctx = "\n".join(lines[start:end])
+                end = min(len(raw_lines), i + 3)
+                ctx = "\n".join(rl.strip() for rl in raw_lines[start:end] if rl.strip())
                 matches.append({"line_num": i, "text": ctx[:1200]})
         return matches[:max_results]
 
