@@ -126,7 +126,9 @@ Available tools (use | to separate multiple keywords, e.g. "利润|资产|负债
    • under heading: set doc + heading_title
 3. search_section_text(doc, query) — Search RAW TEXT (not tables) in a doc. doc is REQUIRED.
 4. get_section(doc, heading_path) — Get FULL text + ALL tables under a heading.
-5. get_doc_info(rel_path) — Get document metadata.
+5. compute(expression) — Evaluate arithmetic with unit-aware numbers. Supports 万亿/亿/万/千/百/元/M/K/B/%.
+   The result is ground truth — do NOT question or re-compute it.
+6. get_doc_info(rel_path) — Get document metadata.
 """
 
 
@@ -167,6 +169,7 @@ IMPORTANT RULES:
 - In round 6 you MUST include a judgment even if uncertain — use VAGUE if data is insufficient.
 - TRUE = data clearly supports the claim. FALSE = data clearly contradicts. VAGUE = insufficient or ambiguous.
 - Prefer search_headings, search_section_text, and search_tables in early rounds — they return targeted data with low token cost. Reserve get_section for later rounds (4+) when lighter tools haven't yielded enough context, as it returns full section text and many tables (high token cost). Never judge based on heading titles alone.
+- ALL numerical calculations MUST use the compute() tool — pass the full expression with units. Never calculate percentages, sums, or ratios yourself. Trust compute() results unconditionally.
 - Use Chinese keywords for Chinese documents. Use | to separate multiple search terms.
 - Do NOT include any text outside the JSON."""
 

@@ -76,6 +76,12 @@ def observe_result(tool_name, act_result):
     if tool_name == "search_section_text":
         st = act_result if isinstance(act_result, list) else []
         return {"type": "section_text", "count": len(st), "matches": [f"L{m.get('line_num','?')}: {m.get('text','')}" for m in st[:5]]}
+    if tool_name == "compute":
+        res = act_result.get("result") if isinstance(act_result, dict) else act_result
+        err = act_result.get("error") if isinstance(act_result, dict) else None
+        if err:
+            return {"type": "compute_error", "error": err}
+        return {"type": "compute", "result": res}
     return {"type": "raw", "preview": str(act_result)[:1000]}
 
 
