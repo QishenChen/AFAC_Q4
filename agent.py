@@ -31,6 +31,8 @@ def main():
                         help="Use LLM for final reasoning (default: True)")
     parser.add_argument("--no-llm", action="store_false", dest="llm",
                         help="Skip LLM reasoning, just dump context")
+    parser.add_argument("--batch", action="store_true", default=False,
+                        help="Use batch evaluation (shared retrieval + simultaneous judgment)")
     args = parser.parse_args()
 
     # Determine input files
@@ -72,7 +74,7 @@ def main():
             print(f"  Q: {q['question'][:80]}...")
 
             start_time = time.time()
-            result = react_solve_one(q)
+            result = react_solve_one(q, batch=args.batch)
             elapsed = time.time() - start_time
 
             # Derive answer string from options_detail

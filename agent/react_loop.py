@@ -384,7 +384,58 @@ def _solve_tf_question(question, doc_status, config):
     }
 
 
-def react_solve_one(question, config=None):
+def _solve_batch_options(question, doc_status, config):
+    """
+    Batch evaluation: one shared retrieval loop gathering context for ALL options,
+    then simultaneous judgment via reason_on_context.
+    """
+    qid = question.get("qid", "")
+    domain = question.get("domain", "")
+    question_text = question.get("question", "")
+    options = question.get("options", {})
+
+    # Build a question that presents ALL options at once
+    options_text = "\n".join([f"  {k}: {v}" for k, v in sorted(options.items())])
+    batch_question = {
+        "qid": qid, "domain": domain,
+        "question": f"{question_text}\n\nAll options to evaluate:\n{options_text}",
+        "options": {"all": f"Evaluate all {len(options)} options simultaneously"},
+        "doc_ids": question.get("doc_ids", []),
+    }
+    opt_result = react_solve_one_option(batch_question, "all", "Evaluate all options", doc_status, config)
+
+    total_prompt = opt_result["token_usage"]["prompt_tokens"]
+    total_completion = opt_result["token_usage"]["completion_tokens"]
+    gathered_tables = []  # Not accessible from react_solve_one_option directly
+    gathered_sections = []
+
+    # Now do the simultaneous judgment using reason_on_context
+    # We need to rebuild the context from the gathered data
+    context = build_single_option_context(question, "ALL", "All options", gathered_tables, gathered_sections, doc_status)
+    llm_reasoning = reason_on_context(context, question, config)
+    total_prompt += llm_reasoning.get("llm_prompt_tokens", 0)
+    total_completion += llm_reasoning.get("llm_completion_tokens", 0)
+    options_detail = llm_reasoning.get("options_detail", {})
+
+    # Fill in any missing options with VAGUE
+    for key in sorted(options.keys()):
+        if key not in options_detail:
+            options_detail[key] = {"judgment": "VAGUE", "reason": "No judgment returned", "evidence": ""}
+
+    all_logs = [f"-- Batch ({opt_result['rounds']} rounds, {opt_result['token_usage']['total']} tokens) --"]
+    all_logs.extend(opt_result["log_summary"])
+    all_logs.append(f"-- Batch judgment ({total_prompt} prompt, {total_completion} completion) --")
+
+    judgments = [v["judgment"] for v in options_detail.values()]
+    status = "VAGUE_ALL" if all(j == "VAGUE" for j in judgments) else ("PARTIAL" if "VAGUE" in judgments else "RESOLVED")
+
+    return {"qid": qid, "domain": domain, "question": question_text, "status": status,
+            "answer_format": question.get("answer_format", ""), "options_detail": options_detail,
+            "token_usage": {"prompt_tokens": total_prompt, "completion_tokens": total_completion, "total": total_prompt + total_completion},
+            "llm_model": config["model"], "rounds": "batch", "log_summary": all_logs, "options_processed": len(options)}
+
+
+def react_solve_one(question, config=None, batch=False):
     qid = question.get("qid", "")
     question_text = question.get("question", "")
     options = question.get("options", {})
@@ -403,6 +454,10 @@ def react_solve_one(question, config=None):
     # TF questions: single loop evaluating the statement → derive opposite A/B
     if question.get("answer_format") == "tf":
         return _solve_tf_question(question, doc_status, config)
+
+    # Batch mode: shared retrieval + simultaneous judgment
+    if batch:
+        return _solve_batch_options(question, doc_status, config)
 
     options_detail = {}
     total_prompt = 0
