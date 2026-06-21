@@ -10,8 +10,8 @@ import argparse, json, os, sys, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from agent.question_loader import load_questions, check_doc_availability
-from agent.llm_reasoner import get_llm_config, llm_think, reason_on_context, build_think_prompt
-from agent.tools import execute_tool, build_tools_prompt
+from agent.llm_reasoner import get_llm_config, llm_think
+from agent.tools import execute_tool
 from agent.context._common import (
     MAX_ROUNDS, BATCH_MAX_ROUNDS,
     build_single_option_context, observe_result, _gather_data,
@@ -80,12 +80,13 @@ def debug_one(question, config=None, no_llm=False, mode="batch", max_rounds=None
         print("\n  All documents missing — nothing to do.")
         return
 
-    # ── Build batch question ──
+    # ── Build batch question (copy options — pruning mutates it) ──
+    original_options = dict(options)
     options_text = "\n".join([f"  {k}: {v}" for k, v in sorted(options.items())])
     batch_question = {
         "qid": qid, "domain": domain,
         "question": f"{question_text}\n\nAll options to evaluate:\n{options_text}",
-        "options": options,
+        "options": dict(options),
         "doc_ids": doc_ids,
     }
 
@@ -97,6 +98,7 @@ def debug_one(question, config=None, no_llm=False, mode="batch", max_rounds=None
     gathered_sections = []
     label_counter = [1]
     total_elapsed = 0.0
+    accumulated_judgment = {}  # {option_key: "TRUE|FALSE"}
 
     think0_text = f"[THINK 0] 检查文档: {qid}"
     round_log.append({"round": 0, "phase": "THINK", "text": think0_text})
@@ -147,7 +149,7 @@ def debug_one(question, config=None, no_llm=False, mode="batch", max_rounds=None
         think_text = f"[THINK {rnd}] {plan.get('reasoning', '')[:150]}"
         round_log.append({"round": rnd, "phase": "THINK", "text": think_text})
 
-        # ── Prune ──
+        # ── Prune irrelevant clues ──
         keep_labels = plan.get("keep") if not no_llm else None
         if keep_labels:
             before_t = len(gathered_tables)
@@ -159,21 +161,61 @@ def debug_one(question, config=None, no_llm=False, mode="batch", max_rounds=None
                 print(f"    Pruned: tables {before_t}→{after_t}, sections {before_s}→{after_s}")
             print(f"    Keep labels: {keep_labels}")
 
+        # ── Accumulate partial judgments + prune resolved options ──
+        round_judgment = plan.get("judgment")
+        if round_judgment:
+            if isinstance(round_judgment, str) and ":" in round_judgment:
+                for part in round_judgment.split("|"):
+                    if ":" in part:
+                        k, v = part.split(":", 1)
+                        accumulated_judgment[k.strip()] = v.strip()
+            elif isinstance(round_judgment, dict):
+                accumulated_judgment.update(round_judgment)
+            print(f"    Partial judgment accumulated: {accumulated_judgment}")
+
+            # Prune resolved options from batch_question
+            resolved_labels_to_remove = set()
+            for opt_key, verdict in accumulated_judgment.items():
+                if verdict in ("TRUE", "FALSE") and opt_key in batch_question.get("options", {}):
+                    del batch_question["options"][opt_key]
+                    if isinstance(keep_labels, dict) and opt_key in keep_labels:
+                        resolved_labels_to_remove.update(keep_labels[opt_key])
+                    elif isinstance(keep_labels, list):
+                        resolved_labels_to_remove.update(keep_labels)
+
+            # Prune resolved labels from gathered data
+            if resolved_labels_to_remove:
+                gathered_tables[:] = [t for t in gathered_tables if t.get("__label__") not in resolved_labels_to_remove]
+                gathered_sections[:] = [s for s in gathered_sections if s.get("__label__") not in resolved_labels_to_remove]
+                for entry in round_log:
+                    if entry.get("phase") != "OBSERVE" or not entry.get("data"):
+                        continue
+                    data = entry["data"]
+                    for result_group in data.get("results", []):
+                        for tool_name, obs in result_group.items():
+                            if "tables" in obs:
+                                obs["tables"] = [t for t in obs["tables"] if t.get("label") not in resolved_labels_to_remove]
+                            if "results" in obs and obs.get("type") == "headings":
+                                obs["results"] = [h for h in obs["results"] if h.get("label") not in resolved_labels_to_remove]
+                            if "matches" in obs:
+                                obs["matches"] = [m for m in obs["matches"] if m.get("label") not in resolved_labels_to_remove]
+
         # ── Actions ──
         actions = _parse_multi_actions(plan, round_log, rnd)
-        if not actions:
-            judgment = plan.get("judgment")
-            if judgment:
-                print(f"\n  LLM self-judged on round {rnd}: {judgment}")
-                print(f"    Evidence: {plan.get('evidence', '')[:200]}")
-                round_log.append({"round": rnd, "phase": "JUDGE", "text": f"Self-judged: {judgment}"})
-                # Save judgment for Final Judgment display
-                saved_judgment = {"judgment": judgment, "evidence": plan.get("evidence", "")}
-                break  # exit loop, go to final judgment
-            # No actions, no judgment
-            saved_judgment = {"judgment": "VAGUE", "evidence": ""}
-            print(f"\n  LLM returned no actions and no judgment — forcing context judgment")
+
+        # ── Termination: check options, not actions ──
+        if not batch_question.get("options"):
+            print(f"\n  ✓ All options resolved on round {rnd}")
+            print(f"    Final judgment: {accumulated_judgment}")
+            saved_judgment = {"judgment": accumulated_judgment, "evidence": plan.get("evidence", "")}
+            round_log.append({"round": rnd, "phase": "JUDGE", "text": f"All resolved: {accumulated_judgment}"})
             break
+
+        # LLM produced 0 actions but options remain — force another round
+        if not actions:
+            remaining = list(batch_question.get("options", {}).keys())
+            print(f"\n  ⚠ LLM returned no actions but {sorted(remaining)} remain — forcing continuation")
+            continue
 
         print(f"\n  Actions ({len(actions)}):")
         for i, action in enumerate(actions):
@@ -239,39 +281,19 @@ def debug_one(question, config=None, no_llm=False, mode="batch", max_rounds=None
         if rnd == max_rounds:
             print(f"\n  ⚠ Last round ({rnd}/{max_rounds}) — forcing judgment via reason_on_context")
 
-    # ── Final judgment ──
+    # ── Final judgment: use accumulated verdicts, unjudged → VAGUE ──
     print_header("Final Judgment")
 
-    # Use LLM self-judgment directly (same logic as batch.py)
-    judgment = saved_judgment.get("judgment", "VAGUE") if 'saved_judgment' in dir() else "VAGUE"
     evidence = saved_judgment.get("evidence", "") if 'saved_judgment' in dir() else ""
+    judgment = saved_judgment.get("judgment", {}) if 'saved_judgment' in dir() else {}
 
-    if isinstance(judgment, dict):
-        options_detail = {}
-        for key in sorted(options.keys()):
-            val = judgment.get(key, "VAGUE")
-            if isinstance(val, str):
-                options_detail[key] = {"judgment": val, "reason": "LLM self-judged", "evidence": evidence}
-            elif isinstance(val, dict):
-                options_detail[key] = val
-            else:
-                options_detail[key] = {"judgment": "VAGUE", "reason": "No judgment returned", "evidence": ""}
-    elif isinstance(judgment, str) and ":" in judgment:
-        options_detail = {}
-        parts = judgment.split("|")
-        for part in parts:
-            if ":" in part:
-                k, v = part.split(":", 1)
-                k, v = k.strip(), v.strip()
-                if k in options:
-                    options_detail[k] = {"judgment": v, "reason": "LLM self-judged", "evidence": evidence}
-        for key in sorted(options.keys()):
-            if key not in options_detail:
-                options_detail[key] = {"judgment": "VAGUE", "reason": "Not in self-judgment", "evidence": ""}
-    else:
-        options_detail = {k: {"judgment": "VAGUE", "reason": "Insufficient evidence", "evidence": evidence} for k in sorted(options.keys())}
-
-    print(f"  Using LLM self-judgment (no second LLM call)")
+    options_detail = {}
+    for key in sorted(original_options.keys()):
+        if isinstance(judgment, dict) and key in judgment:
+            verdict = judgment[key]
+            options_detail[key] = {"judgment": verdict, "reason": "LLM self-judged", "evidence": evidence}
+        else:
+            options_detail[key] = {"judgment": "VAGUE", "reason": "Not resolved during loop", "evidence": ""}
     print(f"  Tables: {len(gathered_tables)}, Sections: {len(gathered_sections)}")
 
     print(f"\n  Results:")

@@ -4,7 +4,7 @@ Shared context utilities and ReACT loop engine for all question-solving strategi
 
 import json
 from agent.tools import execute_tool
-from agent.llm_reasoner import llm_think, reason_on_context, get_llm_config
+from agent.llm_reasoner import llm_think, get_llm_config
 
 MAX_ROUNDS = 6
 BATCH_MAX_ROUNDS = 9
@@ -298,23 +298,12 @@ def run_react_loop(question, option_key, option_text, doc_status, config=None, m
                             if "matches" in obs:
                                 obs["matches"] = [m for m in obs["matches"] if m.get("label") not in resolved_labels_to_remove]
 
-        if not actions:
-            judgment = plan.get("judgment")
-            evidence = plan.get("evidence", "")
-            if judgment:
-                result_judgment = accumulated_judgment or judgment
-                return {
-                    "option": option_key, "judgment": result_judgment,
-                    "reason": plan.get("reasoning", ""), "evidence": evidence,
-                    "gathered_tables": gathered_tables, "gathered_sections": gathered_sections,
-                    "token_usage": {"prompt_tokens": prompt_tokens, "completion_tokens": completion_tokens,
-                                    "total": prompt_tokens + completion_tokens},
-                    "rounds": len([r for r in round_log if r["phase"] == "ACT"]),
-                    "log_summary": [r["text"][:150] for r in round_log],
-                }
+        # ── Termination: check options, not actions ──
+        # If ALL options resolved, terminate immediately — ignore any remaining actions
+        if not mini_question.get("options"):
             return {
-                "option": option_key, "judgment": "VAGUE",
-                "reason": "LLM provided no judgment",
+                "option": option_key, "judgment": accumulated_judgment,
+                "reason": "All options resolved via incremental judgment",
                 "evidence": plan.get("evidence", ""),
                 "gathered_tables": gathered_tables, "gathered_sections": gathered_sections,
                 "token_usage": {"prompt_tokens": prompt_tokens, "completion_tokens": completion_tokens,
@@ -322,6 +311,10 @@ def run_react_loop(question, option_key, option_text, doc_status, config=None, m
                 "rounds": len([r for r in round_log if r["phase"] == "ACT"]),
                 "log_summary": [r["text"][:150] for r in round_log],
             }
+
+        # LLM produced 0 actions but options remain — force another round
+        if not actions:
+            continue
 
         all_obs = []
         for action in actions:

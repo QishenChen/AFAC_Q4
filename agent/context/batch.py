@@ -3,7 +3,7 @@ then simultaneous judgment via reason_on_context (MCQ, max 9 rounds)."""
 
 import json
 from agent.tools import execute_tool
-from agent.llm_reasoner import llm_think, reason_on_context, get_llm_config
+from agent.llm_reasoner import get_llm_config
 from agent.context._common import (
     MAX_ROUNDS, BATCH_MAX_ROUNDS,
     build_single_option_context, observe_result, _gather_data, _prune_by_keep, _parse_multi_actions,
