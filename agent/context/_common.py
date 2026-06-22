@@ -242,12 +242,18 @@ def run_react_loop(question, option_key, option_text, doc_status, config=None, m
     round_log.append({"round": 0, "phase": "OBSERVE", "text": obs0})
 
     for rnd in range(1, max_rounds + 1):
-        plan = llm_think(mini_question, doc_status, round_log, rnd, config, max_rounds=max_rounds)
-        think_text = f"[THINK {rnd}] {plan.get('reasoning', '')[:150]}"
+        plan = llm_think(mini_question, doc_status, round_log, rnd, config, max_rounds=max_rounds, log_qid=qid)
+        reasoning = plan.get("reasoning", "")
+        if isinstance(reasoning, dict):
+            reasoning_display = json.dumps(reasoning, ensure_ascii=False)
+        else:
+            reasoning_display = str(reasoning)
+        think_text = f"[THINK {rnd}] {reasoning_display[:150]}"
         llm_usage = plan.get("llm_usage", {})
         prompt_tokens += llm_usage.get("prompt_tokens", 0)
         completion_tokens += llm_usage.get("completion_tokens", 0)
-        round_log.append({"round": rnd, "phase": "THINK", "text": think_text})
+        round_log.append({"round": rnd, "phase": "THINK", "text": think_text,
+                          "reasoning_dict": plan.get("reasoning") if isinstance(plan.get("reasoning"), dict) else {}})
 
         # Prune irrelevant clues before executing actions
         keep_input = plan.get("keep")
@@ -266,6 +272,11 @@ def run_react_loop(question, option_key, option_text, doc_status, config=None, m
                         accumulated_judgment[k.strip()] = v.strip()
             elif isinstance(round_judgment, dict):
                 accumulated_judgment.update(round_judgment)
+            elif isinstance(round_judgment, str) and round_judgment in ("TRUE", "FALSE"):
+                # Single-option plain judgment ("TRUE"/"FALSE") → map to remaining option key
+                remaining = list(mini_question.get("options", {}).keys())
+                if len(remaining) == 1:
+                    accumulated_judgment[remaining[0]] = round_judgment
 
             # Prune resolved options + their labels from future context
             # keep_input format: {"A": ["R1","R2"], "B": ["R3"]} or list ["R1","R3"]
@@ -274,6 +285,12 @@ def run_react_loop(question, option_key, option_text, doc_status, config=None, m
                 if verdict in ("TRUE", "FALSE") and opt_key in mini_question.get("options", {}):
                     # Remove this option from prompt
                     del mini_question["options"][opt_key]
+                    # Prune resolved keys from all past THINK reasoning dicts
+                    for entry in round_log:
+                        if entry.get("phase") == "THINK" and isinstance(entry.get("text"), str) and "{" in entry.get("text", ""):
+                            pass  # THINK text is already truncated, skip
+                        if entry.get("phase") == "THINK" and isinstance(entry.get("reasoning_dict"), dict):
+                            entry["reasoning_dict"].pop(opt_key, None)
                     # Collect its labels for pruning
                     if isinstance(keep_input, dict) and opt_key in keep_input:
                         resolved_labels_to_remove.update(keep_input[opt_key])
@@ -297,6 +314,18 @@ def run_react_loop(question, option_key, option_text, doc_status, config=None, m
                                 obs["results"] = [h for h in obs["results"] if h.get("label") not in resolved_labels_to_remove]
                             if "matches" in obs:
                                 obs["matches"] = [m for m in obs["matches"] if m.get("label") not in resolved_labels_to_remove]
+
+            # TF auto-derive: if exactly 2 options total and 1 judged, derive the opposite
+            remaining_opts = set(mini_question.get("options", {}).keys())
+            all_known = set(accumulated_judgment.keys()) | remaining_opts
+            if len(all_known) == 2 and len(accumulated_judgment) == 1:
+                judged_val = list(accumulated_judgment.values())[0]
+                remaining_key = list(remaining_opts)[0]
+                if judged_val == "TRUE":
+                    accumulated_judgment[remaining_key] = "FALSE"
+                elif judged_val == "FALSE":
+                    accumulated_judgment[remaining_key] = "TRUE"
+                mini_question["options"].pop(remaining_key, None)
 
         # ── Termination: check options, not actions ──
         # If ALL options resolved, terminate immediately — ignore any remaining actions

@@ -51,7 +51,8 @@ def get_llm_config():
 
 import time
 
-def call_llm(messages: list[dict], config: dict | None = None, max_retries: int = 2) -> dict:
+def call_llm(messages: list[dict], config: dict | None = None, max_retries: int = 2,
+             log_qid: str = "", round_num: int = 0) -> dict:
     """
     Call an OpenAI-compatible LLM API with retry on transient failures.
     Returns {"content": str, "usage": dict} or {"error": str}
@@ -74,21 +75,30 @@ def call_llm(messages: list[dict], config: dict | None = None, max_retries: int 
         "messages": messages,
         "temperature": config["temperature"],
         "max_tokens": config["max_tokens"],
+        "thinking": {"type": "disabled"},
     }
 
     last_error = None
     for attempt in range(max_retries + 1):
         try:
-            resp = requests.post(url, headers=headers, json=payload, timeout=(10, 60))
+            resp = requests.post(url, headers=headers, json=payload, timeout=(10, 15))
             resp.raise_for_status()
             result = resp.json()
             content = result["choices"][0]["message"]["content"]
-            # Debug: log raw LLM responses
+            # Debug: log raw LLM responses per question
             import datetime
-            with open("/tmp/llm_debug.log", "a", encoding="utf-8") as df:
-                df.write(f"\n=== {datetime.datetime.now()} ===\n")
-                df.write(f"Response:\n{content}\n")
-                df.write(f"Usage: {result.get('usage', {})}\n")
+            if log_qid:
+                os.makedirs("results/raw_responses", exist_ok=True)
+                with open(f"results/raw_responses/{log_qid}.txt", "a", encoding="utf-8") as df:
+                    df.write(f"\n=== Round {round_num} {datetime.datetime.now()} ===\n")
+                    df.write(f"MESSAGES:\n{json.dumps(messages, ensure_ascii=False, indent=2)[:8000]}\n")
+                    df.write(f"RESPONSE:\n{content}\n")
+                    df.write(f"Usage: {result.get('usage', {})}\n")
+            else:
+                with open("/tmp/llm_debug.log", "a", encoding="utf-8") as df:
+                    df.write(f"\n=== {datetime.datetime.now()} ===\n")
+                    df.write(f"Response:\n{content}\n")
+                    df.write(f"Usage: {result.get('usage', {})}\n")
             return {
                 "content": content,
                 "usage": result.get("usage", {}),
@@ -152,6 +162,7 @@ def build_think_prompt(question: dict, doc_status: dict, round_log: list[dict], 
 
     # Summarize what we've observed so far
     obs_summary = ""
+    search_history_parts = []
     for r in round_log:
         phase = r.get("phase", "")
         # For OBSERVE phases, use the full data (tables etc) not truncated text
@@ -165,6 +176,11 @@ def build_think_prompt(question: dict, doc_status: dict, round_log: list[dict], 
         else:
             text = r.get("text", "")[:1000]
         obs_summary += f"[{phase}] {text}\n"
+        # Collect ACT entries for search history
+        if phase == "ACT":
+            search_history_parts.append(r.get("text", "")[:200])
+
+    search_history = "\n".join(search_history_parts) if search_history_parts else "(None yet)"
 
     # Dynamic judgment format based on number of options
     if len(options) > 1:
@@ -178,9 +194,11 @@ def build_think_prompt(question: dict, doc_status: dict, round_log: list[dict], 
 
 {TOOLS_DESC}
 
-Respond with JSON: {{"actions": [...], "keep": {{"A": ["R1"], "B": ["R3"]}}, "reasoning": "...", "judgment": "{_jfe}"}}
+Respond with JSON: {{"actions": [...], "keep": {{"A": ["R1"], "B": ["R3"]}}, "reasoning": {{"A": "...", "B": "..."}}, "judgment": "{_jfe}"}}
 (Remove "judgment" field when not ready to judge any option)
 
+- "reasoning" (REQUIRED): Per-option breakdown. One entry per option still under investigation.
+  Remove entries for options already judged. Example: {{"A": "found data at R1,R2 shows...", "B": "waiting for search results..."}}
 - "keep" (REQUIRED): Dict mapping option→labels. Example: {{"A": ["R1","R2"], "B": ["R3"]}}
 - "judgment" (OPTIONAL): Include TRUE/FALSE for options you are confident about. Skip unsure ones.
   Example: "A:TRUE|D:TRUE" = A and D resolved, B and C still investigating.
@@ -191,9 +209,16 @@ Respond with JSON: {{"actions": [...], "keep": {{"A": ["R1"], "B": ["R3"]}}, "re
 RULES:
 - TRUE = data clearly supports. FALSE = data clearly contradicts.
 - When confident, include judgment IMMEDIATELY — do not wait.
+- If a search returns no results, paraphrase and retry with different keywords. Never give up after one attempt.
+  Never mark an option FALSE due to missing data — FALSE only when documents explicitly contradict the claim.
+  If data remains absent after thorough search, simply omit judgment for that option.
 - Only set actions=[] when ALL options judged. {max_rounds} rounds total.
 - Rounds 1–({max_rounds//2}): search_headings, search_text, search_tables. Rounds {max_rounds//2 + 1}+: get_section allowed.
-- Use Chinese keywords with | separator. No text outside JSON."""
+- Issue SEPARATE search actions per option — do NOT use one generic query for all options.
+- Keep queries to 2–3 keywords maximum. More keywords dilute results and match noise.
+  If results are irrelevant, drop keywords and retry with fewer or different terms — not more.
+  Use only core nouns, numbers, and key verbs. Strip all filler words and redundant modifiers.
+  Use Chinese keywords by default. Use | separator. No text outside JSON."""
 
     user = f"""Question: {question.get('question', '')}
 
@@ -202,6 +227,9 @@ Options to evaluate:
 
 Document status:
 {doc_status}
+
+Searches already performed:
+{search_history}
 
 Previous rounds:
 {obs_summary if obs_summary else '(First round — no observations yet)'}
@@ -214,7 +242,7 @@ Return ONLY JSON."""
     ]
 
 
-def llm_think(question: dict, doc_status: dict, round_log: list[dict], round_num: int, config: dict | None = None, max_rounds: int = 6) -> dict:
+def llm_think(question: dict, doc_status: dict, round_log: list[dict], round_num: int, config: dict | None = None, max_rounds: int = 6, log_qid: str = "") -> dict:
     """
     LLM-driven THINK step. Returns a plan dict with "tool" and "params".
     """
@@ -222,7 +250,7 @@ def llm_think(question: dict, doc_status: dict, round_log: list[dict], round_num
         config = get_llm_config()
 
     messages = build_think_prompt(question, doc_status, round_log, round_num, max_rounds=max_rounds)
-    result = call_llm(messages, config)
+    result = call_llm(messages, config, log_qid=log_qid or question.get("qid", ""), round_num=round_num)
 
     if result.get("error"):
         # Fallback: use basic heuristic

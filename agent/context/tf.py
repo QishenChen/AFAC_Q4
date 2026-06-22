@@ -25,6 +25,9 @@ def solve_tf(question, doc_status, config=None):
     opt_result = run_react_loop(one_question, "statement", question_text, doc_status, config)
 
     judgment = opt_result["judgment"]
+    # Unwrap dict-format judgment from run_react_loop (e.g. {"statement": "TRUE"})
+    if isinstance(judgment, dict):
+        judgment = judgment.get("statement", "VAGUE")
     evidence = opt_result.get("evidence", "")
     reasoning = opt_result.get("reason", "")
     total_prompt = opt_result["token_usage"]["prompt_tokens"]

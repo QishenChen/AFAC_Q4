@@ -131,7 +131,7 @@ def debug_one(question, config=None, no_llm=False, mode="batch", max_rounds=None
             print(f"    Query: {query[:100]}")
         else:
             print(f"  THINK → Calling LLM (30s timeout)...", end="", flush=True)
-            plan = llm_think(batch_question, doc_status, round_log, rnd, config, max_rounds=max_rounds)
+            plan = llm_think(batch_question, doc_status, round_log, rnd, config, max_rounds=max_rounds, log_qid=qid)
             think_dur = time.time() - think_start
             print(f" done ({fmt_duration(think_dur)})")
             llm_usage = plan.get("llm_usage", {})
@@ -140,14 +140,24 @@ def debug_one(question, config=None, no_llm=False, mode="batch", max_rounds=None
             prompt_tokens += p_tok
             completion_tokens += c_tok
             print(f"    Tokens: prompt={p_tok} completion={c_tok}")
-            print(f"    Reasoning: {plan.get('reasoning', '')[:200]}")
+            reasoning_display = plan.get("reasoning", "")
+            if isinstance(reasoning_display, dict):
+                print(f"    Reasoning: {json.dumps(reasoning_display, ensure_ascii=False)[:200]}")
+            else:
+                print(f"    Reasoning: {str(reasoning_display)[:200]}")
             if plan.get("llm_error"):
                 print(f"    ⚠ LLM ERROR: {plan['llm_error'][:200]}")
             if plan.get("llm_raw"):
                 print(f"    Raw response: {plan['llm_raw'][:300]}")
 
-        think_text = f"[THINK {rnd}] {plan.get('reasoning', '')[:150]}"
-        round_log.append({"round": rnd, "phase": "THINK", "text": think_text})
+        reasoning_raw = plan.get("reasoning", "")
+        if isinstance(reasoning_raw, dict):
+            reasoning_str = json.dumps(reasoning_raw, ensure_ascii=False)
+        else:
+            reasoning_str = str(reasoning_raw)
+        think_text = f"[THINK {rnd}] {reasoning_str[:150]}"
+        round_log.append({"round": rnd, "phase": "THINK", "text": think_text,
+                          "reasoning_dict": plan.get("reasoning") if isinstance(plan.get("reasoning"), dict) else {}})
 
         # ── Prune irrelevant clues ──
         keep_labels = plan.get("keep") if not no_llm else None
@@ -178,6 +188,10 @@ def debug_one(question, config=None, no_llm=False, mode="batch", max_rounds=None
             for opt_key, verdict in accumulated_judgment.items():
                 if verdict in ("TRUE", "FALSE") and opt_key in batch_question.get("options", {}):
                     del batch_question["options"][opt_key]
+                    # Prune resolved keys from all past THINK reasoning dicts
+                    for entry in round_log:
+                        if entry.get("phase") == "THINK" and isinstance(entry.get("reasoning_dict"), dict):
+                            entry["reasoning_dict"].pop(opt_key, None)
                     if isinstance(keep_labels, dict) and opt_key in keep_labels:
                         resolved_labels_to_remove.update(keep_labels[opt_key])
                     elif isinstance(keep_labels, list):
@@ -199,6 +213,19 @@ def debug_one(question, config=None, no_llm=False, mode="batch", max_rounds=None
                                 obs["results"] = [h for h in obs["results"] if h.get("label") not in resolved_labels_to_remove]
                             if "matches" in obs:
                                 obs["matches"] = [m for m in obs["matches"] if m.get("label") not in resolved_labels_to_remove]
+
+            # TF auto-derive: if exactly 2 options total and 1 judged, derive the opposite
+            remaining_opts = set(batch_question.get("options", {}).keys())
+            all_known = set(accumulated_judgment.keys()) | remaining_opts
+            if len(all_known) == 2 and len(accumulated_judgment) == 1:
+                judged_val = list(accumulated_judgment.values())[0]
+                remaining_key = list(remaining_opts)[0]
+                if judged_val == "TRUE":
+                    accumulated_judgment[remaining_key] = "FALSE"
+                elif judged_val == "FALSE":
+                    accumulated_judgment[remaining_key] = "TRUE"
+                batch_question["options"].pop(remaining_key, None)
+                print(f"    Auto-derived: {remaining_key}={accumulated_judgment[remaining_key]}")
 
         # ── Actions ──
         actions = _parse_multi_actions(plan, round_log, rnd)
@@ -328,7 +355,7 @@ def debug_one(question, config=None, no_llm=False, mode="batch", max_rounds=None
 
 def main():
     parser = argparse.ArgumentParser(description="ReACT Loop Debugger")
-    parser.add_argument("--questions", "-q", default="public_dataset_upload/questions/group_a/financial_contracts_questions.json")
+    parser.add_argument("--questions", "-q", default="public_dataset_upload/questions/group_a/financial_reports_questions.json")
     parser.add_argument("--qid", default=None, help="Question ID to debug")
     parser.add_argument("--mode", choices=["batch", "per-option", "tf"], default="batch")
     parser.add_argument("--max-rounds", type=int, default=None)
