@@ -364,9 +364,11 @@ def run_react_loop(question, option_key, option_text, doc_status, config=None, m
         round_log.append({"round": rnd, "phase": "OBSERVE", "text": obs_text, "data": merged_obs})
 
         if rnd == max_rounds:
+            resolved = dict(accumulated_judgment) if accumulated_judgment else None
             return {
-                "option": option_key, "judgment": "VAGUE",
-                "reason": "Loop exhausted without judgment",
+                "option": option_key,
+                "judgment": resolved or "VAGUE",
+                "reason": f"Loop exhausted — {len(accumulated_judgment)} options resolved" if accumulated_judgment else "Loop exhausted without judgment",
                 "evidence": "",
                 "gathered_tables": gathered_tables, "gathered_sections": gathered_sections,
                 "token_usage": {"prompt_tokens": prompt_tokens, "completion_tokens": completion_tokens,
@@ -375,8 +377,11 @@ def run_react_loop(question, option_key, option_text, doc_status, config=None, m
                 "log_summary": [r["text"][:150] for r in round_log],
             }
 
+    resolved = dict(accumulated_judgment) if accumulated_judgment else None
     return {
-        "option": option_key, "judgment": "VAGUE", "reason": "Loop exhausted without judgment",
+        "option": option_key,
+        "judgment": resolved or "VAGUE",
+        "reason": f"Loop exhausted — {len(accumulated_judgment)} options resolved" if accumulated_judgment else "Loop exhausted without judgment",
         "evidence": "", "gathered_tables": gathered_tables, "gathered_sections": gathered_sections,
         "token_usage": {"prompt_tokens": prompt_tokens, "completion_tokens": completion_tokens,
                         "total": prompt_tokens + completion_tokens},
