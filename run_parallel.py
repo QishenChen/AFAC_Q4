@@ -82,11 +82,9 @@ def main():
             questions_count += len([r for r in results if r.get("qid") != "summary"])
 
             # Keep only question results, skip per-file summary rows
+            # (meta already has correct totals — summary row would double-count)
             for r in results:
                 if r.get("qid") == "summary":
-                    # Add token counts from file-level summary
-                    total_prompt += r.get("prompt_tokens", 0)
-                    total_completion += r.get("completion_tokens", 0)
                     continue
                 all_results.append(r)
 

@@ -91,17 +91,18 @@ def main():
             # Add answer field to result (keeping all existing fields)
             result["answer"] = answer_str
 
-            # Token accounting: prompt from API, completion = 1 per question
+            # Token accounting: use actual API counts
             api_prompt = result["token_usage"]["prompt_tokens"]
+            api_completion = result["token_usage"]["completion_tokens"]
             file_prompt += api_prompt
-            file_completion += 1
+            file_completion += api_completion
             total_questions += 1
 
-            # Update result token_usage to reflect 1 completion token per question
+            # Preserve actual completion_tokens from API
             result["token_usage"] = {
                 "prompt_tokens": api_prompt,
-                "completion_tokens": 1,
-                "total": api_prompt + 1,
+                "completion_tokens": api_completion,
+                "total": api_prompt + api_completion,
             }
 
             file_answers[qid] = answer_str
@@ -110,8 +111,8 @@ def main():
 
             print(f"  Status: {status} | Answer: {answer_str} | Rounds: {result['rounds']} | "
                   f"Tokens: P={api_prompt} "
-                  f"C=1 "
-                  f"T={api_prompt + 1} | {elapsed:.1f}s")
+                  f"C={api_completion} "
+                  f"T={api_prompt + api_completion} | {elapsed:.1f}s")
 
             if args.verbose:
                 for step in result.get("log_summary", []):

@@ -1,10 +1,41 @@
 """
 Text normalization, tokenization, and fuzzy matching utilities for Chinese financial text.
-No external NLP dependencies — uses character n-grams and simple tokenization.
+Uses character n-grams with IDF-weighted scoring (common words down-weighted).
 """
 
+import json
+import math
+import os
 import re
 import unicodedata
+
+# ── Load word frequency weights ──
+_WORD_WEIGHTS = {}
+_WORD_WEIGHTS_MAX = 1.0
+
+def _load_word_weights():
+    """Load `config/common_words.json` to compute IDF-like weights for fuzzy matching."""
+    global _WORD_WEIGHTS, _WORD_WEIGHTS_MAX
+    if _WORD_WEIGHTS:
+        return
+    path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "config", "common_words.json")
+    if not os.path.isfile(path):
+        return
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        total = data.get("total_words", 1)
+        word_list = data.get("words", [])
+        for entry in word_list:
+            w = entry["word"]
+            count = entry["count"]
+            # IDF-style log scale: common words → low weight, rare → high weight
+            _WORD_WEIGHTS[w] = math.log(total / (count + 1))
+        _WORD_WEIGHTS_MAX = max(_WORD_WEIGHTS.values()) if _WORD_WEIGHTS else 1.0
+    except Exception:
+        pass
+
+_load_word_weights()
 
 
 def normalize_text(text: str) -> str:
@@ -48,32 +79,39 @@ def extract_inline_heading_from_html(line: str):
 
 def tokenize_chinese(text: str) -> list[str]:
     """
-    Tokenize Chinese text into overlapping character bigrams + individual characters
-    for robust matching without a segmenter.
-    Example: '营业收入' → ['营', '业', '收', '入', '营业', '业收', '收入', '营业收入']
+    Tokenize Chinese text into character bigrams + trigrams + full match.
+    Bigrams provide baseline recall; trigrams + full match add specificity.
+    Unigrams are excluded to reduce noise from single-character matches.
     """
     text = normalize_text(text)
-    # Extract Chinese characters
     chars = re.findall(r"[\u4e00-\u9fff]", text)
-    tokens = list(chars)  # unigrams
+    tokens = []
     if len(chars) >= 2:
         tokens.extend("".join(chars[i:i + 2]) for i in range(len(chars) - 1))  # bigrams
     if len(chars) >= 3:
         tokens.extend("".join(chars[i:i + 3]) for i in range(len(chars) - 2))  # trigrams
     if len(chars) >= 4:
         tokens.append("".join(chars))  # full match
-    # Also add alphanumeric tokens
     alpha_tokens = re.findall(r"[a-zA-Z0-9]+", text)
     tokens.extend(t.lower() for t in alpha_tokens)
     return list(set(tokens))
 
 
 def token_overlap_score(query_tokens: list[str], target_tokens: list[str]) -> float:
-    """Jaccard-like overlap score between two token sets."""
+    """Weighted overlap score. Common words get lower weight via IDF."""
     if not query_tokens or not target_tokens:
         return 0.0
-    intersection = set(query_tokens) & set(target_tokens)
-    return len(intersection) / min(len(query_tokens), len(target_tokens))
+    q_set = set(query_tokens)
+    c_set = set(target_tokens)
+    intersection = q_set & c_set
+    if not intersection:
+        return 0.0
+    if _WORD_WEIGHTS:
+        # Weighted: sum IDF weights of overlapping tokens / max possible
+        weighted = sum(_WORD_WEIGHTS.get(t, _WORD_WEIGHTS_MAX) for t in intersection)
+        max_weighted = sum(_WORD_WEIGHTS.get(t, _WORD_WEIGHTS_MAX) for t in q_set)
+        return weighted / max(1, max_weighted)
+    return len(intersection) / min(len(q_set), len(c_set))
 
 
 def fuzzy_match(query: str, candidate: str, threshold: float = 0.3) -> float:

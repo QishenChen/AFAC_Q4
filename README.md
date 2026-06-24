@@ -10,6 +10,7 @@
 ├── debugger.py               # 透明调试器：逐步展示 ReACT 循环（LLM ↔ 工具交互）
 ├── generate_submission.py    # 从 answers.json 生成 CSV 提交文件
 ├── build_synonyms.py         # 从 LLM 生成 500+ 中文金融术语同义词词典
+├── analyze_vocab.py          # jieba 词频分析 → 生成 common_words.json
 ├── retriever.py              # 向后兼容门面（所有实现已迁移至 agent/tools/）
 ├── indexer.py                # 索引构建器（解析 Markdown 文档 → 生成索引 JSON）
 ├── build_indices.py          # 一键重建所有检索索引
@@ -40,13 +41,15 @@
 │       └── get_doc_info.py
 ├── config/
 │   ├── financial_terms.json     # 原始金融术语同义词
-│   └── financial_synonyms.json  # 500+ 术语 → group_id (LLM 生成)
+│   ├── financial_synonyms.json  # 500+ 术语 → group_id (LLM 生成)
+│   └── common_words.json       # jieba 词频统计 → IDF 权重 (555 文档, 44.5K 词)
 ├── indices/
 │   ├── doc_registry.json
 │   ├── table_index.json
 │   └── heading_index.json
 ├── utils/
-│   └── text_utils.py
+│   ├── __init__.py
+│   └── text_utils.py          # 模糊匹配 (bigram + IDF 加权, jieba 支持)
 ├── public_dataset_upload/
 │   ├── questions/group_a/       # 5 个类别问题 JSON
 │   │   ├── financial_contracts_questions.json
@@ -68,7 +71,7 @@
 ### 1. 环境配置
 
 ```bash
-pip install requests
+pip install requests jieba
 ```
 
 ### 2. 设置 API Key
@@ -129,7 +132,10 @@ Round 1–9 (batch) / 1–6 (per-option):
 - **TF 自动推导**：当 2 选项题目中 1 个已判定，自动推导对立选项（A=TRUE ⟹ B=FALSE）
 - **搜索历史记录**：prompt 中包含已执行搜索列表，避免重复调用
 - **查询改写规则**：无结果时改写关键词重试，绝不因缺数据标记 FALSE
+- **显式+隐式证据搜索**：事实可能通过监管引用/合规语言隐含，无需逐字匹配
 - **2-3 关键词上限**：过多关键词稀释检索结果
+- **IDF 加权模糊匹配**：通过 jieba 词频分析对常见词降权 (`utils/text_utils.py`)
+- **循环耗尽保留部分判断**：max_rounds 时保留已累计的 TRUE/FALSE (不丢弃为 VAGUE)
 - **原始响应日志**：每问题的 LLM 响应保存到 `results/raw_responses/{qid}.txt`
 
 ### keep dict 格式
@@ -164,6 +170,9 @@ ReACT 参数在 `agent/context/_common.py`：`MAX_ROUNDS=6`, `BATCH_MAX_ROUNDS=9
 ## 辅助脚本
 
 ```bash
+# 分析文档词频，生成 IDF 权重文件（需要 jieba）
+python3 analyze_vocab.py
+
 # 生成金融术语同义词词典（500+ 词，按 group_id 分组）
 python3 build_synonyms.py
 

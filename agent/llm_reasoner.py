@@ -212,6 +212,8 @@ RULES:
 - If a search returns no results, paraphrase and retry with different keywords. Never give up after one attempt.
   Never mark an option FALSE due to missing data — FALSE only when documents explicitly contradict the claim.
   If data remains absent after thorough search, simply omit judgment for that option.
+- Search for both explicit and implicit indicators. A fact may be implied through regulatory references,
+  compliance language, or contextual clues without being stated verbatim.
 - Only set actions=[] when ALL options judged. {max_rounds} rounds total.
 - Rounds 1–({max_rounds//2}): search_headings, search_text, search_tables. Rounds {max_rounds//2 + 1}+: get_section allowed.
 - Issue SEPARATE search actions per option — do NOT use one generic query for all options.
