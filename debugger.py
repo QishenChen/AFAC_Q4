@@ -99,6 +99,7 @@ def debug_one(question, config=None, no_llm=False, mode="batch", max_rounds=None
     label_counter = [1]
     total_elapsed = 0.0
     accumulated_judgment = {}  # {option_key: "TRUE|FALSE"}
+    saved_judgment = {"judgment": {}, "evidence": ""}
 
     think0_text = f"[THINK 0] 检查文档: {qid}"
     round_log.append({"round": 0, "phase": "THINK", "text": think0_text})
@@ -164,11 +165,20 @@ def debug_one(question, config=None, no_llm=False, mode="batch", max_rounds=None
         if keep_labels:
             before_t = len(gathered_tables)
             before_s = len(gathered_sections)
+            # Count total labels before pruning (helps detect cap overflow)
+            if isinstance(keep_labels, dict):
+                before_keep_count = sum(len(v) for v in keep_labels.values() if isinstance(v, list))
+            elif isinstance(keep_labels, list):
+                before_keep_count = len(keep_labels)
+            else:
+                before_keep_count = 0
             _prune_by_keep(keep_labels, gathered_tables, gathered_sections, round_log)
             after_t = len(gathered_tables)
             after_s = len(gathered_sections)
             if before_t != after_t or before_s != after_s:
                 print(f"    Pruned: tables {before_t}→{after_t}, sections {before_s}→{after_s}")
+            if before_keep_count > 5:
+                print(f"    ⚠ keep labels capped: {before_keep_count} → 5")
             print(f"    Keep labels: {keep_labels}")
 
         # ── Accumulate partial judgments + prune resolved options ──
@@ -304,15 +314,18 @@ def debug_one(question, config=None, no_llm=False, mode="batch", max_rounds=None
         total_elapsed += round_elapsed
         print(f"  Round duration: {fmt_duration(round_elapsed)}")
 
-        # On last round, force-judge
+        # On last round, capture accumulated partial judgment
         if rnd == max_rounds:
-            print(f"\n  ⚠ Last round ({rnd}/{max_rounds}) — forcing judgment via reason_on_context")
+            print(f"\n  ⚠ Last round ({rnd}/{max_rounds}) — using accumulated partial judgment")
+            saved_judgment = {"judgment": dict(accumulated_judgment), "evidence": plan.get("evidence", "")}
+            round_log.append({"round": rnd, "phase": "JUDGE", "text": f"Max rounds: {accumulated_judgment}"})
+            break
 
     # ── Final judgment: use accumulated verdicts, unjudged → VAGUE ──
     print_header("Final Judgment")
 
-    evidence = saved_judgment.get("evidence", "") if 'saved_judgment' in dir() else ""
-    judgment = saved_judgment.get("judgment", {}) if 'saved_judgment' in dir() else {}
+    evidence = saved_judgment.get("evidence", "")
+    judgment = saved_judgment.get("judgment", {})
 
     options_detail = {}
     for key in sorted(original_options.keys()):

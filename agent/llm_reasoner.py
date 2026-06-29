@@ -194,12 +194,15 @@ def build_think_prompt(question: dict, doc_status: dict, round_log: list[dict], 
 
 {tools_desc}
 
-Respond with JSON: {{"actions": [...], "keep": {{"A": ["R1"], "B": ["R3"]}}, "reasoning": {{"A": "...", "B": "..."}}, "judgment": "{_jfe}"}}
+Respond with JSON: {{"actions": [...], "keep": {{"A": ["R1"], "B": ["R3"]}}, "reasoning": {{"A": "{{R1}} reveals ...", "B": "{{R3}} reveals ..."}}, "judgment": "{_jfe}"}}
 (Remove "judgment" field when not ready to judge any option)
 
 - "reasoning" (REQUIRED): Per-option breakdown. One entry per option still under investigation.
-  Remove entries for options already judged. Example: {{"A": "found data at R1,R2 shows...", "B": "waiting for search results..."}}
+  Remove entries for options already judged.
+  Write compactly by citing clues inline, e.g. "{{R1}} reveals X; {{R3}} reveals Y; therefore A is TRUE."
+  Do not repeat the full evidence text — reference the label and state the inferred fact.
 - "keep" (REQUIRED): Dict mapping option→labels. Example: {{"A": ["R1","R2"], "B": ["R3"]}}
+  IMPORTANT: "keep" may contain at most 5 clue labels total across all options. Keep ONLY the most important / decisive clues; drop weaker ones.
 - "judgment" (OPTIONAL): Include TRUE/FALSE for options you are confident about. Skip unsure ones.
   Example: "A:TRUE|D:TRUE" = A and D resolved, B and C still investigating.
   Include judgment AS SOON AS you are confident — do NOT wait for all options.

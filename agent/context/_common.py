@@ -9,6 +9,7 @@ from agent.llm_reasoner import llm_think, get_llm_config
 
 MAX_ROUNDS = 6
 BATCH_MAX_ROUNDS = 9
+MAX_KEEP_CLUES = 5
 
 
 def format_table_for_context(table: dict) -> str:
@@ -179,6 +180,7 @@ def _save_search_results(qid, obs):
 def _prune_by_keep(keep_input, gathered_tables, gathered_sections, round_log):
     """Remove items not in keep_labels from gathered context and round_log observations.
     Accepts either a flat list ["R1","R3"] or a dict {"A": ["R1","R2"], "B": ["R3"]}.
+    Enforces MAX_KEEP_CLUES by truncating to the first labels deterministically.
     """
     if not keep_input:
         return
@@ -191,6 +193,20 @@ def _prune_by_keep(keep_input, gathered_tables, gathered_sections, round_log):
         keep = set(keep_input)
     else:
         return
+
+    # Aggressive compression: cap total kept clues at MAX_KEEP_CLUES
+    original_count = len(keep)
+    if original_count > MAX_KEEP_CLUES:
+        sorted_labels = sorted(keep, key=lambda x: (len(x), x))
+        dropped = sorted_labels[MAX_KEEP_CLUES:]
+        keep = set(sorted_labels[:MAX_KEEP_CLUES])
+        # Warn in the most recent THINK entry or append a system note
+        warning = f"[COMPRESS] keep had {original_count} clues; truncated to {MAX_KEEP_CLUES} ({keep}). Dropped: {dropped}"
+        for entry in reversed(round_log):
+            if entry.get("phase") == "THINK":
+                entry["text"] = f"{entry.get('text', '')}\n{warning}"
+                break
+
     gathered_tables[:] = [t for t in gathered_tables if t.get("__label__") in keep]
     gathered_sections[:] = [s for s in gathered_sections if s.get("__label__") in keep]
     for entry in round_log:

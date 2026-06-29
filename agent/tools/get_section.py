@@ -44,8 +44,34 @@ def get_section(doc: str, heading_path):
     if not candidates:
         return None
 
-    # Prefer the heading with the largest content span (skip TOC entries with ~1-5 lines)
-    target = max(candidates, key=lambda h: h["line_end"] - h["line_start"])
+    # Defense in depth:
+    # 1. Reject paths that live inside a table-of-contents section.
+    # 2. If the same title appears twice (TOC + real section), keep the later occurrence.
+    # 3. Prefer markdown headings over html_table-extracted headings.
+    # 4. Use span as a final tiebreaker.
+    TOC_MARKERS = {"条款目录", "阅读指引", "目次", "目录", "contents", "table of contents"}
+
+    def _in_toc(path):
+        normalized = " ".join(p.lower() for p in path)
+        return any(m in normalized for m in TOC_MARKERS)
+
+    non_toc = [c for c in candidates if not _in_toc(c.get("path", []))]
+    if not non_toc:
+        non_toc = candidates  # fallback: use everything if all were flagged
+
+    by_title = {}
+    for c in non_toc:
+        title = c["title"]
+        if title not in by_title or c["line_start"] > by_title[title]["line_start"]:
+            by_title[title] = c
+    deduped = list(by_title.values())
+
+    def _score(h):
+        span = h["line_end"] - h["line_start"]
+        source_score = 1 if h.get("source") == "md" else 0
+        return (source_score, span)
+
+    target = max(deduped, key=_score)
 
     filepath = os.path.join("public_dataset_upload/extracted", rel_path)
     with open(filepath, "r", encoding="utf-8") as f:
