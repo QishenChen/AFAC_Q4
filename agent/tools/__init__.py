@@ -20,6 +20,11 @@ from agent.tools.compute import compute
 from agent.tools.expand_query import expand_query
 from agent.tools.get_doc_info import get_doc_info
 
+# ── Lazy-load insurance context tool to avoid circular import ──
+def _get_all_headings(**kwargs):
+    from agent.context.insurance.get_all_headings import get_all_headings
+    return get_all_headings(**kwargs)
+
 TOOLS = {
     # ── Heading search ──
     "search_headings": {
@@ -86,6 +91,13 @@ TOOLS = {
         "params": ["rel_path: str"],
         "fn": get_doc_info,
     },
+    # ── Insurance: get all headings ──
+    "get_all_headings": {
+        "name": "get_all_headings",
+        "desc": "Return ALL heading titles with hierarchy for an insurance policy document to understand structure before searching.",
+        "params": ["doc: str — document ID, e.g. '1', '3', '15'"],
+        "fn": _get_all_headings,
+    },
 }
 
 
@@ -101,10 +113,12 @@ def execute_tool(name: str, **kwargs) -> dict:
         return {"error": str(e), "result": None}
 
 
-def build_tools_prompt() -> str:
-    """Build the LLM-facing tools description by reading .md files for public tools."""
+def build_tools_prompt(domain: str = "") -> str:
+    """Build the LLM-facing tools description by reading .md files for core and domain-specific tools."""
     _dir = os.path.dirname(os.path.abspath(__file__))
     lines = ["Available tools (use | to separate multiple keywords, e.g. \"利润|资产|负债\"):", ""]
+
+    # Core tools
     prompt_order = ["search_headings", "search_tables", "search_text", "get_section", "compute"]
     for name in prompt_order:
         md_path = os.path.join(_dir, f"{name}.md")
@@ -113,4 +127,17 @@ def build_tools_prompt() -> str:
                 content = f.read().strip()
             lines.append(content)
             lines.append("")
+
+    # Domain-specific tools (e.g., insurance/get_all_headings.md)
+    if domain:
+        domain_dir = os.path.join(os.path.dirname(_dir), "context", domain)
+        if os.path.isdir(domain_dir):
+            for fname in sorted(os.listdir(domain_dir)):
+                if fname.endswith(".md") and not fname.startswith("_"):
+                    md_path = os.path.join(domain_dir, fname)
+                    with open(md_path, "r", encoding="utf-8") as f:
+                        content = f.read().strip()
+                    lines.append(content)
+                    lines.append("")
+
     return "\n".join(lines)

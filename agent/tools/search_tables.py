@@ -131,7 +131,7 @@ def search_tables(query: str | None = None, domain: str | None = None, max_resul
         header_text = " ".join(t["headers"])
         header_score = _multi_fuzzy_match(query, header_text)
         context_score = _multi_fuzzy_match(query, t.get("context_before", ""))
-        data_text = " ".join(str(r[0]) for r in t.get("data", []) if r)
+        data_text = " ".join(str(c) for r in t.get("data", []) if r for c in r if c)
         data_score = _multi_fuzzy_match(query, data_text)
         score = 0.35 * name_score + 0.20 * header_score + 0.15 * context_score + 0.30 * data_score
 
