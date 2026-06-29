@@ -153,12 +153,12 @@ def parse_json_from_response(content: str) -> dict:
 
 from agent.tools import build_tools_prompt
 
-TOOLS_DESC = build_tools_prompt()
-
 
 def build_think_prompt(question: dict, doc_status: dict, round_log: list[dict], round_num: int, max_rounds: int = 6) -> list[dict]:
     """Build the messages for the THINK step."""
     options = question.get("options", {})
+    domain = question.get("domain", "")
+    tools_desc = build_tools_prompt(domain)
 
     # Summarize what we've observed so far
     obs_summary = ""
@@ -192,7 +192,7 @@ def build_think_prompt(question: dict, doc_status: dict, round_log: list[dict], 
     _jfe = judge_format_example.replace('"judgment": ', '').strip('"')
     system = f"""You are a ReACT agent that retrieves financial data from documents to answer questions.
 
-{TOOLS_DESC}
+{tools_desc}
 
 Respond with JSON: {{"actions": [...], "keep": {{"A": ["R1"], "B": ["R3"]}}, "reasoning": {{"A": "...", "B": "..."}}, "judgment": "{_jfe}"}}
 (Remove "judgment" field when not ready to judge any option)
@@ -220,6 +220,15 @@ RULES:
 - Keep queries to 2–3 keywords maximum. More keywords dilute results and match noise.
   If results are irrelevant, drop keywords and retry with fewer or different terms — not more.
   Use only core nouns, numbers, and key verbs. Strip all filler words and redundant modifiers.
+- For search_headings, use diverse loosely-related keywords to cover more possible areas.
+  Do not restrict searches to the option's exact terms — think about what topic areas
+  could contain relevant information.
+- When using search_tables, you can either (a) search by keywords to discover relevant tables, or
+  (b) target a specific table by table_id or heading_title if you already know which one contains the
+  information. In either case, inspect the returned table data and extract the exact value
+  before judging 
+- You may issue multiple searches in a single round to exhaust all promising angles. Use as many
+  parallel actions as needed within the round limit, especially when earlier searches were inconclusive.
   Use Chinese keywords by default. Use | separator. No text outside JSON."""
 
     user = f"""Question: {question.get('question', '')}

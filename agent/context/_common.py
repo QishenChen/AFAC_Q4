@@ -3,6 +3,7 @@ Shared context utilities and ReACT loop engine for all question-solving strategi
 """
 
 import json
+import os
 from agent.tools import execute_tool
 from agent.llm_reasoner import llm_think, get_llm_config
 
@@ -148,6 +149,31 @@ def _gather_data(tool_name, act_result, gathered_tables, gathered_sections, doc_
                 "content": match.get("text", ""),
                 "__label__": lbl,
             })
+
+
+def _sanitize_filename(name: str) -> str:
+    """Replace path separators and other unsafe chars so a label can be used as a filename."""
+    for ch in "/\\:?*\"<>|":
+        name = name.replace(ch, "_")
+    return name
+
+
+def _save_search_results(qid, obs):
+    """Save labeled search results into results/search_results/{qid}/{label}.json"""
+    search_dir = f"results/search_results/{qid}"
+    os.makedirs(search_dir, exist_ok=True)
+    items = obs.get("results") or obs.get("tables") or obs.get("matches") or []
+    for item in items:
+        lbl = item.get("label")
+        if lbl:
+            safe_lbl = _sanitize_filename(lbl)
+            with open(f"{search_dir}/{safe_lbl}.json", "w", encoding="utf-8") as f:
+                json.dump(item, f, ensure_ascii=False, indent=2)
+    if obs.get("type") == "section" and obs.get("found"):
+        lbl = f"section_{obs.get('heading','')[:30]}"
+        safe_lbl = _sanitize_filename(lbl)
+        with open(f"{search_dir}/{safe_lbl}.json", "w", encoding="utf-8") as f:
+            json.dump({"heading": obs.get("heading",""), "content": obs.get("content_preview","")}, f, ensure_ascii=False, indent=2)
 
 
 def _prune_by_keep(keep_input, gathered_tables, gathered_sections, round_log):
@@ -357,6 +383,7 @@ def run_react_loop(question, option_key, option_text, doc_status, config=None, m
 
             obs = observe_result(tool_name, act_result, label_counter)
             _gather_data(tool_name, act_result, gathered_tables, gathered_sections, doc_status, obs_result=obs)
+            _save_search_results(qid, obs)
             all_obs.append({f"tool_{tool_name}": obs})
 
         merged_obs = {"type": "multi_action", "count": len(all_obs), "results": all_obs}

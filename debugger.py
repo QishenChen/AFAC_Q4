@@ -71,7 +71,7 @@ def debug_one(question, config=None, no_llm=False, mode="batch", max_rounds=None
     available = {}
     for did, st in doc_status.items():
         icon = "✓" if st.get("available") else "✗"
-        name = st.get("friendly_name", did) if st.get("available") else st.get("reason", "?")
+        name = st.get("summary", st.get("rel_path", did)) if st.get("available") else st.get("reason", "?")
         print(f"    {icon} {did}: {name[:60]}")
         if st.get("available"):
             available[did] = st

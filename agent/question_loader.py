@@ -2,17 +2,11 @@
 Load question JSON files and check document availability.
 """
 
+import glob
 import json
 import os
 
-INDICES_DIR = "indices"
-
-
-def load_doc_registry():
-    """Load the doc_registry.json file."""
-    path = os.path.join(INDICES_DIR, "doc_registry.json")
-    with open(path, "r", encoding="utf-8") as f:
-        return json.load(f)
+from agent.tools.get_doc_info import get_doc_info, resolve_doc
 
 
 def load_questions(filepath: str) -> list[dict]:
@@ -27,24 +21,30 @@ def check_doc_availability(doc_ids: list[str]) -> dict[str, dict]:
     Check which doc_ids exist in the registry.
     Returns dict: {doc_id: {available: bool, info: {...}} or {available: false, reason: str}}
     """
-    registry = load_doc_registry()
-    by_id = registry.get("by_id", {})
-
     result = {}
     for doc_id in doc_ids:
-        if doc_id in by_id:
-            info = by_id[doc_id]
-            result[doc_id] = {
-                "available": True,
-                "rel_path": info["rel_path"],
-                "friendly_name": info.get("friendly_name", doc_id),
-                "domain": info.get("domain", "unknown"),
-            }
-        else:
+        rel_paths = resolve_doc(doc_id)
+        if not rel_paths:
             result[doc_id] = {
                 "available": False,
                 "reason": f"doc_id '{doc_id}' not found in extracted documents",
             }
+            continue
+
+        info = get_doc_info(rel_paths[0])
+        if info is None:
+            result[doc_id] = {
+                "available": False,
+                "reason": f"doc_id '{doc_id}' resolved but metadata not found",
+            }
+            continue
+
+        result[doc_id] = {
+            "available": True,
+            "rel_path": info["rel_path"],
+            "domain": info["domain"],
+            "summary": info.get("summary", ""),
+        }
 
     return result
 
