@@ -83,10 +83,11 @@ def debug_one(question, config=None, no_llm=False, mode="batch", max_rounds=None
 
     # ── Build batch question (copy options — pruning mutates it) ──
     original_options = dict(options)
-    options_text = "\n".join([f"  {k}: {v}" for k, v in sorted(options.items())])
+    # Active options are rendered dynamically by build_think_prompt; do not embed
+    # the full list here so resolved options disappear from subsequent prompts.
     batch_question = {
         "qid": qid, "domain": domain,
-        "question": f"{question_text}\n\nAll options to evaluate:\n{options_text}",
+        "question": question_text,
         "options": dict(options),
         "doc_ids": doc_ids,
     }

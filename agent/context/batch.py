@@ -23,11 +23,13 @@ def solve_batch(question, doc_status, config=None):
     if config is None:
         config = get_llm_config()
 
-    # Build a question that presents ALL options at once
-    options_text = "\n".join([f"  {k}: {v}" for k, v in sorted(options.items())])
+    # Build a question that presents ALL options at once.
+    # The active options are rendered dynamically by build_think_prompt; do not
+    # embed them here, or resolved options would remain visible in the prompt
+    # after being pruned from mini_question["options"].
     batch_question = {
         "qid": qid, "domain": domain,
-        "question": f"{question_text}\n\nAll options to evaluate:\n{options_text}",
+        "question": question_text,
         "options": options,
         "doc_ids": question.get("doc_ids", []),
     }
