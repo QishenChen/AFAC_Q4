@@ -68,6 +68,17 @@ def observe_result(tool_name, act_result, label_counter=None):
         label_counter = [1]
     if not act_result:
         return {"type": "empty", "summary": "No results returned"}
+    if tool_name == "get_all_headings":
+        hr = act_result if isinstance(act_result, list) else []
+        items = []
+        for h in hr[:30]:
+            lbl = _make_label(label_counter)
+            items.append({
+                "label": lbl,
+                "heading": h.get("title", ""),
+                "level": h.get("level", 2),
+            })
+        return {"type": "all_headings", "count": len(hr), "results": items}
     if tool_name == "search_headings":
         hr = act_result if isinstance(act_result, list) else []
         items = []
@@ -122,6 +133,68 @@ def observe_result(tool_name, act_result, label_counter=None):
             return {"type": "compute_error", "error": err}
         return {"type": "compute", "result": res}
     return {"type": "raw", "preview": str(act_result)[:1000]}
+
+
+def _round_has_useful_results(merged_obs):
+    """Return True if the current round produced any actionable/searchable results."""
+    if not merged_obs or merged_obs.get("type") != "multi_action":
+        return False
+    for result_group in merged_obs.get("results", []):
+        for tool_name, obs in result_group.items():
+            t = obs.get("type", "")
+            if t == "empty":
+                continue
+            if t in ("headings", "section_text", "tables", "all_headings"):
+                if obs.get("count", 0) > 0:
+                    return True
+            elif t == "section":
+                if obs.get("found"):
+                    return True
+            elif t == "compute_error":
+                continue
+            else:
+                # compute or unknown tool: treat as useful if we got any result
+                return True
+    return False
+
+
+def _inject_all_headings(doc_status, round_log, label_counter, domain, qid):
+    """Inject a synthetic OBSERVE with all headings for every available insurance doc.
+    Used as a fallback when the LLM is stuck for two consecutive rounds.
+    """
+    if domain != "insurance":
+        return None
+    doc_headings = {}
+    total_count = 0
+    for doc_id, status in doc_status.items():
+        if not status.get("available"):
+            continue
+        result = execute_tool("get_all_headings", doc=doc_id)
+        headings = result.get("result", []) if isinstance(result, dict) else []
+        if not headings:
+            continue
+        items = []
+        for h in headings:
+            lbl = _make_label(label_counter)
+            items.append({
+                "label": lbl,
+                "heading": h.get("title", ""),
+                "level": h.get("level", 2),
+            })
+        doc_headings[doc_id] = [f"{it['label']} [L{it['level']}] {it['heading']}" for it in items]
+        total_count += len(headings)
+        # Save individual headings as labeled search results
+        _save_search_results(qid, {"type": "all_headings", "count": len(headings), "doc": doc_id, "results": items})
+    if not doc_headings:
+        return None
+    merged_obs = {
+        "type": "all_headings",
+        "count": total_count,
+        "docs": doc_headings,
+    }
+    obs_text = f"[OBSERVE fallback] 连续两轮无进展，注入全部章节标题 ({total_count} headings across {len(doc_headings)} docs)"
+    round_log.append({"round": "fallback", "phase": "OBSERVE", "text": obs_text, "data": merged_obs})
+    return merged_obs
 
 
 def _gather_data(tool_name, act_result, gathered_tables, gathered_sections, doc_status, obs_result=None):
@@ -283,6 +356,11 @@ def run_react_loop(question, option_key, option_text, doc_status, config=None, m
     obs0 = f"[OBSERVE 0] 可用: {list(available.keys())}"
     round_log.append({"round": 0, "phase": "OBSERVE", "text": obs0})
 
+    consecutive_no_progress = 0
+    all_headings_injected = False
+    last_judgment_count = 0
+    last_gathered_count = 0
+
     for rnd in range(1, max_rounds + 1):
         plan = llm_think(mini_question, doc_status, round_log, rnd, config, max_rounds=max_rounds, log_qid=qid)
         reasoning = plan.get("reasoning", "")
@@ -383,28 +461,48 @@ def run_react_loop(question, option_key, option_text, doc_status, config=None, m
                 "log_summary": [r["text"][:150] for r in round_log],
             }
 
-        # LLM produced 0 actions but options remain — force another round
-        if not actions:
-            continue
+        merged_obs = None
+        if actions:
+            all_obs = []
+            for action in actions:
+                tool_name = action.get("tool", "search_headings")
+                params = action.get("params", {})
+                act_text = f"[ACT {rnd}] {tool_name}({json.dumps(params, ensure_ascii=False)[:150]})"
+                round_log.append({"round": rnd, "phase": "ACT", "text": act_text})
 
-        all_obs = []
-        for action in actions:
-            tool_name = action.get("tool", "search_headings")
-            params = action.get("params", {})
-            act_text = f"[ACT {rnd}] {tool_name}({json.dumps(params, ensure_ascii=False)[:150]})"
-            round_log.append({"round": rnd, "phase": "ACT", "text": act_text})
+                result = execute_tool(tool_name, **params)
+                act_result = result.get("result", {})
 
-            result = execute_tool(tool_name, **params)
-            act_result = result.get("result", {})
+                obs = observe_result(tool_name, act_result, label_counter)
+                _gather_data(tool_name, act_result, gathered_tables, gathered_sections, doc_status, obs_result=obs)
+                _save_search_results(qid, obs)
+                all_obs.append({f"tool_{tool_name}": obs})
 
-            obs = observe_result(tool_name, act_result, label_counter)
-            _gather_data(tool_name, act_result, gathered_tables, gathered_sections, doc_status, obs_result=obs)
-            _save_search_results(qid, obs)
-            all_obs.append({f"tool_{tool_name}": obs})
+            merged_obs = {"type": "multi_action", "count": len(all_obs), "results": all_obs}
+            obs_text = f"[OBSERVE {rnd}] {json.dumps(merged_obs, ensure_ascii=False)[:8000]}"
+            round_log.append({"round": rnd, "phase": "OBSERVE", "text": obs_text, "data": merged_obs})
 
-        merged_obs = {"type": "multi_action", "count": len(all_obs), "results": all_obs}
-        obs_text = f"[OBSERVE {rnd}] {json.dumps(merged_obs, ensure_ascii=False)[:8000]}"
-        round_log.append({"round": rnd, "phase": "OBSERVE", "text": obs_text, "data": merged_obs})
+        # ── No-progress detection & fallback ──
+        judgment_changed = len(accumulated_judgment) > last_judgment_count
+        gathered_changed = (len(gathered_tables) + len(gathered_sections)) > last_gathered_count
+        useful_results = _round_has_useful_results(merged_obs)
+
+        if judgment_changed or gathered_changed or useful_results:
+            consecutive_no_progress = 0
+        else:
+            consecutive_no_progress += 1
+
+        last_judgment_count = len(accumulated_judgment)
+        last_gathered_count = len(gathered_tables) + len(gathered_sections)
+
+        if (consecutive_no_progress >= 2
+                and not all_headings_injected
+                and rnd < max_rounds
+                and domain == "insurance"):
+            fallback_obs = _inject_all_headings(doc_status, round_log, label_counter, domain, qid)
+            if fallback_obs:
+                all_headings_injected = True
+                consecutive_no_progress = 0
 
         if rnd == max_rounds:
             resolved = dict(accumulated_judgment) if accumulated_judgment else None

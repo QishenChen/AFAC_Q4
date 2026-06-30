@@ -169,7 +169,9 @@ def build_think_prompt(question: dict, doc_status: dict, round_log: list[dict], 
         if phase == "OBSERVE" and r.get("data"):
             obs_data = r["data"]
             # For data-heavy observations (including multi_action), include table previews
-            if obs_data.get("type") in ("section", "tables", "multi_action"):
+            if obs_data.get("type") == "all_headings":
+                text = json.dumps(obs_data, ensure_ascii=False)[:6000]
+            elif obs_data.get("type") in ("section", "tables", "multi_action"):
                 text = json.dumps(obs_data, ensure_ascii=False)[:3000]
             else:
                 text = json.dumps(obs_data, ensure_ascii=False)[:1000]

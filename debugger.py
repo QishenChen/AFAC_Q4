@@ -16,6 +16,7 @@ from agent.context._common import (
     MAX_ROUNDS, BATCH_MAX_ROUNDS,
     build_single_option_context, observe_result, _gather_data,
     _prune_by_keep, _parse_multi_actions,
+    _round_has_useful_results, _inject_all_headings,
 )
 
 
@@ -100,6 +101,10 @@ def debug_one(question, config=None, no_llm=False, mode="batch", max_rounds=None
     total_elapsed = 0.0
     accumulated_judgment = {}  # {option_key: "TRUE|FALSE"}
     saved_judgment = {"judgment": {}, "evidence": ""}
+    consecutive_no_progress = 0
+    all_headings_injected = False
+    last_judgment_count = 0
+    last_gathered_count = 0
 
     think0_text = f"[THINK 0] 检查文档: {qid}"
     round_log.append({"round": 0, "phase": "THINK", "text": think0_text})
@@ -248,64 +253,99 @@ def debug_one(question, config=None, no_llm=False, mode="batch", max_rounds=None
             round_log.append({"round": rnd, "phase": "JUDGE", "text": f"All resolved: {accumulated_judgment}"})
             break
 
-        # LLM produced 0 actions but options remain — force another round
-        if not actions:
+        merged_obs = None
+        if actions:
+            print(f"\n  Actions ({len(actions)}):")
+            for i, action in enumerate(actions):
+                tool_name = action.get("tool", "?")
+                params = action.get("params", {})
+                print(f"    [{i+1}] {tool_name}({json.dumps(params, ensure_ascii=False)[:120]})")
+
+            # ── ACT + OBSERVE ──
+            all_obs = []
+            for action in actions:
+                tool_name = action.get("tool", "?")
+                params = action.get("params", {})
+                act_text = f"[ACT {rnd}] {tool_name}({json.dumps(params, ensure_ascii=False)[:150]})"
+                round_log.append({"round": rnd, "phase": "ACT", "text": act_text})
+
+                t_act = time.time()
+                result = execute_tool(tool_name, **params)
+                act_dur = time.time() - t_act
+                act_result = result.get("result", {})
+
+                obs = observe_result(tool_name, act_result, label_counter)
+                _gather_data(tool_name, act_result, gathered_tables, gathered_sections, doc_status, obs_result=obs)
+                all_obs.append({f"tool_{tool_name}": obs})
+
+                # Print observation summary
+                otype = obs.get("type", "?")
+                if otype == "headings":
+                    print(f"    {tool_name} -> {obs.get('count', 0)} headings ({fmt_duration(act_dur)})")
+                    for h in obs.get("results", [])[:3]:
+                        print(f"      [{h.get('label','?')}] {h.get('heading','')[:60]}")
+                elif otype == "all_headings":
+                    print(f"    {tool_name} -> ALL {obs.get('count', 0)} headings ({fmt_duration(act_dur)})")
+                    if "results" in obs:
+                        for h in obs.get('results', [])[:3]:
+                            print(f"      [{h.get('label','?')}] {h.get('heading','')[:60]}")
+                    elif "docs" in obs:
+                        for doc_id, items in obs.get("docs", {}).items():
+                            print(f"      doc {doc_id}: {len(items)} headings")
+                            for h in items[:2]:
+                                print(f"        {h[:80]}")
+                elif otype == "tables":
+                    print(f"    {tool_name} -> {obs.get('count', 0)} tables ({fmt_duration(act_dur)})")
+                    for t in obs.get("tables", [])[:3]:
+                        print(f"      [{t.get('label','?')}] {t.get('table_id','?')} {t.get('name','')[:50]}")
+                elif otype == "section":
+                    print(f"    {tool_name} -> {'found' if obs.get('found') else 'NOT FOUND'} ({fmt_duration(act_dur)})")
+                    if obs.get("found"):
+                        print(f"      Content: {len(obs.get('content_preview',''))} chars, {obs.get('table_count',0)} tables")
+                elif otype == "section_text":
+                    print(f"    {tool_name} -> {obs.get('count', 0)} matches ({fmt_duration(act_dur)})")
+                    for m in obs.get("matches", [])[:2]:
+                        print(f"      [{m.get('label','?')}] L{m.get('line','?')}: {m.get('text','')[:60]}")
+                elif otype == "compute":
+                    print(f"    {tool_name} -> {obs.get('result', '?')} ({fmt_duration(act_dur)})")
+                elif otype == "compute_error":
+                    print(f"    {tool_name} -> ERROR: {obs.get('error', '?')[:100]}")
+                elif otype == "empty":
+                    print(f"    {tool_name} -> NO RESULTS ({fmt_duration(act_dur)})")
+                else:
+                    print(f"    {tool_name} -> {str(obs)[:100]} ({fmt_duration(act_dur)})")
+
+            merged_obs = {"type": "multi_action", "count": len(all_obs), "results": all_obs}
+            round_log.append({"round": rnd, "phase": "OBSERVE", "text": f"", "data": merged_obs})
+        else:
             remaining = list(batch_question.get("options", {}).keys())
             print(f"\n  ⚠ LLM returned no actions but {sorted(remaining)} remain — forcing continuation")
-            continue
 
-        print(f"\n  Actions ({len(actions)}):")
-        for i, action in enumerate(actions):
-            tool_name = action.get("tool", "?")
-            params = action.get("params", {})
-            print(f"    [{i+1}] {tool_name}({json.dumps(params, ensure_ascii=False)[:120]})")
+        # ── No-progress detection & fallback ──
+        judgment_changed = len(accumulated_judgment) > last_judgment_count
+        gathered_changed = (len(gathered_tables) + len(gathered_sections)) > last_gathered_count
+        useful_results = _round_has_useful_results(merged_obs)
 
-        # ── ACT + OBSERVE ──
-        all_obs = []
-        for action in actions:
-            tool_name = action.get("tool", "?")
-            params = action.get("params", {})
-            act_text = f"[ACT {rnd}] {tool_name}({json.dumps(params, ensure_ascii=False)[:150]})"
-            round_log.append({"round": rnd, "phase": "ACT", "text": act_text})
+        if judgment_changed or gathered_changed or useful_results:
+            consecutive_no_progress = 0
+        else:
+            consecutive_no_progress += 1
 
-            t_act = time.time()
-            result = execute_tool(tool_name, **params)
-            act_dur = time.time() - t_act
-            act_result = result.get("result", {})
+        last_judgment_count = len(accumulated_judgment)
+        last_gathered_count = len(gathered_tables) + len(gathered_sections)
 
-            obs = observe_result(tool_name, act_result, label_counter)
-            _gather_data(tool_name, act_result, gathered_tables, gathered_sections, doc_status, obs_result=obs)
-            all_obs.append({f"tool_{tool_name}": obs})
-
-            # Print observation summary
-            otype = obs.get("type", "?")
-            if otype == "headings":
-                print(f"    {tool_name} → {obs.get('count', 0)} headings ({fmt_duration(act_dur)})")
-                for h in obs.get("results", [])[:3]:
-                    print(f"      [{h.get('label','?')}] {h.get('heading','')[:60]}")
-            elif otype == "tables":
-                print(f"    {tool_name} → {obs.get('count', 0)} tables ({fmt_duration(act_dur)})")
-                for t in obs.get("tables", [])[:3]:
-                    print(f"      [{t.get('label','?')}] {t.get('table_id','?')} {t.get('name','')[:50]}")
-            elif otype == "section":
-                print(f"    {tool_name} → {'found' if obs.get('found') else 'NOT FOUND'} ({fmt_duration(act_dur)})")
-                if obs.get("found"):
-                    print(f"      Content: {len(obs.get('content_preview',''))} chars, {obs.get('table_count',0)} tables")
-            elif otype == "section_text":
-                print(f"    {tool_name} → {obs.get('count', 0)} matches ({fmt_duration(act_dur)})")
-                for m in obs.get("matches", [])[:2]:
-                    print(f"      [{m.get('label','?')}] L{m.get('line','?')}: {m.get('text','')[:60]}")
-            elif otype == "compute":
-                print(f"    {tool_name} → {obs.get('result', '?')} ({fmt_duration(act_dur)})")
-            elif otype == "compute_error":
-                print(f"    {tool_name} → ERROR: {obs.get('error', '?')[:100]}")
-            elif otype == "empty":
-                print(f"    {tool_name} → NO RESULTS ({fmt_duration(act_dur)})")
+        if (consecutive_no_progress >= 2
+                and not all_headings_injected
+                and rnd < max_rounds
+                and domain == "insurance"):
+            print(f"\n  ⚠ No progress for 2 rounds — injecting get_all_headings fallback")
+            fallback_obs = _inject_all_headings(doc_status, round_log, label_counter, domain, qid)
+            if fallback_obs:
+                all_headings_injected = True
+                consecutive_no_progress = 0
+                print(f"    Injected all headings across {len(fallback_obs.get('docs', {}))} doc(s), total {fallback_obs.get('count', 0)}")
             else:
-                print(f"    {tool_name} → {str(obs)[:100]} ({fmt_duration(act_dur)})")
-
-        merged_obs = {"type": "multi_action", "count": len(all_obs), "results": all_obs}
-        round_log.append({"round": rnd, "phase": "OBSERVE", "text": f"", "data": merged_obs})
+                print(f"    No headings available to inject")
 
         # State summary
         print(f"\n  State: {len(gathered_tables)} tables, {len(gathered_sections)} sections gathered")
