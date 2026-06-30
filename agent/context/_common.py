@@ -7,8 +7,8 @@ import os
 from agent.tools import execute_tool
 from agent.llm_reasoner import llm_think, get_llm_config
 
-MAX_ROUNDS = 6
-BATCH_MAX_ROUNDS = 9
+MAX_ROUNDS = 12
+BATCH_MAX_ROUNDS = 12
 MAX_KEEP_CLUES = 5
 
 

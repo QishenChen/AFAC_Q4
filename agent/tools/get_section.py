@@ -3,10 +3,26 @@ Full implementation extracted from Retriever.get_section.
 """
 
 import os
+import re
 
 from agent.tools._loader import get_indices
 from agent.tools.get_doc_info import resolve_doc
 from agent.tools.search_tables import get_tables_under
+
+
+def _normalize_heading(text: str) -> str:
+    """Normalize a heading title for fuzzy matching.
+
+    - Strips all non-Chinese characters.
+    - Removes leading chapter prefixes like 第八章.
+    This handles section-number mismatches (6. vs 6.2), Unicode bullets,
+    extra whitespace, and trailing page numbers (....10).
+    """
+    # Remove leading chapter prefixes: 第八章 / 第1章
+    text = re.sub(r"^第[一二三四五六七八九十\d]+章\s*", "", text)
+    # Keep only CJK unified ideographs (Chinese characters)
+    text = "".join(c for c in text if "\u4e00" <= c <= "\u9fff")
+    return text
 
 
 def get_section(doc: str, heading_path):
@@ -34,11 +50,21 @@ def get_section(doc: str, heading_path):
     if not headings:
         return None
 
-    # Collect all matching headings (same title may appear as TOC entry AND real section)
+    # Collect all matching headings (same title may appear as TOC entry AND real section).
+    # Use normalized titles so that "6.\u5982\u4f55\u9000\u4fdd" can match the real heading "\uf07a \u5982\u4f55\u9000\u4fdd".
+    normalized_heading_path = [_normalize_heading(p) for p in heading_path]
+    query_title = normalized_heading_path[-1]
+
     candidates = []
     for h in headings:
         h_path = h.get("path", [])
-        if len(h_path) >= len(heading_path) and h_path[-len(heading_path):] == heading_path:
+        normalized_h_path = [_normalize_heading(p) for p in h_path]
+        path_match = (
+            len(normalized_h_path) >= len(normalized_heading_path)
+            and normalized_h_path[-len(normalized_heading_path):] == normalized_heading_path
+        )
+        title_match = _normalize_heading(h["title"]) == query_title
+        if path_match or title_match:
             candidates.append(h)
 
     if not candidates:
@@ -51,16 +77,23 @@ def get_section(doc: str, heading_path):
     # 4. Use span as a final tiebreaker.
     TOC_MARKERS = {"条款目录", "阅读指引", "目次", "目录", "contents", "table of contents"}
 
-    def _in_toc(path):
-        normalized = " ".join(p.lower() for p in path)
-        return any(m in normalized for m in TOC_MARKERS)
+    def _has_page_number(title):
+        # TOC entries often end with page numbers: ....10, ..... 25, . 16
+        return bool(re.search(r"[\.\s]+\d+\s*$", title))
 
-    non_toc = [c for c in candidates if not _in_toc(c.get("path", []))]
-    if not non_toc:
-        non_toc = candidates  # fallback: use everything if all were flagged
+    def _in_toc(path, title):
+        normalized = " ".join(p.lower() for p in path)
+        if any(m in normalized for m in TOC_MARKERS):
+            return True
+        if _has_page_number(title):
+            return True
+        return False
+
+    non_toc = [c for c in candidates if not _in_toc(c.get("path", []), c.get("title", ""))]
+    pool = non_toc if non_toc else candidates  # fallback to TOC if no real section matches
 
     by_title = {}
-    for c in non_toc:
+    for c in pool:
         title = c["title"]
         if title not in by_title or c["line_start"] > by_title[title]["line_start"]:
             by_title[title] = c
