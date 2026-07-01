@@ -5,36 +5,21 @@ Full implementations extracted from Retriever.
 
 from agent.tools._loader import get_indices
 from agent.tools._shared import MIN_SCORE, _split_pipe_query
+from agent.tools.expand_query import expand_query_to_sets
+from agent.tools.keyword_tracker import record_search_keywords
 from agent.tools.get_doc_info import get_doc_info, resolve_doc
-from utils.text_utils import fuzzy_match
 
 
-def _multi_fuzzy_match(query: str, target: str) -> float:
-    """
-    If query contains pipe, score = max of individual term matches.
-    Otherwise normal fuzzy_match.
-    """
-    terms = _split_pipe_query(query)
-    if len(terms) <= 1:
-        return fuzzy_match(query, target)
-    return max(fuzzy_match(t, target) for t in terms)
 
-
-def _multi_fuzzy_match_and(query: str, target: str) -> float:
-    """
-    Geometric mean of individual term scores — requires ALL terms present (AND logic).
-    Returns 0 if any term scores 0.
-    """
-    terms = _split_pipe_query(query)
-    if len(terms) <= 1:
-        return fuzzy_match(query, target)
-    scores = [fuzzy_match(t, target) for t in terms]
-    if any(s == 0 for s in scores):
-        return 0.0
-    prod = 1.0
-    for s in scores:
-        prod *= s
-    return prod ** (1.0 / len(scores))
+def _synonym_set_score(synonym_sets: dict[str, set[str]], target: str) -> float:
+    """Synonym-normalized exact-match score (sum across query terms)."""
+    total = 0.0
+    for syns in synonym_sets.values():
+        if not syns:
+            continue
+        matched = sum(1 for syn in syns if syn in target)
+        total += matched / len(syns)
+    return total
 
 
 def get_table(table_id: str) -> dict | None:
@@ -82,17 +67,18 @@ def get_tables_by_doc(doc: str) -> list[dict]:
     return tables
 
 
-def search_doc(doc: str, query: str, max_results: int = 20) -> list[dict]:
+def search_doc(doc: str, query: str, max_results: int = 20, qid: str | None = None) -> list[dict]:
     """Search for tables within a single document."""
     docs = resolve_doc(doc)
     if not docs:
         return []
-    return search_tables(query, doc_filter=docs[0], max_results=max_results)
+    return search_tables(query, doc_filter=docs[0], max_results=max_results, qid=qid)
 
 
 def search_tables(query: str | None = None, domain: str | None = None, max_results: int = 20,
                   doc_filter: str | None = None, doc: str | None = None,
-                  table_id: str | None = None, heading_title: str | None = None):
+                  table_id: str | None = None, heading_title: str | None = None,
+                  qid: str | None = None):
     """
     Unified table access:
       - If table_id: return single table by ID
@@ -117,6 +103,9 @@ def search_tables(query: str | None = None, domain: str | None = None, max_resul
     if not query:
         return []
 
+    synonym_sets = expand_query_to_sets(query)
+    record_search_keywords(qid or doc or "unknown", "search_tables", query, synonym_sets)
+
     results = []
     for t in table_index["tables"]:
         if domain:
@@ -126,13 +115,13 @@ def search_tables(query: str | None = None, domain: str | None = None, max_resul
         if doc_filter and t["doc_path"] != doc_filter:
             continue
 
-        # Multi-term pipe matching — search name, headers, context, AND data rows
-        name_score = _multi_fuzzy_match(query, t["name"])
+        # Synonym-aware scoring across name, headers, context, and data rows
+        name_score = _synonym_set_score(synonym_sets, t["name"])
         header_text = " ".join(t["headers"])
-        header_score = _multi_fuzzy_match(query, header_text)
-        context_score = _multi_fuzzy_match(query, t.get("context_before", ""))
+        header_score = _synonym_set_score(synonym_sets, header_text)
+        context_score = _synonym_set_score(synonym_sets, t.get("context_before", ""))
         data_text = " ".join(str(c) for r in t.get("data", []) if r for c in r if c)
-        data_score = _multi_fuzzy_match(query, data_text)
+        data_score = _synonym_set_score(synonym_sets, data_text)
         score = 0.35 * name_score + 0.20 * header_score + 0.15 * context_score + 0.30 * data_score
 
         if score >= MIN_SCORE:

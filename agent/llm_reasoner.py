@@ -203,7 +203,8 @@ Respond with JSON: {{"actions": [...], "keep": {{"A": ["R1"], "B": ["R3"]}}, "re
   Remove entries for options already judged.
   Write compactly by citing clues inline, e.g. "{{R1}} reveals X; {{R3}} reveals Y; therefore A is TRUE."
   Do not repeat the full evidence text — reference the label and state the inferred fact.
-- "keep" (REQUIRED): Dict mapping option→labels. Example: {{"A": ["R1","R2"], "B": ["R3"]}}
+- "keep" (REQUIRED): Dict mapping option→labels. Example: {{"A": ["R1","R2"], "B": ["R3"], "C": [], "D": []}}
+  Include one entry for EVERY option still under investigation. Use an empty list `[]` for an option that has no clues worth keeping.
   IMPORTANT: "keep" may contain at most 5 clue labels total across all options. Keep ONLY the most important / decisive clues; drop weaker ones.
 - "judgment" (OPTIONAL): Include TRUE/FALSE for options you are confident about. Skip unsure ones.
   Example: "A:TRUE|D:TRUE" = A and D resolved, B and C still investigating.
@@ -225,7 +226,7 @@ RULES:
 - Keep queries to 2–3 keywords maximum. More keywords dilute results and match noise.
   If results are irrelevant, drop keywords and retry with fewer or different terms — not more.
   Use only core nouns, numbers, and key verbs. Strip all filler words and redundant modifiers.
-- For search_headings, use diverse loosely-related keywords to cover more possible areas.
+- For search_headings, search_text and search_tables, use diverse loosely-related keywords to cover more possible areas.
   Do not restrict searches to the option's exact terms — think about what topic areas
   could contain relevant information.
 - When using search_tables, you can either (a) search by keywords to discover relevant tables, or

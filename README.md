@@ -38,7 +38,12 @@
 │       ├── get_section.py / .md
 │       ├── compute.py / .md
 │       ├── expand_query.py
+│       ├── keyword_tracker.py   # 记录 LLM 搜索关键词
 │       └── get_doc_info.py
+├── scripts/
+│   ├── show_search_keywords.py        # 查看每问题搜索关键词
+│   ├── analyze_search_keywords.py     # 嵌入模型分析关键词同义词
+│   └── build_synonym_pipeline.py      # 端到端同义词采集流水线
 ├── config/
 │   ├── financial_terms.json     # 原始金融术语同义词
 │   ├── financial_synonyms.json  # 500+ 术语 → group_id (LLM 生成)
@@ -71,7 +76,9 @@
 ### 1. 环境配置
 
 ```bash
-pip install requests jieba
+pip install requests jieba numpy
+# 或者使用项目 venv（已包含 numpy + requests，无需 torch）
+# .venv/bin/python scripts/analyze_search_keywords.py
 ```
 
 ### 2. 设置 API Key
@@ -137,6 +144,9 @@ Round 1–9 (batch) / 1–6 (per-option):
 - **IDF 加权模糊匹配**：通过 jieba 词频分析对常见词降权 (`utils/text_utils.py`)
 - **循环耗尽保留部分判断**：max_rounds 时保留已累计的 TRUE/FALSE (不丢弃为 VAGUE)
 - **原始响应日志**：每问题的 LLM 响应保存到 `results/raw_responses/{qid}.txt`
+- **同义词感知检索**：`search_text` / `search_tables` / `search_headings` 自动按同义词集合归一化打分
+- **关键词追踪**：每次搜索的原始 query 和同义词展开记录到 `results/keywords/{qid}/keywords.jsonl`
+- **无进展回退**：连续两轮无新判断/无新数据时自动注入 `get_all_headings` 概览保险文档结构
 
 ### keep dict 格式
 
@@ -155,6 +165,63 @@ Round 1–9 (batch) / 1–6 (per-option):
 | 3 | search_text | 搜索文档原始段落文本 |
 | 4 | get_section | 获取标题下完整文本 + 表格 |
 | 5 | compute | 单位感知算术计算器 |
+
+## 同义词发现与关键词追踪
+
+代理在搜索时会自动把 query 中的词展开成同义词集合（基于 `config/financial_terms.json`），并按集合大小归一化打分。所有搜索词都会被记录，便于持续扩充同义词表。
+
+### 1. 查看已搜索关键词
+
+```bash
+python3 scripts/show_search_keywords.py [qid]
+```
+
+输出会列出每个问题实际调用的 query 及其同义词展开。
+
+### 2. 用嵌入模型分析关键词
+
+```bash
+python3 scripts/analyze_search_keywords.py --model text-embedding-v3 --threshold 0.90
+```
+
+流程：
+1. 读取 `results/keywords/*/keywords.jsonl` 中的所有搜索词。
+2. 用在线 Embedding API 把每个搜索词与参考同义词图（默认 `config/financial_synonyms.json`）中的金融术语组做相似度对比。
+3. 高相似词写入 `results/keywords/analysis/proposed_merges.json`。
+4. 无法匹配的词在 `results/keywords/new_terms/<term>/` 下生成目录，附带最近似组和相似度。
+
+可调参数：
+- `--threshold`：合并相似度阈值（默认 0.90）
+- `--margin`：Top2 差距阈值（默认 0.05）
+- `--target`：参考同义词图路径（默认 `config/financial_synonyms.json`）
+- `--apply`：把建议合并写入 `config/financial_terms.json`（自动备份）
+
+### 3. 端到端同义词采集流水线
+
+`scripts/build_synonym_pipeline.py` 把以下步骤串成一条命令：
+
+```bash
+# 完整流水线：生成种子词典 → 运行代理收集关键词 → 分析 → LLM  enrichment → 应用
+python3 scripts/build_synonym_pipeline.py run-all \
+    --questions public_dataset_upload/questions/group_a/insurance_questions.json \
+    --seed --collect --apply
+```
+
+也可以分步执行：
+
+```bash
+python3 scripts/build_synonym_pipeline.py seed
+python3 scripts/build_synonym_pipeline.py collect --questions public_dataset_upload/questions/group_a/insurance_questions.json
+python3 scripts/build_synonym_pipeline.py analyze
+python3 scripts/build_synonym_pipeline.py enrich
+python3 scripts/build_synonym_pipeline.py apply
+```
+
+输出：
+- `config/financial_synonyms.json`：更新后的参考同义词图
+- `config/financial_terms.json`：运行时使用的同义词配置（带备份）
+- `results/keywords/analysis/`：`known_terms.json`、`proposed_merges.json`、`new_terms_summary.json`、`enrichment_report.json`
+- `results/keywords/new_terms/`：每个新概念的目录与 `info.json`
 
 ## 配置
 

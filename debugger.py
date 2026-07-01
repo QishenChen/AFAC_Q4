@@ -270,6 +270,11 @@ def debug_one(question, config=None, no_llm=False, mode="batch", max_rounds=None
                 act_text = f"[ACT {rnd}] {tool_name}({json.dumps(params, ensure_ascii=False)[:150]})"
                 round_log.append({"round": rnd, "phase": "ACT", "text": act_text})
 
+                # Pass qid into search tools so keyword tracking can log per-question
+                if tool_name in ("search_text", "search_headings", "search_tables"):
+                    params = dict(params)
+                    params.setdefault("qid", qid)
+
                 t_act = time.time()
                 result = execute_tool(tool_name, **params)
                 act_dur = time.time() - t_act

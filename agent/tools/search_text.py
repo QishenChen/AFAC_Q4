@@ -6,28 +6,29 @@ import os
 
 from agent.tools._loader import get_indices
 from agent.tools._shared import MIN_SCORE, _split_pipe_query
+from agent.tools.expand_query import expand_query_to_sets
+from agent.tools.keyword_tracker import record_search_keywords
 from agent.tools.get_doc_info import resolve_doc
-from utils.text_utils import strip_html_tags, fuzzy_match
+from utils.text_utils import strip_html_tags
 
 
-def _multi_fuzzy_match_and(query: str, target: str) -> float:
+def _synonym_set_score(synonym_sets: dict[str, set[str]], target: str) -> float:
+    """Synonym-normalized exact-match score.
+
+    For each original query term, count how many of its synonyms are present
+    in the target and divide by the synonym-set size. The final score is the
+    sum across all original terms.
     """
-    Geometric mean of individual term scores — requires ALL terms present (AND logic).
-    Returns 0 if any term scores 0.
-    """
-    terms = _split_pipe_query(query)
-    if len(terms) <= 1:
-        return fuzzy_match(query, target)
-    scores = [fuzzy_match(t, target) for t in terms]
-    if any(s == 0 for s in scores):
-        return 0.0
-    prod = 1.0
-    for s in scores:
-        prod *= s
-    return prod ** (1.0 / len(scores))
+    total = 0.0
+    for syns in synonym_sets.values():
+        if not syns:
+            continue
+        matched = sum(1 for syn in syns if syn in target)
+        total += matched / len(syns)
+    return total
 
 
-def search_text(doc: str, query: str, max_results: int = 10):
+def search_text(doc: str, query: str, max_results: int = 10, qid: str | None = None):
     """Search raw text content of a document — finds clauses, statements, non-table text.
     doc is REQUIRED. Split query into individual terms with |."""
     docs = resolve_doc(doc)
@@ -39,14 +40,21 @@ def search_text(doc: str, query: str, max_results: int = 10):
         content = f.read()
     clean = strip_html_tags(content)
     raw_lines = clean.split("\n")
+
+    synonym_sets = expand_query_to_sets(query)
+    record_search_keywords(qid or doc, "search_text", query, synonym_sets)
+
     matches = []
     for i, line in enumerate(raw_lines):
         stripped = line.strip()
         if not stripped:
             continue
-        if _multi_fuzzy_match_and(query, stripped) >= MIN_SCORE:
+        score = _synonym_set_score(synonym_sets, stripped)
+        if score >= MIN_SCORE:
             start = max(0, i - 2)
             end = min(len(raw_lines), i + 3)
             ctx = "\n".join(rl.strip() for rl in raw_lines[start:end] if rl.strip())
-            matches.append({"line_num": i, "text": ctx[:1200]})
+            matches.append({"line_num": i, "text": ctx[:1200], "score": round(score, 3)})
+
+    matches.sort(key=lambda x: x["score"], reverse=True)
     return matches[:max_results]

@@ -250,15 +250,36 @@ def _save_search_results(qid, obs):
             json.dump({"heading": obs.get("heading",""), "content": obs.get("content_preview","")}, f, ensure_ascii=False, indent=2)
 
 
-def _prune_by_keep(keep_input, gathered_tables, gathered_sections, round_log):
+def _append_think_warning(round_log, warning):
+    """Append a warning text to the most recent THINK entry."""
+    for entry in reversed(round_log):
+        if entry.get("phase") == "THINK":
+            entry["text"] = f"{entry.get('text', '')}\n{warning}"
+            break
+
+
+def _prune_by_keep(keep_input, gathered_tables, gathered_sections, round_log, active_options=None):
     """Remove items not in keep_labels from gathered context and round_log observations.
     Accepts either a flat list ["R1","R3"] or a dict {"A": ["R1","R2"], "B": ["R3"]}.
     Enforces MAX_KEEP_CLUES by truncating to the first labels deterministically.
+
+    If keep_input is a dict and omits active options, pruning is skipped to avoid
+    accidentally discarding all evidence for unresolved options.
     """
     if not keep_input:
         return
     if isinstance(keep_input, dict):
-        # Dict format: {"A": ["R1","R2"], "B": ["R3"]} → flatten
+        # Dict format: {"A": ["R1","R2"], "B": ["R3"]}
+        # If the LLM forgot to include some unresolved options, don't drop their evidence.
+        if active_options:
+            missing = [opt for opt in active_options if opt not in keep_input]
+            if missing:
+                warning = (
+                    f"[WARN] keep omitted active options {missing}; "
+                    f"keeping all current evidence to avoid losing unresolved clues."
+                )
+                _append_think_warning(round_log, warning)
+                return
         keep = set()
         for labels in keep_input.values():
             keep.update(labels)
@@ -273,15 +294,13 @@ def _prune_by_keep(keep_input, gathered_tables, gathered_sections, round_log):
         sorted_labels = sorted(keep, key=lambda x: (len(x), x))
         dropped = sorted_labels[MAX_KEEP_CLUES:]
         keep = set(sorted_labels[:MAX_KEEP_CLUES])
-        # Warn in the most recent THINK entry or append a system note
         warning = f"[COMPRESS] keep had {original_count} clues; truncated to {MAX_KEEP_CLUES} ({keep}). Dropped: {dropped}"
-        for entry in reversed(round_log):
-            if entry.get("phase") == "THINK":
-                entry["text"] = f"{entry.get('text', '')}\n{warning}"
-                break
+        _append_think_warning(round_log, warning)
 
-    gathered_tables[:] = [t for t in gathered_tables if t.get("__label__") in keep]
-    gathered_sections[:] = [s for s in gathered_sections if s.get("__label__") in keep]
+    # Keep labeled items whose label is in the keep set, plus any unlabeled items
+    # (e.g. get_section results that do not carry a reference label).
+    gathered_tables[:] = [t for t in gathered_tables if not t.get("__label__") or t.get("__label__") in keep]
+    gathered_sections[:] = [s for s in gathered_sections if not s.get("__label__") or s.get("__label__") in keep]
     for entry in round_log:
         if entry.get("phase") != "OBSERVE" or not entry.get("data"):
             continue
@@ -378,7 +397,8 @@ def run_react_loop(question, option_key, option_text, doc_status, config=None, m
         # Prune irrelevant clues before executing actions
         keep_input = plan.get("keep")
         if keep_input:
-            _prune_by_keep(keep_input, gathered_tables, gathered_sections, round_log)
+            active_options = list(mini_question.get("options", {}).keys())
+            _prune_by_keep(keep_input, gathered_tables, gathered_sections, round_log, active_options=active_options)
 
         actions = _parse_multi_actions(plan, round_log, rnd)
 
@@ -469,6 +489,11 @@ def run_react_loop(question, option_key, option_text, doc_status, config=None, m
                 params = action.get("params", {})
                 act_text = f"[ACT {rnd}] {tool_name}({json.dumps(params, ensure_ascii=False)[:150]})"
                 round_log.append({"round": rnd, "phase": "ACT", "text": act_text})
+
+                # Pass qid into search tools so keyword tracking can log per-question
+                if tool_name in ("search_text", "search_headings", "search_tables"):
+                    params = dict(params)
+                    params.setdefault("qid", qid)
 
                 result = execute_tool(tool_name, **params)
                 act_result = result.get("result", {})
