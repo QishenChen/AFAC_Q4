@@ -109,13 +109,20 @@ def observe_result(tool_name, act_result, label_counter=None):
     if tool_name == "search_tables":
         tr = act_result if isinstance(act_result, list) else []
         items = []
+        note = None
         for t in tr[:4]:
+            if t.get("note"):
+                note = t.get("name", "")
+                continue
             lbl = _make_label(label_counter)
             items.append({
                 "label": lbl, "table_id": t.get("table_id", ""),
                 "name": t.get("name", ""), "text": format_table_for_context(t),
             })
-        return {"type": "tables", "count": len(tr), "tables": items}
+        obs = {"type": "tables", "count": len(tr), "tables": items}
+        if note:
+            obs["note"] = note
+        return obs
     if tool_name == "search_text":
         st = act_result if isinstance(act_result, list) else []
         items = []
@@ -205,6 +212,8 @@ def _gather_data(tool_name, act_result, gathered_tables, gathered_sections, doc_
             gathered_tables.append(t)
     elif tool_name == "search_tables":
         tr = act_result if isinstance(act_result, list) else []
+        # Skip synthetic note entries so label alignment remains correct.
+        tr = [t for t in tr if not t.get("note")]
         obs_data = obs_result or {}
         tbl_entries = obs_data.get("tables", [])
         for i, t in enumerate(tr):

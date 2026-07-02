@@ -107,6 +107,8 @@ def search_tables(query: str | None = None, domain: str | None = None, max_resul
     record_search_keywords(qid or doc or "unknown", "search_tables", query, synonym_sets)
 
     results = []
+    seen_ids = set()
+    duplicates_skipped = 0
     for t in table_index["tables"]:
         if domain:
             doc_info = get_doc_info(t["doc_path"])
@@ -114,6 +116,14 @@ def search_tables(query: str | None = None, domain: str | None = None, max_resul
                 continue
         if doc_filter and t["doc_path"] != doc_filter:
             continue
+
+        # Skip duplicate tables (same table_id) within a single search result.
+        table_id = t.get("table_id")
+        if table_id:
+            if table_id in seen_ids:
+                duplicates_skipped += 1
+                continue
+            seen_ids.add(table_id)
 
         # Synonym-aware scoring across name, headers, context, and data rows
         name_score = _synonym_set_score(synonym_sets, t["name"])
@@ -128,4 +138,12 @@ def search_tables(query: str | None = None, domain: str | None = None, max_resul
             results.append({**t, "score": round(score, 3)})
 
     results.sort(key=lambda x: x["score"], reverse=True)
-    return results[:max_results]
+    results = results[:max_results]
+    if duplicates_skipped > 0:
+        results.append({
+            "table_id": None,
+            "name": f"[NOTE] {duplicates_skipped} duplicate table(s) were omitted.",
+            "score": 0.0,
+            "note": True,
+        })
+    return results
