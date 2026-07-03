@@ -389,6 +389,7 @@ def run_react_loop(question, option_key, option_text, doc_status, config=None, m
     gathered_sections = []
     label_counter = [1]
     accumulated_judgment = {}  # {option_key: "TRUE|FALSE|VAGUE"}
+    cumulative_keep = set()     # all labels the LLM ever asked to keep
 
     # Build initial mini_question
     parent_question = question.get("question", "")
@@ -413,7 +414,7 @@ def run_react_loop(question, option_key, option_text, doc_status, config=None, m
     if not available:
         return {"option": option_key, "judgment": "VAGUE", "reason": "所有文档缺失", "evidence": "",
                 "token_usage": {"prompt_tokens": 0, "completion_tokens": 0, "total": 0},
-                "rounds": 0, "log_summary": []}
+                "rounds": 0, "log_summary": [], "cumulative_keep": []}
 
     think0 = f"[THINK 0] Option {option_key}: 检查文档"
     round_log.append({"round": 0, "phase": "THINK", "text": think0})
@@ -444,6 +445,12 @@ def run_react_loop(question, option_key, option_text, doc_status, config=None, m
         if keep_input:
             active_options = list(mini_question.get("options", {}).keys())
             _prune_by_keep(keep_input, gathered_tables, gathered_sections, round_log, active_options=active_options)
+            # Track every label the LLM asked to keep, for fallback final judgment.
+            if isinstance(keep_input, dict):
+                for labels in keep_input.values():
+                    cumulative_keep.update(labels)
+            elif isinstance(keep_input, list):
+                cumulative_keep.update(keep_input)
 
         actions = _parse_multi_actions(plan, round_log, rnd)
 
@@ -527,6 +534,7 @@ def run_react_loop(question, option_key, option_text, doc_status, config=None, m
                                 "total": prompt_tokens + completion_tokens},
                 "rounds": len([r for r in round_log if r["phase"] == "ACT"]),
                 "log_summary": [r["text"][:150] for r in round_log],
+                "cumulative_keep": sorted(cumulative_keep),
             }
 
         merged_obs = None
@@ -589,6 +597,7 @@ def run_react_loop(question, option_key, option_text, doc_status, config=None, m
                                 "total": prompt_tokens + completion_tokens},
                 "rounds": len([r for r in round_log if r["phase"] == "ACT"]),
                 "log_summary": [r["text"][:150] for r in round_log],
+                "cumulative_keep": sorted(cumulative_keep),
             }
 
     resolved = dict(accumulated_judgment) if accumulated_judgment else None
@@ -601,4 +610,5 @@ def run_react_loop(question, option_key, option_text, doc_status, config=None, m
                         "total": prompt_tokens + completion_tokens},
         "rounds": max_rounds,
         "log_summary": [r["text"][:150] for r in round_log],
+        "cumulative_keep": sorted(cumulative_keep),
     }
