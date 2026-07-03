@@ -214,6 +214,7 @@ Respond with JSON: {{"actions": [...], "keep": {{"A": ["R1"], "B": ["R3"]}}, "re
 
 RULES:
 - TRUE = data clearly supports. FALSE = data clearly contradicts.
+- All mcq questions have one answers, while multi questions have more than one.
 - When confident, include judgment IMMEDIATELY — do not wait.
 - If a search returns no results, paraphrase and retry with different keywords. Never give up after one attempt.
   Never mark an option FALSE due to missing data — FALSE only when documents explicitly contradict the claim.
@@ -373,6 +374,85 @@ def reason_on_context(context: str, question: dict, config: dict | None = None) 
         options_detail[key] = {
             "judgment": opt.get("judgment", "VAGUE"),
             "reason": opt.get("reason", "Unable to determine from context"),
+            "evidence": opt.get("evidence", ""),
+        }
+
+    return {
+        "options_detail": options_detail,
+        "llm_prompt_tokens": usage.get("prompt_tokens", 0),
+        "llm_completion_tokens": usage.get("completion_tokens", 0),
+        "llm_api_usage": usage,
+        "llm_model": config["model"],
+    }
+
+
+def build_fallback_judgment_prompt(context: str, question: dict) -> list[dict]:
+    """Build a forced-choice fallback prompt: MCQ must pick exactly 1, multi must pick >=2."""
+    options = question.get("options", {})
+    answer_format = question.get("answer_format", "")
+    if answer_format == "mcq":
+        instruction = (
+            "This is a single-choice MCQ. You MUST choose exactly ONE option as TRUE and mark the rest FALSE. "
+            "Do NOT return VAGUE. Pick the most likely answer based on the evidence."
+        )
+    elif answer_format == "multi":
+        instruction = (
+            "This is a multi-select question. You MUST choose at least TWO options as TRUE and mark the rest FALSE. "
+            "Do NOT return VAGUE. Pick the most likely correct combination based on the evidence."
+        )
+    else:
+        instruction = (
+            "You MUST commit to TRUE/FALSE judgments for every option. Do NOT return VAGUE. "
+            "Pick the most likely answer(s) based on the evidence."
+        )
+
+    system = f"""You are a precise financial document analyst. Judge each option based ONLY on the provided context.
+
+{instruction}
+
+TRUE = context supports the claim.
+FALSE = context contradicts the claim or the option is not the best answer.
+
+Return ONLY a JSON object (no other text):
+{{"options": {{"A": {{"judgment": "TRUE|FALSE", "reason": "brief reason", "evidence": "label / table / row / value"}}, ...}}}}"""
+
+    user = f"QUESTION: {question.get('question', '')}\n\nOPTIONS:\n{json.dumps(options, ensure_ascii=False, indent=2)}\n\nCONTEXT:\n{context}"
+    return [
+        {"role": "system", "content": system},
+        {"role": "user", "content": user},
+    ]
+
+
+def fallback_reason_on_context(context: str, question: dict, config: dict | None = None) -> dict:
+    """Forced-choice fallback reasoning: no VAGUE allowed."""
+    if config is None:
+        config = get_llm_config()
+
+    messages = build_fallback_judgment_prompt(context, question)
+    result = call_llm(messages, config)
+
+    options = question.get("options", {})
+    if result.get("error"):
+        return {
+            "options_detail": {k: {"judgment": "FALSE", "reason": f"LLM error: {result['error']}", "evidence": ""}
+                              for k in options},
+            "llm_prompt_tokens": 0, "llm_completion_tokens": 0,
+            "llm_api_usage": {}, "llm_model": config["model"], "llm_error": result["error"],
+        }
+
+    parsed = parse_json_from_response(result["content"])
+    usage = result.get("usage", {})
+    llm_options = parsed.get("options", {}) if not parsed.get("error") else {}
+
+    options_detail = {}
+    for key in sorted(options.keys()):
+        opt = llm_options.get(key, {})
+        judgment = opt.get("judgment", "FALSE")
+        if judgment not in ("TRUE", "FALSE"):
+            judgment = "FALSE"
+        options_detail[key] = {
+            "judgment": judgment,
+            "reason": opt.get("reason", "Fallback forced choice"),
             "evidence": opt.get("evidence", ""),
         }
 

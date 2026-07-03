@@ -4,7 +4,7 @@ then simultaneous judgment via reason_on_context (MCQ, max 9 rounds)."""
 import json
 import os
 from agent.tools import execute_tool
-from agent.llm_reasoner import get_llm_config, reason_on_context
+from agent.llm_reasoner import get_llm_config, fallback_reason_on_context
 from agent.context._common import (
     MAX_ROUNDS, BATCH_MAX_ROUNDS,
     build_single_option_context, observe_result, _gather_data, _prune_by_keep, _parse_multi_actions,
@@ -122,7 +122,7 @@ def solve_batch(question, doc_status, config=None):
         keep_labels = opt_result.get("cumulative_keep", [])
         fallback_context = _build_fallback_context(qid, keep_labels, question.get("doc_ids", []))
         full_context = f"Question: {question_text}\n\n{fallback_context}"
-        fallback = reason_on_context(full_context, question, config)
+        fallback = fallback_reason_on_context(full_context, question, config)
         fb_detail = fallback.get("options_detail", {})
         for key in sorted(options.keys()):
             detail = fb_detail.get(key, {})
