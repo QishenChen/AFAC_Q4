@@ -165,6 +165,42 @@ def _round_has_useful_results(merged_obs):
     return False
 
 
+def _fill_remaining_by_elimination(question, mini_question, accumulated_judgment, round_log):
+    """Early termination heuristic for multiple-choice questions.
+
+    - MCQ (single correct): if all but one option are FALSE, the remaining option is TRUE.
+    - Multi-select: if two options are FALSE, mark the remaining unresolved options TRUE by elimination.
+
+    Returns True if any options were filled and the loop should terminate.
+    """
+    answer_format = question.get("answer_format", "")
+    total_options = len(question.get("options", {}))
+    false_count = sum(1 for v in accumulated_judgment.values() if v == "FALSE")
+    remaining = list(mini_question.get("options", {}).keys())
+    if not remaining:
+        return False
+
+    fill = None
+    if answer_format == "mcq" and false_count >= total_options - 1:
+        fill = "TRUE"
+    elif answer_format == "multi" and false_count >= 2:
+        fill = "TRUE"
+
+    if not fill:
+        return False
+
+    for opt in remaining:
+        accumulated_judgment[opt] = fill
+        mini_question["options"].pop(opt, None)
+
+    note = f"[ELIMINATION] {false_count} option(s) FALSE → filled remaining {remaining} as {fill}."
+    for entry in reversed(round_log):
+        if entry.get("phase") == "THINK":
+            entry["text"] = f"{entry.get('text', '')}\n{note}"
+            break
+    return True
+
+
 def _inject_all_headings(doc_status, round_log, label_counter, domain, qid):
     """Inject a synthetic OBSERVE with all headings for every available insurance doc.
     Used as a fallback when the LLM is stuck for two consecutive rounds.
@@ -475,6 +511,9 @@ def run_react_loop(question, option_key, option_text, doc_status, config=None, m
                 elif judged_val == "FALSE":
                     accumulated_judgment[remaining_key] = "TRUE"
                 mini_question["options"].pop(remaining_key, None)
+
+            # Early termination by elimination for MCQ / multi-select
+            _fill_remaining_by_elimination(question, mini_question, accumulated_judgment, round_log)
 
         # ── Termination: check options, not actions ──
         # If ALL options resolved, terminate immediately — ignore any remaining actions
